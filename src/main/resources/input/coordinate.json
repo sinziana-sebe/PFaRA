@@ -1,0 +1,17 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "description" : "structure for location coordinates",
+  "type" : "object",
+  "properties" : {
+    "lat" : {
+      "type" : "number"
+    },
+    "lon" : {
+      "type" : "number"
+    }
+  },
+  "required" : [
+    "lat",
+    "lon"
+  ]
+}

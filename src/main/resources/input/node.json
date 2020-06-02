@@ -1,0 +1,18 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "description": "the node object structure",
+  "type" : "object",
+  "properties" : {
+    "name" : {
+      "type" : "string"
+    },
+    "coordinates" : {
+      "type" : "object",
+      "$ref" : "coordinates.json"
+    }
+  },
+  "required" : [
+    "name",
+    "coordinates"
+  ]
+}
