@@ -1,11 +1,11 @@
-package environment;
+package org.socialcars.sinziana.pfara.environment;
 
-import org.socialcars.sinziana.simulation.data.input.CCoordinatepojo;
+import org.socialcars.sinziana.pfara.data.input.CCoordinatespojo;
 
 /**
  * the coordinate class used for both synthetic and real coordinate systems
  */
-public class CCoordinate implements ICoordinate
+public class CCoordinates implements ICoordinates
 {
     private final Double m_latitude;
     private final Double m_longitude;
@@ -15,7 +15,7 @@ public class CCoordinate implements ICoordinate
      * @param p_latitude latitude
      * @param p_longitude longitude
      */
-    public  CCoordinate( final Double p_latitude, final Double p_longitude )
+    public CCoordinates( final Double p_latitude, final Double p_longitude )
     {
         m_latitude = p_latitude;
         m_longitude = p_longitude;
@@ -26,7 +26,7 @@ public class CCoordinate implements ICoordinate
      * used to create a coordinate from file
      * @param p_pojo the plain old java object
      */
-    public CCoordinate( final CCoordinatepojo p_pojo )
+    public CCoordinates( final CCoordinatespojo p_pojo )
     {
         m_latitude = p_pojo.getLat();
         m_longitude = p_pojo.getLon();
