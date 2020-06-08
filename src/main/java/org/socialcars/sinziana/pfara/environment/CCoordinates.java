@@ -11,17 +11,6 @@ public class CCoordinates implements ICoordinates
     private final Double m_longitude;
 
     /**
-     * simple constructor with given latitude and longitude
-     * @param p_latitude latitude
-     * @param p_longitude longitude
-     */
-    public CCoordinates( final Double p_latitude, final Double p_longitude )
-    {
-        m_latitude = p_latitude;
-        m_longitude = p_longitude;
-    }
-
-    /**
      * constructor using the jsonschema defined
      * used to create a coordinate from file
      * @param p_pojo the plain old java object

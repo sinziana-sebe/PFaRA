@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "the input scheme",
+  "type": "object",
+  "properties": {
+    "graph" : {
+      "type": "object",
+      "$ref": "graph.json"
+    },
+    "stoplights" : {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "stoplight.json"
+      }
+    }
+  },
+  "required": [
+    "graph"
+  ]
+}

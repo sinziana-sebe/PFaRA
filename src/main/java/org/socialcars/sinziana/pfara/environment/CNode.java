@@ -11,17 +11,6 @@ public class CNode implements INode
     private final CCoordinates m_coordinates;
 
     /**
-     * ctor with given input
-     * @param p_name name
-     * @param p_coordinates coordinates object
-     */
-    public CNode( final String p_name, final CCoordinates p_coordinates )
-    {
-        m_name = p_name;
-        m_coordinates = p_coordinates;
-    }
-
-    /**
      * ctor
      * @param p_pojo pojo object read from file
      */

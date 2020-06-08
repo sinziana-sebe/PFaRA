@@ -1,0 +1,36 @@
+{
+  "graph": {
+    "nodes" : [
+      {
+        "name" : "node0",
+        "coordinates" : {
+          "lat" : 0,
+          "lon" : 0
+        }
+      },
+      {
+        "name" : "node1",
+        "coordinates" : {
+          "lat" : 10,
+          "lon" : 0
+        }
+      }
+    ],
+    "edges" : [
+      {
+        "name" : "edge0-1",
+        "from" : "node0",
+        "to" : "node1",
+        "weight" : 10
+      }
+    ]
+  },
+  "stoplights" : [
+    {
+      "location": "edge0-1",
+      "red" : 5,
+      "green" : 5,
+      "start": 0
+    }
+  ]
+}
