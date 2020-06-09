@@ -47,4 +47,5 @@ public class TestCCoordinates
         Assert.assertTrue( m_coordinates.latitude().equals( 0.0 ) );
     }
 
+
 }
