@@ -53,7 +53,7 @@ public class TestCStoplight
     /**
      * test the update function
      * both the normal update, where the time remaining is decremented
-     * as well as a change in the light
+     * as well two changes in the light
      */
     @Test
     public void testUpdate()
@@ -69,6 +69,14 @@ public class TestCStoplight
         m_stoplight.update();
         m_stoplight.update();
         Assert.assertTrue( m_stoplight.state() == ELightState.RED );
+        Assert.assertTrue( m_stoplight.timeLeft() == 5 );
+        m_stoplight.update();
+        Assert.assertTrue( m_stoplight.timeLeft() == 4 );
+        m_stoplight.update();
+        m_stoplight.update();
+        m_stoplight.update();
+        m_stoplight.update();
+        Assert.assertTrue( m_stoplight.state() == ELightState.GREEN );
         Assert.assertTrue( m_stoplight.timeLeft() == 5 );
     }
 

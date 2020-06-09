@@ -72,7 +72,11 @@ public class TestCGraph
         final INode l_from = m_graph.nodeByName( m_from );
         Assume.assumeNotNull( m_graph.nodeByName( m_to ) );
         final INode l_to = m_graph.nodeByName( m_to );
-        final List<IEdge> l_route = m_graph.route( l_from, l_to, Stream.empty() );
+        List<IEdge> l_route = m_graph.route( l_from, l_to, Stream.empty() );
+        Assume.assumeNotNull( l_route );
+        Assert.assertTrue( l_route.size() == 1 );
+        Assert.assertTrue( l_route.contains( m_graph.edgeByName( m_edgename ) ) );
+        l_route = m_graph.route( l_from, l_to );
         Assume.assumeNotNull( l_route );
         Assert.assertTrue( l_route.size() == 1 );
         Assert.assertTrue( l_route.contains( m_graph.edgeByName( m_edgename ) ) );
@@ -87,7 +91,11 @@ public class TestCGraph
         Assume.assumeNotNull( m_graph );
         Assume.assumeNotNull( m_graph.nodeByName( m_from ) );
         Assume.assumeNotNull( m_graph.nodeByName( m_to ) );
-        final List<IEdge> l_route = m_graph.route( m_from, m_to, Stream.empty() );
+        List<IEdge> l_route = m_graph.route( m_from, m_to, Stream.empty() );
+        Assume.assumeNotNull( l_route );
+        Assert.assertTrue( l_route.size() == 1 );
+        Assert.assertTrue( l_route.contains( m_graph.edgeByName( m_edgename ) ) );
+        l_route = m_graph.route( m_from, m_to );
         Assume.assumeNotNull( l_route );
         Assert.assertTrue( l_route.size() == 1 );
         Assert.assertTrue( l_route.contains( m_graph.edgeByName( m_edgename ) ) );
