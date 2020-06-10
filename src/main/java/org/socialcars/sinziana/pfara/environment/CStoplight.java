@@ -8,7 +8,6 @@ public class CStoplight implements IStoplight
 {
     private static Logger s_logger;
 
-    private final String m_edgename;
     private final Integer m_red;
     private final Integer m_green;
     private final Integer m_start;
@@ -22,7 +21,6 @@ public class CStoplight implements IStoplight
      */
     public CStoplight( final CStoplightpojo p_pojo )
     {
-        m_edgename = p_pojo.getLocation();
         m_red = p_pojo.getRed();
         m_green = p_pojo.getGreen();
         m_start = p_pojo.getStart();

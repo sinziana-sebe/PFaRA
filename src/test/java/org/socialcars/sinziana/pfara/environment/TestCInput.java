@@ -1,4 +1,4 @@
-package org.socialcars.sinziana.pfara;
+package org.socialcars.sinziana.pfara.environment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;

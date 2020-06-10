@@ -1,4 +1,4 @@
-package org.socialcars.sinziana.pfara;
+package org.socialcars.sinziana.pfara.environment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
@@ -7,10 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.socialcars.sinziana.pfara.data.input.CEdgepojo;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
-import org.socialcars.sinziana.pfara.environment.CEdge;
-import org.socialcars.sinziana.pfara.environment.CNode;
-import org.socialcars.sinziana.pfara.environment.CStoplight;
-import org.socialcars.sinziana.pfara.environment.INode;
 
 import java.io.File;
 import java.io.IOException;

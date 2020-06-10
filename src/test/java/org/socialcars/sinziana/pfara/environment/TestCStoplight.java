@@ -1,4 +1,4 @@
-package org.socialcars.sinziana.pfara;
+package org.socialcars.sinziana.pfara.environment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
@@ -6,8 +6,6 @@ import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
-import org.socialcars.sinziana.pfara.environment.CStoplight;
-import org.socialcars.sinziana.pfara.environment.ELightState;
 
 import java.io.File;
 import java.io.IOException;
@@ -75,6 +73,7 @@ public class TestCStoplight
         m_stoplight.update();
         m_stoplight.update();
         m_stoplight.update();
+        Assert.assertTrue( m_stoplight.timeLeft() == 1 );
         m_stoplight.update();
         Assert.assertTrue( m_stoplight.state() == ELightState.GREEN );
         Assert.assertTrue( m_stoplight.timeLeft() == 5 );
