@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "structure for the vehicle",
+  "type": "object",
+  "properties": {
+    "name" : {
+      "type" : "string"
+    },
+    "start" :{
+      "type":"string"
+    },
+    "finish" :{
+      "type":"string"
+    },
+    "middle": {
+      "type":"array",
+      "items": {
+        "type" : "string"
+      }
+    },
+    "preference" : {
+      "type" : "object",
+      "$ref": "preference.json"
+    },
+    "utility" : {
+      "type": "object",
+      "$ref": "utility.json"
+    },
+    "agent-type" : {
+      "type" : "string",
+      "default" : "vehicle"
+    }
+  },
+  "required" : [
+    "name",
+    "start",
+    "finish",
+    "preference",
+    "utility",
+    "agent-type"
+  ]
+}

@@ -13,9 +13,17 @@
         "type": "object",
         "$ref": "stoplight.json"
       }
+    },
+    "vehicles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "vehicle.json"
+      }
     }
   },
   "required": [
-    "graph"
+    "graph",
+    "vehicles"
   ]
 }
