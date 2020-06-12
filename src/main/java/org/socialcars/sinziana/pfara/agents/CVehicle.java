@@ -11,7 +11,6 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -66,6 +65,9 @@ public class CVehicle implements IVehicle
         m_acceleration = 0.0;
         m_position = 0.0;
         m_location = m_origin;
+        m_timelastarrival = p_timestep;
+        m_routelength = 0.0;
+        m_cost = 0.0;
 
         m_companions = new ArrayList<>();
         m_preference = new CPreference( p_pojo.getPreference() );
@@ -142,8 +144,8 @@ public class CVehicle implements IVehicle
         }
         else if ( m_speed > m_preference.maxSpeed() )
         {
-            m_acceleration = m_acceleration - m_preference.maxDecel();
-            m_speed =  m_speed + m_unit.accelerationToSpeed( m_acceleration ).doubleValue();
+            m_acceleration = Math.abs( m_acceleration - m_preference.maxDecel() );
+            m_speed =  m_speed - m_unit.accelerationToSpeed( m_preference.maxDecel() ).doubleValue();
             m_position = m_position + m_unit.speedToBlocks( m_speed ).doubleValue();
         }
         else
@@ -162,7 +164,7 @@ public class CVehicle implements IVehicle
         if ( m_speed > 0 )
         {
             m_acceleration = m_acceleration - m_preference.maxDecel();
-            m_speed =  m_speed - Math.abs( m_unit.accelerationToSpeed( m_acceleration ).doubleValue() );
+            m_speed =  m_speed - Math.abs( m_unit.accelerationToSpeed( m_preference.maxDecel() ).doubleValue() );
         }
         m_position = m_position + Math.abs( m_unit.speedToBlocks( m_speed ).doubleValue() );
     }
@@ -189,7 +191,7 @@ public class CVehicle implements IVehicle
     {
         final CEvent l_departed = new CEvent( this, EEventType.DEPARTED, p_position.from().name(), p_timestep, null );
         m_events.add( l_departed );
-        s_logger.log( Level.INFO, l_departed.toString() );
+        //s_logger.log( Level.INFO, l_departed.toString() );
         m_location = p_position.name();
         m_lastedge = p_position;
     }
@@ -205,7 +207,7 @@ public class CVehicle implements IVehicle
         final CEvent l_arrived = new CEvent( this, EEventType.ARRIVED, p_position.to().name(), p_timestep, null );
         m_events.add( l_arrived );
         m_location = p_position.to().name();
-        s_logger.log( Level.INFO, l_arrived.toString() );
+        //s_logger.log( Level.INFO, l_arrived.toString() );
         m_position = 0.0;
         m_preference.reduceMaxLength( p_position.length() );
         m_routelength += p_position.length();
@@ -234,10 +236,10 @@ public class CVehicle implements IVehicle
     {
         final CEvent l_completed = new CEvent( this, EEventType.COMPLETED, p_position.name(), p_timestep, null );
         m_events.add( l_completed );
-        s_logger.log( Level.INFO, l_completed.toString() );
-        s_logger.log( Level.INFO, m_name + " cost: " + m_cost + ", " + m_routelength + " blocks" );
-        s_logger.log( Level.INFO, m_name + " has an allowance of " + m_preference.lengthLimit() + " blocks, "
-                + m_preference.timeLimit() + " timesteps and  " + m_preference.maxCost() + " cost" );
+        //s_logger.log( Level.INFO, l_completed.toString() );
+        //s_logger.log( Level.INFO, m_name + " cost: " + m_cost + ", " + m_routelength + " blocks" );
+        //s_logger.log( Level.INFO, m_name + " has an allowance of " + m_preference.lengthLimit() + " blocks, "
+                //+ m_preference.timeLimit() + " timesteps and  " + m_preference.maxCost() + " cost" );
     }
 
 
@@ -256,7 +258,7 @@ public class CVehicle implements IVehicle
         final CEvent l_formed = new CEvent( this, EEventType.FORMED, p_position.name(), p_timestep, l_plat );
         m_events.add( l_formed );
         m_platooning = true;
-        s_logger.log( Level.INFO, l_formed.toString() );
+        //s_logger.log( Level.INFO, l_formed.toString() );
     }
 
     /**
@@ -271,6 +273,15 @@ public class CVehicle implements IVehicle
         m_events.add( l_split );
         m_platooning = false;
         m_companions.removeAll( m_companions );
-        s_logger.log( Level.INFO, l_split.toString() );
+        //s_logger.log( Level.INFO, l_split.toString() );
+    }
+
+    /**
+     * the vehicles's events
+     * @return the list of events
+     */
+    public ArrayList<IEvent> events()
+    {
+        return m_events;
     }
 }
