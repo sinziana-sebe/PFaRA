@@ -1,3 +1,19 @@
+/**
+ * This file is part of the mesoscopic traffic simulation PFaRA of Clauthal University of
+ * Technology-Mobile and Enterprise Computing aswell as SocialCars Research Training Group.
+ *  Copyright (c) 2017-2021 Sinziana-Maria Sebe (sms14@tu-clausthal.de)
+ *
+ *  This program is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as  published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY
+ *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ *  PURPOSE.  See the GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
+ *
+ */
+
 package org.socialcars.sinziana.pfara.agents;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,6 +27,7 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TestCVehicle
 {
@@ -160,5 +177,28 @@ public class TestCVehicle
         Assume.assumeNotNull( m_veh );
         m_veh.completed( m_graph.nodeByName( "node1" ), 10 );
         Assert.assertTrue( m_veh.events().size() == 2 );
+    }
+
+    @Test
+    public void testFormed()
+    {
+        Assume.assumeNotNull( m_veh );
+        Assert.assertFalse( m_veh.platooning() );
+        m_veh.formed( "node0", 0, new ArrayList<>() );
+        Assert.assertTrue( m_veh.platooning() );
+        Assert.assertTrue( m_veh.events().size() == 2 );
+    }
+
+    @Test
+    public void testSplit()
+    {
+        Assume.assumeNotNull( m_veh );
+        Assert.assertFalse( m_veh.platooning() );
+        m_veh.formed( "node0", 0, new ArrayList<>() );
+        Assert.assertTrue( m_veh.platooning() );
+        Assert.assertTrue( m_veh.events().size() == 2 );
+        m_veh.split( "node0", 0 );
+        Assert.assertFalse( m_veh.platooning() );
+        Assert.assertTrue( m_veh.events().size() == 3 );
     }
 }

@@ -13,16 +13,28 @@
  *  You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
  */
 
-package org.socialcars.sinziana.pfara.agents;
+package org.socialcars.sinziana.pfara.environment;
 
-/**
- * the agent interface
- */
-public interface IAgent
+public interface ITraffic
 {
     /**
-     * the name of the agent
-     * @return the string with the name
+     * the maximum speed on the edge
+     * flow divided by density
+     * @return maximum speed
      */
-    String name();
+    Double maxSpeed();
+
+    /**
+     * traffic density on the edge
+     * number of vehicles per distance unit
+     * @return the density
+     */
+    Double density();
+
+    /**
+     * traffic flow on the edge
+     * number of vehicles per time unit
+     * @return the flow
+     */
+    Double flow();
 }

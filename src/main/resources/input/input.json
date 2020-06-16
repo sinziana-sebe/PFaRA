@@ -20,6 +20,15 @@
         "type": "object",
         "$ref": "vehicle.json"
       }
+    },
+    "traffic": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "traffic.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
   "required": [

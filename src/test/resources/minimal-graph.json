@@ -53,5 +53,13 @@
       },
       "agent-type": "vehicle"
     }
+  ],
+  "traffic": [
+    {
+      "edge": "edge0-1",
+      "flow": 10,
+      "density": 10,
+      "speed": 1
+    }
   ]
 }

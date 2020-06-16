@@ -1,3 +1,18 @@
+/**
+ * This file is part of the mesoscopic traffic simulation PFaRA of Clauthal University of
+ * Technology-Mobile and Enterprise Computing aswell as SocialCars Research Training Group.
+ *  Copyright (c) 2017-2021 Sinziana-Maria Sebe (sms14@tu-clausthal.de)
+ *
+ *  This program is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as  published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY
+ *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ *  PURPOSE.  See the GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
+ */
+
 package org.socialcars.sinziana.pfara.agents;
 
 import org.socialcars.sinziana.pfara.agents.events.CEvent;
@@ -250,12 +265,12 @@ public class CVehicle implements IVehicle
      * @param p_platoon the co-platooners
      */
     @Override
-    public void formed( final INode p_position, final Integer p_timestep, final ArrayList<CVehicle> p_platoon )
+    public void formed( final String p_position, final Integer p_timestep, final ArrayList<CVehicle> p_platoon )
     {
         final Collection<IDynamic> l_plat = new ArrayList<>( p_platoon );
         m_companions = p_platoon;
         //m_precedence = m_companions.size() + 1;
-        final CEvent l_formed = new CEvent( this, EEventType.FORMED, p_position.name(), p_timestep, l_plat );
+        final CEvent l_formed = new CEvent( this, EEventType.FORMED, p_position, p_timestep, l_plat );
         m_events.add( l_formed );
         m_platooning = true;
         //s_logger.log( Level.INFO, l_formed.toString() );
@@ -267,13 +282,19 @@ public class CVehicle implements IVehicle
      * @param p_timestep the current timestep
      */
     @Override
-    public void split( final INode p_position, final Integer p_timestep )
+    public void split( final String p_position, final Integer p_timestep )
     {
-        final CEvent l_split = new CEvent( this, EEventType.SPLIT, p_position.name(), p_timestep, null );
+        final CEvent l_split = new CEvent( this, EEventType.SPLIT, p_position, p_timestep, null );
         m_events.add( l_split );
         m_platooning = false;
         m_companions.removeAll( m_companions );
         //s_logger.log( Level.INFO, l_split.toString() );
+    }
+
+    @Override
+    public Boolean platooning()
+    {
+        return m_platooning;
     }
 
     /**

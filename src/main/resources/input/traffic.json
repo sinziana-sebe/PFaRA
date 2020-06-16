@@ -1,0 +1,24 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "description" : "the traffic background structure",
+  "type": "object",
+  "properties": {
+    "edge": {
+      "type": "string"
+    },
+    "flow" : {
+      "type" : "number"
+    },
+    "density" : {
+      "type" : "number"
+    },
+    "speed" : {
+      "type" : "number"
+    }
+  },
+  "required" : [
+    "edge",
+    "flow",
+    "density"
+  ]
+}
