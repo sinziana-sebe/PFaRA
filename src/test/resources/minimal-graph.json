@@ -35,7 +35,26 @@
   ],
   "vehicles": [
     {
-      "name": "veh0",
+      "name": "red",
+      "start": "node0",
+      "finish": "node1",
+      "preference": {
+        "min-speed": 0.1,
+        "max-speed": 1.0,
+        "max-acceleration": 0.9,
+        "max-deceleration": 0.7,
+        "max-time": 100,
+        "max-length": 100,
+        "max-cost": 10
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "blue",
       "start": "node0",
       "finish": "node1",
       "preference": {

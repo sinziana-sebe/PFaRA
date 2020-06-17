@@ -57,7 +57,7 @@ public class TestCVehicle
     public void testName()
     {
         Assume.assumeNotNull( m_veh );
-        Assert.assertTrue( m_veh.name().contentEquals( "veh0" ) );
+        Assert.assertTrue( m_veh.name().contentEquals( "red" ) );
     }
 
     /**
