@@ -113,6 +113,15 @@ public class CCompleteOffer implements IOffer
     }
 
     /**
+     *
+     * @return
+     */
+    protected CVehicle offeror()
+    {
+        return m_offeror;
+    }
+
+    /**
      * the alternative route, the one which was proposed
      * @return the alternative route
      */

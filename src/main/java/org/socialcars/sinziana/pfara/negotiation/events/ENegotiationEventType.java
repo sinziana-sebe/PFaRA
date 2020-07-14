@@ -13,33 +13,14 @@
  *  You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
  */
 
-package org.socialcars.sinziana.pfara.negotiation;
+package org.socialcars.sinziana.pfara.negotiation.events;
 
-import org.socialcars.sinziana.pfara.environment.IEdge;
-
-import java.util.List;
-
-/**
- * the general offer interface
- */
-public interface IOffer
+public enum ENegotiationEventType
 {
-    /**
-     * the id of the offer
-     * @return the id
-     */
-    String id();
-
-    /**
-     * the buyout of the offer
-     * @return buyout
-     */
-    Double buyout();
-
-    /**
-     * the route of the offer
-     * @return the route
-     */
-    List<IEdge> route();
-
+    JOINED,
+    SENT,
+    RECEIVED,
+    ACCEPTED,
+    REJECTED,
+    LEFT
 }

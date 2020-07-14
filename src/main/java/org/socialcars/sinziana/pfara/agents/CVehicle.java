@@ -22,10 +22,22 @@ import org.socialcars.sinziana.pfara.agents.proprieties.CUtility;
 import org.socialcars.sinziana.pfara.data.input.CVehiclepojo;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 import org.socialcars.sinziana.pfara.environment.INode;
+import org.socialcars.sinziana.pfara.negotiation.CInitialOffer;
+import org.socialcars.sinziana.pfara.negotiation.CNegotiationModule;
+import org.socialcars.sinziana.pfara.negotiation.CSimpleOffer;
+import org.socialcars.sinziana.pfara.negotiation.INegotiationModule;
+import org.socialcars.sinziana.pfara.negotiation.IOffer;
+import org.socialcars.sinziana.pfara.negotiation.IProtocol;
+import org.socialcars.sinziana.pfara.negotiation.events.CNegotiationEvent;
+import org.socialcars.sinziana.pfara.negotiation.events.ENegotiationEventType;
+import org.socialcars.sinziana.pfara.negotiation.events.INegotiationEvent;
 import org.socialcars.sinziana.pfara.units.CUnits;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -61,6 +73,13 @@ public class CVehicle implements IVehicle
     private Integer m_timelastarrival;
 
 
+    private Boolean m_negotiating;
+    private INegotiationModule m_negmodule;
+    private final ArrayList<INegotiationEvent> m_negevents;
+    private IProtocol m_protocol;
+
+
+
     /**
      * ctor
      * @param p_pojo plain old java object
@@ -92,6 +111,8 @@ public class CVehicle implements IVehicle
         final CEvent l_created = new CEvent( this, EEventType.CREATED, m_origin, p_timestep, null );
         m_events = new ArrayList<>();
         m_events.add( l_created );
+
+        m_negevents = new ArrayList<>();
     }
 
     /**
@@ -305,4 +326,106 @@ public class CVehicle implements IVehicle
     {
         return m_events;
     }
+
+    public void joinParty( final IProtocol p_protocol )
+    {
+        m_negotiating = true;
+        m_negmodule = new CNegotiationModule( p_protocol, m_utility, m_unit, m_preference );
+        m_protocol = p_protocol;
+        if ( m_speed == 0.0 ) m_speed = m_preference.maxSpeed();
+        final CNegotiationEvent l_join = new CNegotiationEvent( this, ENegotiationEventType.JOINED, null );
+        m_negevents.add( l_join );
+        //s_logger.log( Level.INFO, l_join.toString() );
+    }
+
+    public void release( final IProtocol p_protocol )
+    {
+        m_negotiating = false;
+        final CNegotiationEvent l_leave = new CNegotiationEvent( this, ENegotiationEventType.LEFT, null );
+        m_negmodule = null;
+        //s_logger.log( Level.INFO, l_leave.toString() );
+    }
+
+    public void receiveOffer( final IOffer p_offer ) throws IOException
+    {
+        final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.RECEIVED, p_offer );
+        m_negevents.add( l_getoffer );
+        s_logger.log( Level.INFO, l_getoffer.toString() );
+        final String l_response = m_negmodule.receiveOffer( p_offer, m_routelength, m_speed );
+        switch ( l_response )
+        {
+            case "haggle":
+                writeHaggle( new CSimpleOffer( p_offer.id(), m_routelength ) );
+                m_protocol.haggle( this, new CSimpleOffer( p_offer.id(), m_routelength ) );
+                break;
+            case "accept":
+                writeAccept( p_offer );
+                m_protocol.receiveAccept( this, p_offer );
+                break;
+            case "reject":
+                writeReject( p_offer );
+                m_protocol.receiveReject(  p_offer );
+                break;
+            default:
+                m_protocol.receiveBreakaway( p_offer );
+                break;
+        }
+    }
+
+    public void sendOffer( final List<IEdge> p_route )
+    {
+        final CInitialOffer l_offer = m_negmodule.sendOffer( p_route, m_name );
+        final CNegotiationEvent l_newoffer = new CNegotiationEvent( this, ENegotiationEventType.SENT, l_offer );
+        m_negevents.add( l_newoffer );
+        s_logger.log( Level.INFO, l_newoffer.toString() );
+        m_protocol.sendOffer( this, l_offer );
+    }
+
+    public void haggle( final CSimpleOffer p_offer ) throws IOException
+    {
+        final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.RECEIVED, p_offer );
+        m_negevents.add( l_getoffer );
+        s_logger.log( Level.INFO, l_getoffer.toString() );
+        final String l_result = m_negmodule.haggle( p_offer );
+        switch ( l_result )
+        {
+            case "haggle":
+                writeHaggle( p_offer );
+                m_protocol.haggle( this, p_offer );
+                break;
+            case "accept":
+                writeAccept( p_offer );
+                m_protocol.receiveAccept( this, p_offer );
+                break;
+            case "reject":
+                writeReject( p_offer );
+                m_protocol.receiveReject(  p_offer );
+                break;
+            default:
+                m_protocol.receiveBreakaway( p_offer );
+                break;
+        }
+    }
+
+    private void writeAccept( final IOffer p_offer ) throws IOException
+    {
+        final CNegotiationEvent l_accept = new CNegotiationEvent( this, ENegotiationEventType.ACCEPTED, p_offer );
+        m_negevents.add( l_accept );
+        s_logger.log( Level.INFO, l_accept.toString() );
+    }
+
+    private void writeReject( final IOffer p_offer ) throws IOException
+    {
+        final CNegotiationEvent l_reject = new CNegotiationEvent( this, ENegotiationEventType.REJECTED, p_offer );
+        m_negevents.add( l_reject );
+        s_logger.log( Level.INFO, l_reject.toString() );
+    }
+
+    private void writeHaggle( final IOffer p_offer ) throws IOException
+    {
+        final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.SENT, p_offer );
+        m_negevents.add( l_getoffer );
+        s_logger.log( Level.INFO, l_getoffer.toString() );
+    }
+
 }

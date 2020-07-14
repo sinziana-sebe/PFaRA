@@ -17,29 +17,16 @@ package org.socialcars.sinziana.pfara.negotiation;
 
 import org.socialcars.sinziana.pfara.environment.IEdge;
 
+import java.io.IOException;
 import java.util.List;
 
-/**
- * the general offer interface
- */
-public interface IOffer
+public interface INegotiationModule
 {
-    /**
-     * the id of the offer
-     * @return the id
-     */
-    String id();
+    String receiveOffer( final IOffer p_offer, final Double p_oldroutelength, final Double p_speed ) throws IOException;
 
-    /**
-     * the buyout of the offer
-     * @return buyout
-     */
-    Double buyout();
+    CInitialOffer sendOffer( final List<IEdge> p_route, final String p_name );
 
-    /**
-     * the route of the offer
-     * @return the route
-     */
-    List<IEdge> route();
+    String haggle( final CSimpleOffer p_offer ) throws IOException;
+
 
 }

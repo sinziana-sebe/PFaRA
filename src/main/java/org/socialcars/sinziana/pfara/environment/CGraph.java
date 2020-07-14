@@ -147,6 +147,20 @@ public class CGraph implements IGraph
     }
 
     /**
+     * creates a route represented by a list of edges
+     * @param p_finish the name of the end node
+     * @param p_via a list of edges that must be a part of the final route
+     * @return the final route
+     */
+    public List<IEdge> route( final String p_finish, final List<IEdge> p_via )
+    {
+        final List<IEdge> l_route = p_via;
+        final List<IEdge> l_altroute = m_pathalgorithm.getPath( p_via.get( p_via.size() ).to(), nodeByName( p_finish ) );
+        l_altroute.forEach( e -> l_route.add( e ) );
+        return l_route;
+    }
+
+    /**
      * creates stoplights to be placed in the environment
      * @param p_pojo stoplights plain old java object
      */

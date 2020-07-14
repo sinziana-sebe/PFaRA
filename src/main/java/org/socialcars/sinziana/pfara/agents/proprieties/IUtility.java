@@ -15,6 +15,12 @@
 
 package org.socialcars.sinziana.pfara.agents.proprieties;
 
+import org.socialcars.sinziana.pfara.agents.CPreference;
+import org.socialcars.sinziana.pfara.environment.IEdge;
+import org.socialcars.sinziana.pfara.units.CUnits;
+
+import java.util.List;
+
 /**
  * the utility interface
  */
@@ -31,4 +37,36 @@ public interface IUtility
      * @return beta
      */
     Double beta();
+
+    /**
+     * calculates the utility for a given route
+     * @param p_route the route
+     * @param p_speed the speed
+     * @param p_unit the transformation unit
+     * @param p_buyout the buyout
+     * @param p_pref the preference
+     * @return the utility
+     */
+    Double calculate( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
+
+    /**
+     * calculates the utility for a given route
+     * @param p_routelength the route length
+     * @param p_speed the speed
+     * @param p_unit the transformation unit
+     * @param p_buyout the buyout
+     * @param p_pref the preference
+     * @return the utility
+     */
+    Double calculate( final Double p_routelength, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
+
+    /**
+     * calculates the reservation value
+     * @param p_route the route
+     * @param p_speed the speed
+     * @param p_unit the transformation unit
+     * @param p_oldutility the old utility value
+     * @return the reservation value
+     */
+    Double calculateRV( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_oldutility );
 }

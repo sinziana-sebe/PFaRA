@@ -15,31 +15,8 @@
 
 package org.socialcars.sinziana.pfara.negotiation;
 
-import org.socialcars.sinziana.pfara.environment.IEdge;
-
-import java.util.List;
-
-/**
- * the general offer interface
- */
-public interface IOffer
+public enum EProtocolType
 {
-    /**
-     * the id of the offer
-     * @return the id
-     */
-    String id();
-
-    /**
-     * the buyout of the offer
-     * @return buyout
-     */
-    Double buyout();
-
-    /**
-     * the route of the offer
-     * @return the route
-     */
-    List<IEdge> route();
-
+    TILI,
+    AO
 }

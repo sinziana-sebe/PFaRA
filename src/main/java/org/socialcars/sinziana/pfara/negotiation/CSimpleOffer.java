@@ -55,14 +55,15 @@ public class CSimpleOffer implements IOffer
     }
 
     /**
-     * the route of the route
-     * @return the route
+     * returns the non-existant route
+     * @return null
      */
     @Override
     public List<IEdge> route()
     {
         return null;
     }
+
 
     /**
      * changes the buyout of the offer
