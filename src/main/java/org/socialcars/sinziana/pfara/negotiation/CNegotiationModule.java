@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CNegotiationModule implements INegotiationModule
@@ -43,7 +42,7 @@ public class CNegotiationModule implements INegotiationModule
     private final CUtility m_utility;
     private final CUnits m_unit;
     private final CPreference m_preference;
-    private final CBiddingModule m_bb;
+    private CBiddingModule m_bb;
 
     public CNegotiationModule( final IProtocol p_protocol, final CUtility p_utility, final CUnits p_unit, final CPreference p_preference )
     {
@@ -51,7 +50,6 @@ public class CNegotiationModule implements INegotiationModule
         m_utility = p_utility;
         m_unit = p_unit;
         m_preference = p_preference;
-        m_bb = new CBiddingModule();
     }
 
     @Override
@@ -76,13 +74,11 @@ public class CNegotiationModule implements INegotiationModule
                     else return "accept";
                 }
                 else return "reject";
-                break;
             case TILI:
                 if ( ( l_newutility != null ) && ( l_newutility < l_oldutility ) ) return "accept";
                 else return "reject";
             default:
                 return "";
-                break;
         }
 
 
@@ -97,7 +93,8 @@ public class CNegotiationModule implements INegotiationModule
             case TILI:
                 final AtomicDouble l_count = new AtomicDouble( 0.0 );
                 p_route.forEach( e -> l_count.getAndAdd(
-                        ( p_route.get( 0 ).weight().doubleValue() - ( p_route.get( 0 ).weight().doubleValue() + p_route.get( 0 ).weight().doubleValue() / 3 * 2 ) / 2 ) / 4 ) );
+                        ( p_route.get( 0 ).weight().doubleValue()
+                                - ( p_route.get( 0 ).weight().doubleValue() + p_route.get( 0 ).weight().doubleValue() / 3 * 2 ) / 2 ) / 4 ) );
                 Double l_price = l_count.get();
                 List<IEdge> l_desired = new ArrayList<>();
                 l_desired.add( p_route.get( 0 ) );
@@ -111,8 +108,9 @@ public class CNegotiationModule implements INegotiationModule
                 l_offer = new CInitialOffer( p_name + m_protocol.getNodeID().name() + p_route.get( 0 ).to() + l_price.toString(), l_price, l_desired );
                 m_av = l_price;
                 return l_offer;
+            default:
+                return null;
         }
-        return null;
     }
 
     @Override
