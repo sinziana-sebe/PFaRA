@@ -15,6 +15,11 @@
 
 package org.socialcars.sinziana.pfara.negotiation;
 
+import org.socialcars.sinziana.pfara.negotiation.probabilities.CProbGenerator;
+import org.socialcars.sinziana.pfara.negotiation.probabilities.CRVtoAccProb;
+import org.socialcars.sinziana.pfara.negotiation.simultaneoussearch.CCollege;
+import org.socialcars.sinziana.pfara.negotiation.simultaneoussearch.CSimultaneousSearch;
+
 import java.util.ArrayList;
 
 public class CBiddingModule implements IBiddingModule
@@ -28,7 +33,7 @@ public class CBiddingModule implements IBiddingModule
     private Integer m_round;
 
     private final CProbGenerator m_probgen;
-    private CRVtoAccProb1 m_rvtoacc;
+    private CRVtoAccProb m_rvtoacc;
     private final CSimultaneousSearch m_ss;
 
     public CBiddingModule( final String p_type, final Double p_firstbid, final Integer p_deadline )
@@ -49,7 +54,7 @@ public class CBiddingModule implements IBiddingModule
     public Double getBestBid( final ArrayList<Double> p_bids, final Integer p_time, final Double p_rv )
     {
         final ArrayList<Double> l_rvs = m_probgen.getDistribution( "normal", 100, p_rv );
-        m_rvtoacc = new CRVtoAccProb1( m_type, m_strategy, m_firstbid, m_deadline, l_rvs );
+        m_rvtoacc = new CRVtoAccProb( m_type, m_strategy, m_firstbid, m_deadline, l_rvs );
         m_ss.fromAccProb( m_rvtoacc.calculateForBids( p_bids, p_time ) );
         final CCollege l_res = m_ss.getBestBid();
         return l_res.getU();

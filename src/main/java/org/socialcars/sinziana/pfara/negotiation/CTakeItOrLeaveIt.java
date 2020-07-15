@@ -55,11 +55,6 @@ public class CTakeItOrLeaveIt implements IProtocol
         return EProtocolType.TILI;
     }
 
-    /**public void receiveOffer( final CVehicle p_offeror, final CInitialOffer p_offer  )
-    {
-        sendOffer( p_offeror, p_offer );
-    }**/
-
     @Override
     public void sendOffer( final CVehicle p_offeror, final CInitialOffer p_offer )
     {
@@ -72,7 +67,7 @@ public class CTakeItOrLeaveIt implements IProtocol
                 m_offers.put( l_newoffer.id(), l_newoffer );
                 try
                 {
-                    p.receiveOffer( new CInitialOffer( l_newoffer.id(), l_newoffer.savings() + p_offer.buyout(), l_newroute ), m_routes.get( p ) );
+                    p.receiveOffer( new CInitialOffer( l_newoffer.id(), l_newoffer.savings() + p_offer.buyout(), l_newroute ) );
                 }
                 catch ( final IOException l_err )
                 {

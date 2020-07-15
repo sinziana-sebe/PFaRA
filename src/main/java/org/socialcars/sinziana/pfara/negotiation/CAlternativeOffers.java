@@ -83,7 +83,7 @@ public class CAlternativeOffers implements IProtocol
                 m_offers.put( l_newoffer.id(), l_newoffer );
                 try
                 {
-                    p.receiveOffer( new CInitialOffer( l_newoffer.id(), l_newoffer.savings() + p_offer.buyout(), l_newroute ), m_routes.get( p ) );
+                    p.receiveOffer( new CInitialOffer( l_newoffer.id(), l_newoffer.savings() + p_offer.buyout(), l_newroute ) );
                 }
                 catch ( final IOException l_err )
                 {

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "the structure of a set of colleges, substitute for a probability distribution",
+  "type": "object",
+  "properties": {
+    "colleges": {
+      "type":"array",
+      "items" : {
+        "type" : "object",
+        "$ref" : "college.json"
+      },
+      "minItems" : 1,
+      "uniqueItems" : false
+    }
+  },
+  "required" : [
+    "colleges"
+  ]
+}
