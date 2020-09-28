@@ -68,6 +68,9 @@ public class CVehicle implements IVehicle
     private Boolean m_platooning = false;
     private ArrayList<CVehicle> m_companions;
 
+    private Integer m_precedence;
+    private Integer m_delay;
+
     private Double m_cost;
     private Double m_routelength;
     private Integer m_timelastarrival;
@@ -102,6 +105,8 @@ public class CVehicle implements IVehicle
         m_timelastarrival = p_timestep;
         m_routelength = 0.0;
         m_cost = 0.0;
+        m_precedence = 0;
+        m_delay = 0;
 
         m_companions = new ArrayList<>();
         m_preference = new CPreference( p_pojo.getPreference() );
@@ -290,7 +295,7 @@ public class CVehicle implements IVehicle
     {
         final Collection<IDynamic> l_plat = new ArrayList<>( p_platoon );
         m_companions = p_platoon;
-        //m_precedence = m_companions.size() + 1;
+        m_precedence = m_companions.size() + 1;
         final CEvent l_formed = new CEvent( this, EEventType.FORMED, p_position, p_timestep, l_plat );
         m_events.add( l_formed );
         m_platooning = true;
@@ -308,6 +313,7 @@ public class CVehicle implements IVehicle
         final CEvent l_split = new CEvent( this, EEventType.SPLIT, p_position, p_timestep, null );
         m_events.add( l_split );
         m_platooning = false;
+        m_precedence = 0;
         m_companions.removeAll( m_companions );
         //s_logger.log( Level.INFO, l_split.toString() );
     }
@@ -426,6 +432,38 @@ public class CVehicle implements IVehicle
         final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.SENT, p_offer );
         m_negevents.add( l_getoffer );
         s_logger.log( Level.INFO, l_getoffer.toString() );
+    }
+
+    public ArrayList<CVehicle> companions()
+    {
+        return m_companions;
+    }
+
+    public void setDelay( final Integer p_maxdelay )
+    {
+        m_delay = p_maxdelay * m_unit.getTimestep().intValue() - m_precedence;
+        m_speed = 0.0;
+        m_acceleration = 0.0;
+    }
+
+    public void updatePrecedence()
+    {
+        m_precedence--;
+    }
+
+    public Integer getDelay()
+    {
+        return m_delay;
+    }
+
+    public void updateDelay()
+    {
+        m_delay--;
+    }
+
+    public IEdge getLastEdge()
+    {
+        return m_lastedge;
     }
 
 }
