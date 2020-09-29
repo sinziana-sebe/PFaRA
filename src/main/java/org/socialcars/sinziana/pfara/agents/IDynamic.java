@@ -16,7 +16,6 @@
 package org.socialcars.sinziana.pfara.agents;
 
 import org.socialcars.sinziana.pfara.environment.IEdge;
-import org.socialcars.sinziana.pfara.environment.INode;
 
 /**
  * interface for dynamic agents like vehicles, bikes, pedestrians etc
@@ -84,6 +83,6 @@ public interface IDynamic extends IAgent
      * @param p_position the current node
      * @param p_timestep the current time-step
      */
-    void completed( final INode p_position, final Integer p_timestep );
+    void completed( final String p_position, final Integer p_timestep );
 
 }

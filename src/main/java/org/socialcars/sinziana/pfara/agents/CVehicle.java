@@ -21,7 +21,6 @@ import org.socialcars.sinziana.pfara.agents.events.IEvent;
 import org.socialcars.sinziana.pfara.agents.proprieties.CUtility;
 import org.socialcars.sinziana.pfara.data.input.CVehiclepojo;
 import org.socialcars.sinziana.pfara.environment.IEdge;
-import org.socialcars.sinziana.pfara.environment.INode;
 import org.socialcars.sinziana.pfara.negotiation.CInitialOffer;
 import org.socialcars.sinziana.pfara.negotiation.CNegotiationModule;
 import org.socialcars.sinziana.pfara.negotiation.CSimpleOffer;
@@ -273,9 +272,9 @@ public class CVehicle implements IVehicle
      * @param p_timestep the current time-step
      */
     @Override
-    public void completed( final INode p_position, final Integer p_timestep )
+    public void completed( final String p_position, final Integer p_timestep )
     {
-        final CEvent l_completed = new CEvent( this, EEventType.COMPLETED, p_position.name(), p_timestep, null );
+        final CEvent l_completed = new CEvent( this, EEventType.COMPLETED, p_position, p_timestep, null );
         m_events.add( l_completed );
         //s_logger.log( Level.INFO, l_completed.toString() );
         //s_logger.log( Level.INFO, m_name + " cost: " + m_cost + ", " + m_routelength + " blocks" );
@@ -432,6 +431,11 @@ public class CVehicle implements IVehicle
         final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.SENT, p_offer );
         m_negevents.add( l_getoffer );
         s_logger.log( Level.INFO, l_getoffer.toString() );
+    }
+
+    public CPreference preferences()
+    {
+        return m_preference;
     }
 
     public ArrayList<CVehicle> companions()

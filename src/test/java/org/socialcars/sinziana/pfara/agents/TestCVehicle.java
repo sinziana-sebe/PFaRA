@@ -175,7 +175,7 @@ public class TestCVehicle
     public void testCompleted()
     {
         Assume.assumeNotNull( m_veh );
-        m_veh.completed( m_graph.nodeByName( "node1" ), 10 );
+        m_veh.completed( "node1", 10 );
         Assert.assertTrue( m_veh.events().size() == 2 );
     }
 
