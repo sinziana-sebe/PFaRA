@@ -15,5 +15,6 @@ src/test/Barcelona
 src/test/Hannover
 
 src/main/java/org/socialcars/sinziana/pfara/negotiation/simultaneoussearch/*.*
+src/test/java/org/socialcars/sinziana/pfara/negotiation/simultaneoussearch/*.*
 
 target/
