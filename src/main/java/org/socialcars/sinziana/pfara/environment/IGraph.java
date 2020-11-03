@@ -15,11 +15,25 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
 public interface IGraph
 {
+
+    /**
+     * the size of the network
+     * @return the number of nodes
+     */
+    Integer size();
+
+    /**
+     * all the edges
+     * @return edges
+     */
+    Collection<IEdge> edges();
+
     /**
      * gets a node by its name
      * @param p_name the name of the node requested
@@ -67,4 +81,6 @@ public interface IGraph
      * @return list of edges
      */
     List<IEdge> route( final String p_from, final String p_to, Stream<String> p_via );
+
+
 }

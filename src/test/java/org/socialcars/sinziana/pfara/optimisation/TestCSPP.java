@@ -1,4 +1,4 @@
-/**
+/*
  * This file is part of the mesoscopic traffic simulation PFaRA of Clauthal University of
  * Technology-Mobile and Enterprise Computing aswell as SocialCars Research Training Group.
  *  Copyright (c) 2017-2021 Sinziana-Maria Sebe (sms14@tu-clausthal.de)
@@ -13,52 +13,69 @@
  *  You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
  */
 
-package org.socialcars.sinziana.pfara.agents.proprieties;
+package org.socialcars.sinziana.pfara.optimisation;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
-import org.junit.Assume;
+import gurobi.GRBException;
 import org.junit.Before;
 import org.junit.Test;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
+import org.socialcars.sinziana.pfara.environment.CGraph;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 
-
-public class TestCUtility
+public class TestCSPP
 {
-    private CUtility m_utility;
+    private static final CInputpojo INPUT;
 
+    private CGraph m_env;
+    private CSPP m_opt;
+
+    static
+    {
+        try
+        {
+            INPUT = new ObjectMapper().readValue( new File( "src/test/resources/tiergarten_negotiation.json" ), CInputpojo.class );
+        }
+        catch ( final IOException l_exception )
+        {
+            throw new UncheckedIOException( l_exception );
+        }
+    }
 
     /**
-     * initialising test
-     * @throws IOException file
+     * initializing
+     * @throws GRBException gurobi
      */
     @Before
-    public void init() throws IOException
+    public void init() throws GRBException
     {
-        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
-        l_configuration.getVehicles().forEach( v -> m_utility = new CUtility( v.getUtility() ) );
+        m_env = new CGraph( INPUT.getGraph() );
+        m_opt = new CSPP( m_env, 353, 27 );
     }
 
     /**
-     * tests the alpha coefficient
+     * testing the solve option
+     * @throws GRBException gurobi
      */
     @Test
-    public void testAlpha()
+    public void solve() throws GRBException
     {
-        Assume.assumeNotNull( m_utility );
-        Assert.assertTrue( m_utility.rho().equals( 0.2 ) );
+        m_opt.solve();
+        m_opt.display();
     }
 
     /**
-     * tests the beta coefficient
+     * main function
+     * @param p_args cli
+     * @throws GRBException gurobi
      */
-    @Test
-    public void testBeta()
+    public static void main( final String[] p_args ) throws GRBException
     {
-        Assume.assumeNotNull( m_utility );
-        Assert.assertTrue( m_utility.sigma().equals( 0.8 ) );
+        final TestCSPP l_test = new TestCSPP();
+        l_test.init();
+        l_test.solve();
     }
 }

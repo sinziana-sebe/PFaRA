@@ -28,9 +28,14 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class TestCVehicle
 {
+    private static final Logger LOGGER = Logger.getLogger( TestCVehicle.class.getName() );
+
     private CVehicle m_veh;
     private CGraph m_graph;
     private Integer m_time;
@@ -47,7 +52,10 @@ public class TestCVehicle
         m_time = 0;
         m_unit = new CUnits( 1, 10 );
         m_graph = new CGraph( l_configuration.getGraph() );
-        m_veh = new CVehicle( l_configuration.getVehicles().get( 0 ), 0, "outpufile", m_unit );
+        final FileHandler l_handler = new FileHandler( "MovementOutput", true );
+        LOGGER.addHandler( l_handler );
+        l_handler.setFormatter( new SimpleFormatter() );
+        m_veh = new CVehicle( l_configuration.getVehicles().get( 0 ), 0, LOGGER, m_unit );
     }
 
     /**

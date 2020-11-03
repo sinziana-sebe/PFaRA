@@ -43,6 +43,7 @@ public class CNegotiationModule implements INegotiationModule
     private final CUnits m_unit;
     private final CPreference m_preference;
     private CBiddingModule m_bb;
+    private Double m_rvpeak;
 
     public CNegotiationModule( final IProtocol p_protocol, final CUtility p_utility, final CUnits p_unit, final CPreference p_preference )
     {
@@ -63,7 +64,7 @@ public class CNegotiationModule implements INegotiationModule
         switch ( m_protocol.type() )
         {
             case AO:
-                if ( ( l_newutility != null ) && ( m_utility.alpha() < 0.75 ) && ( m_utility.beta() < 0.75 ) )
+                if ( ( l_newutility != null ) && ( m_utility.rho() < 0.75 ) && ( m_utility.sigma() < 0.75 ) )
                 {
                     m_rv = m_utility.calculateRV( p_offer.route(), p_speed, m_unit, l_oldutility );
                     if ( l_newutility > l_oldutility )
@@ -171,22 +172,22 @@ public class CNegotiationModule implements INegotiationModule
         final ArrayList<Double> l_bids = new ArrayList<>();
         Iterator<Double> l_it =  new Random().doubles( 0, 1 ).iterator();
         final Double l_lim = Math.abs( m_av - m_rv ) / m_protocol.getDeadline() * m_protocol.getRoundCounter();
-        final AtomicDouble l_rvpeak = new AtomicDouble( m_lastoffer );
+        if ( m_rvpeak == null ) m_rvpeak = m_lastoffer;
         switch ( m_role )
         {
             case INITIATOR:
                 l_it = new Random().doubles( m_av, m_av + l_lim ).iterator();
-                l_rvpeak.getAndAdd( -m_lastoffer / 2 );
+                m_rvpeak -= m_lastoffer / 2;
                 break;
             case ACCEPTOR:
                 l_it = new Random().doubles( m_av - l_lim, m_av ).iterator();
-                l_rvpeak.getAndAdd( m_lastoffer / 2 );
+                m_rvpeak += m_lastoffer / 2;
                 break;
             default:
                 break;
         }
         while ( l_bids.size() < 20 ) l_bids.add( l_it.next() );
-        Double l_bb = m_bb.getBestBid( l_bids, m_protocol.getRoundCounter(), l_rvpeak.get() );
+        Double l_bb = m_bb.getBestBid( l_bids, m_protocol.getRoundCounter(), m_rvpeak );
         if ( l_bb == 0.0 )
         {
             switch ( m_role )

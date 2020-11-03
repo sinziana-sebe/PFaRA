@@ -25,8 +25,8 @@ import java.util.List;
 
 public class CUtility implements IUtility
 {
-    private final Double m_alpha;
-    private final Double m_beta;
+    private final Double m_rho;
+    private final Double m_sigma;
 
     private Double m_altcost;
 
@@ -36,8 +36,8 @@ public class CUtility implements IUtility
      */
     public CUtility( final CUtilitypojo p_pojo )
     {
-        m_alpha = p_pojo.getAlpha();
-        m_beta = p_pojo.getBeta();
+        m_rho = p_pojo.getAlpha();
+        m_sigma = p_pojo.getBeta();
     }
 
     /**
@@ -45,9 +45,9 @@ public class CUtility implements IUtility
      * @return alpha
      */
     @Override
-    public Double alpha()
+    public Double rho()
     {
-        return m_alpha;
+        return m_rho;
     }
 
     /**
@@ -55,11 +55,12 @@ public class CUtility implements IUtility
      * @return beta
      */
     @Override
-    public Double beta()
+    public Double sigma()
     {
-        return m_beta;
+        return m_sigma;
     }
 
+    //todo have two separate functions based on the evaluation type; money or time
     /**
      * calculates the utility for a given route
      * @param p_route the route
@@ -85,7 +86,7 @@ public class CUtility implements IUtility
         //l_cost.getAndAdd( -p_buyout );
         if ( ( l_length.get() > p_pref.lengthLimit() ) || ( l_time.get() > p_pref.timeLimit() ) )
             return null;
-        else return m_alpha * l_length.get() + m_beta * l_time.get();
+        else return m_rho * l_length.get() + m_sigma * l_time.get();
     }
 
     @Override
@@ -95,7 +96,7 @@ public class CUtility implements IUtility
         //l_cost.getAndAdd( -p_buyout );
         if ( ( p_routelength > p_pref.lengthLimit() ) || ( p_routelength / p_speed > p_pref.timeLimit() ) )
             return null;
-        else return m_alpha * p_routelength + m_beta * p_routelength / p_speed;
+        else return m_rho * p_routelength + m_sigma * p_routelength / p_speed;
     }
 
     /**
@@ -111,8 +112,8 @@ public class CUtility implements IUtility
     {
         final AtomicDouble l_length = new AtomicDouble( 0.0 );
         p_route.forEach( e -> l_length.getAndAdd( p_unit.distanceToBlocks( e.length().doubleValue() ).doubleValue() ) );
-        Double l_rv =  p_oldutility - m_alpha * l_length.get();
-        l_rv = l_rv / m_beta;
+        Double l_rv =  p_oldutility - m_rho * l_length.get();
+        l_rv = l_rv / m_sigma;
         return Math.abs( l_rv );
     }
 

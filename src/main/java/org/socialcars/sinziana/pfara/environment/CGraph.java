@@ -24,6 +24,7 @@ import edu.uci.ics.jung.graph.util.Graphs;
 import org.socialcars.sinziana.pfara.data.input.CGraphpojo;
 import org.socialcars.sinziana.pfara.data.input.CStoplightpojo;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -144,6 +145,26 @@ public class CGraph implements IGraph
     public List<IEdge> route( final String p_from, final String p_to, final Stream<String> p_via )
     {
         return this.route( m_nodes.get( p_from ), m_nodes.get( p_to ), p_via.map( m_nodes::get ) );
+    }
+
+    /**
+     * size of the graph
+     * @return number of nodes
+     */
+    @Override
+    public Integer size()
+    {
+        return m_nodes.size();
+    }
+
+    /**
+     * all the edges
+     * @return edges
+     */
+    @Override
+    public Collection<IEdge> edges()
+    {
+        return m_graph.getEdges();
     }
 
     /**

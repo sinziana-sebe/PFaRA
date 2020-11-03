@@ -28,15 +28,15 @@ public interface IUtility
 {
     /**
      * the first coefficient
-     * @return alpha
+     * @return rho
      */
-    Double alpha();
+    Double rho();
 
     /**
      * the second coefficient
-     * @return beta
+     * @return sigma
      */
-    Double beta();
+    Double sigma();
 
     /**
      * calculates the utility for a given route

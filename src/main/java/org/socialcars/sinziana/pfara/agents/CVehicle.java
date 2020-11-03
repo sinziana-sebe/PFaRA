@@ -86,11 +86,12 @@ public class CVehicle implements IVehicle
      * ctor
      * @param p_pojo plain old java object
      * @param p_timestep the cuurent time
-     * @param p_outputfile the output filename
+     * @param p_log the logger
      * @param p_unit the unit object
      */
-    public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final String p_outputfile, final CUnits p_unit )
+    public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final Logger p_log, final CUnits p_unit )
     {
+        s_logger = p_log;
         m_name = p_pojo.getName();
         m_origin = p_pojo.getStart();
         m_destination = p_pojo.getFinish();
@@ -169,6 +170,12 @@ public class CVehicle implements IVehicle
         return m_position;
     }
 
+    @Override
+    public CPreference preferences()
+    {
+        return m_preference;
+    }
+
     /**
      * moves the vehicle in a microscopic fashion
      * based on the vehicles acceleration, current speed
@@ -231,7 +238,7 @@ public class CVehicle implements IVehicle
     {
         final CEvent l_departed = new CEvent( this, EEventType.DEPARTED, p_position.from().name(), p_timestep, null );
         m_events.add( l_departed );
-        //s_logger.log( Level.INFO, l_departed.toString() );
+        s_logger.log( Level.INFO, l_departed.toString() );
         m_location = p_position.name();
         m_lastedge = p_position;
     }
@@ -247,7 +254,7 @@ public class CVehicle implements IVehicle
         final CEvent l_arrived = new CEvent( this, EEventType.ARRIVED, p_position.to().name(), p_timestep, null );
         m_events.add( l_arrived );
         m_location = p_position.to().name();
-        //s_logger.log( Level.INFO, l_arrived.toString() );
+        s_logger.log( Level.INFO, l_arrived.toString() );
         m_position = 0.0;
         m_preference.reduceMaxLength( p_position.length() );
         m_routelength += p_position.length();
@@ -276,10 +283,10 @@ public class CVehicle implements IVehicle
     {
         final CEvent l_completed = new CEvent( this, EEventType.COMPLETED, p_position, p_timestep, null );
         m_events.add( l_completed );
-        //s_logger.log( Level.INFO, l_completed.toString() );
-        //s_logger.log( Level.INFO, m_name + " cost: " + m_cost + ", " + m_routelength + " blocks" );
-        //s_logger.log( Level.INFO, m_name + " has an allowance of " + m_preference.lengthLimit() + " blocks, "
-                //+ m_preference.timeLimit() + " timesteps and  " + m_preference.maxCost() + " cost" );
+        s_logger.log( Level.INFO, l_completed.toString() );
+        s_logger.log( Level.INFO, m_name + " cost: " + m_cost + ", " + m_routelength + " blocks" );
+        s_logger.log( Level.INFO, m_name + " has an allowance of " + m_preference.lengthLimit() + " blocks, "
+                + m_preference.timeLimit() + " timesteps and  " + m_preference.maxCost() + " cost" );
     }
 
 
@@ -298,7 +305,7 @@ public class CVehicle implements IVehicle
         final CEvent l_formed = new CEvent( this, EEventType.FORMED, p_position, p_timestep, l_plat );
         m_events.add( l_formed );
         m_platooning = true;
-        //s_logger.log( Level.INFO, l_formed.toString() );
+        s_logger.log( Level.INFO, l_formed.toString() );
     }
 
     /**
@@ -314,7 +321,7 @@ public class CVehicle implements IVehicle
         m_platooning = false;
         m_precedence = 0;
         m_companions.removeAll( m_companions );
-        //s_logger.log( Level.INFO, l_split.toString() );
+        s_logger.log( Level.INFO, l_split.toString() );
     }
 
     @Override
@@ -323,15 +330,39 @@ public class CVehicle implements IVehicle
         return m_platooning;
     }
 
-    /**
-     * the vehicles's events
-     * @return the list of events
-     */
-    public ArrayList<IEvent> events()
+    @Override
+    public ArrayList<CVehicle> companions()
     {
-        return m_events;
+        return m_companions;
     }
 
+    @Override
+    public void setDelay( final Integer p_maxdelay )
+    {
+        m_delay = p_maxdelay * m_unit.getTimestep().intValue() - m_precedence;
+        m_speed = 0.0;
+        m_acceleration = 0.0;
+    }
+
+    @Override
+    public void updatePrecedence()
+    {
+        m_precedence--;
+    }
+
+    @Override
+    public Integer getDelay()
+    {
+        return m_delay;
+    }
+
+    @Override
+    public void updateDelay()
+    {
+        m_delay--;
+    }
+
+    @Override
     public void joinParty( final IProtocol p_protocol )
     {
         m_negotiating = true;
@@ -340,17 +371,19 @@ public class CVehicle implements IVehicle
         if ( m_speed == 0.0 ) m_speed = m_preference.maxSpeed();
         final CNegotiationEvent l_join = new CNegotiationEvent( this, ENegotiationEventType.JOINED, null );
         m_negevents.add( l_join );
-        //s_logger.log( Level.INFO, l_join.toString() );
+        s_logger.log( Level.INFO, l_join.toString() );
     }
 
+    @Override
     public void release( final IProtocol p_protocol )
     {
         m_negotiating = false;
         final CNegotiationEvent l_leave = new CNegotiationEvent( this, ENegotiationEventType.LEFT, null );
         m_negmodule = null;
-        //s_logger.log( Level.INFO, l_leave.toString() );
+        s_logger.log( Level.INFO, l_leave.toString() );
     }
 
+    @Override
     public void receiveOffer( final IOffer p_offer ) throws IOException
     {
         final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.RECEIVED, p_offer );
@@ -377,6 +410,7 @@ public class CVehicle implements IVehicle
         }
     }
 
+    @Override
     public void sendOffer( final List<IEdge> p_route )
     {
         final CInitialOffer l_offer = m_negmodule.sendOffer( p_route, m_name );
@@ -386,6 +420,7 @@ public class CVehicle implements IVehicle
         m_protocol.sendOffer( this, l_offer );
     }
 
+    @Override
     public void haggle( final CSimpleOffer p_offer ) throws IOException
     {
         final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.RECEIVED, p_offer );
@@ -412,6 +447,11 @@ public class CVehicle implements IVehicle
         }
     }
 
+    /**
+     * writes an accept event
+     * @param p_offer the offer accepted
+     * @throws IOException write file
+     */
     private void writeAccept( final IOffer p_offer ) throws IOException
     {
         final CNegotiationEvent l_accept = new CNegotiationEvent( this, ENegotiationEventType.ACCEPTED, p_offer );
@@ -419,6 +459,11 @@ public class CVehicle implements IVehicle
         s_logger.log( Level.INFO, l_accept.toString() );
     }
 
+    /**
+     * writes a reject event
+     * @param p_offer the offer rejected
+     * @throws IOException write file
+     */
     private void writeReject( final IOffer p_offer ) throws IOException
     {
         final CNegotiationEvent l_reject = new CNegotiationEvent( this, ENegotiationEventType.REJECTED, p_offer );
@@ -426,6 +471,11 @@ public class CVehicle implements IVehicle
         s_logger.log( Level.INFO, l_reject.toString() );
     }
 
+    /**
+     * writes a haggle event
+     * @param p_offer the new haggle offer
+     * @throws IOException write file
+     */
     private void writeHaggle( final IOffer p_offer ) throws IOException
     {
         final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.SENT, p_offer );
@@ -433,41 +483,21 @@ public class CVehicle implements IVehicle
         s_logger.log( Level.INFO, l_getoffer.toString() );
     }
 
-    public CPreference preferences()
-    {
-        return m_preference;
-    }
-
-    public ArrayList<CVehicle> companions()
-    {
-        return m_companions;
-    }
-
-    public void setDelay( final Integer p_maxdelay )
-    {
-        m_delay = p_maxdelay * m_unit.getTimestep().intValue() - m_precedence;
-        m_speed = 0.0;
-        m_acceleration = 0.0;
-    }
-
-    public void updatePrecedence()
-    {
-        m_precedence--;
-    }
-
-    public Integer getDelay()
-    {
-        return m_delay;
-    }
-
-    public void updateDelay()
-    {
-        m_delay--;
-    }
-
+    /**
+     * @return the last edge travelled by the vehicle
+     */
     public IEdge getLastEdge()
     {
         return m_lastedge;
+    }
+
+    /**
+     * the vehicles's events
+     * @return the list of events
+     */
+    public ArrayList<IEvent> events()
+    {
+        return m_events;
     }
 
 }

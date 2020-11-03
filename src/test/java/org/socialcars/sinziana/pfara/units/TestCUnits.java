@@ -1,5 +1,5 @@
 /**
- * This file is part of the mesoscopic traffic simulation PFaRA of Clauthal University of
+ * This file is part of the mesoscopic traffic simulation PFaRA of Claustshal University of
  * Technology-Mobile and Enterprise Computing aswell as SocialCars Research Training Group.
  *  Copyright (c) 2017-2021 Sinziana-Maria Sebe (sms14@tu-clausthal.de)
  *

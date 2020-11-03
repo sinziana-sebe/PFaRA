@@ -47,6 +47,11 @@ public interface IDynamic extends IAgent
     Number position();
 
     /**
+     * @return the agent's preferences
+     */
+    CPreference preferences();
+
+    /**
      * moves the agent in a microscopic fashion
      * based on the agents acceleration, current speed
      */
@@ -84,5 +89,6 @@ public interface IDynamic extends IAgent
      * @param p_timestep the current time-step
      */
     void completed( final String p_position, final Integer p_timestep );
+
 
 }

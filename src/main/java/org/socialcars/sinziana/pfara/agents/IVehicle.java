@@ -15,7 +15,14 @@
 
 package org.socialcars.sinziana.pfara.agents;
 
+import org.socialcars.sinziana.pfara.environment.IEdge;
+import org.socialcars.sinziana.pfara.negotiation.CSimpleOffer;
+import org.socialcars.sinziana.pfara.negotiation.IOffer;
+import org.socialcars.sinziana.pfara.negotiation.IProtocol;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IVehicle extends IDynamic
 {
@@ -41,5 +48,63 @@ public interface IVehicle extends IDynamic
      * @return true if it is and false if not
      */
     Boolean platooning();
+
+    /**
+     * @return the co-platooning vehicles
+     */
+    ArrayList<CVehicle> companions();
+
+    /**
+     * sets the delay based on the number of co-platooners
+     */
+    void setDelay( final Integer p_maxdelay );
+
+    /**
+     * decreases the precedence
+     */
+    void updatePrecedence();
+
+    /**
+     * @return the delay
+     */
+    Integer getDelay();
+
+    /**
+     * decreases the delay
+     */
+    void updateDelay();
+
+    /**
+     * joins a negotiating party
+     * @param p_protocol the protocol for communication
+     */
+    void joinParty( final IProtocol p_protocol );
+
+    /**
+     * releases the vehicle from the negotiation party
+     * @param p_protocol the protocol for communication
+     */
+    void release( final IProtocol p_protocol );
+
+    /**
+     * actions needed when receiving an offer
+     * @param p_offer the offer
+     * @throws IOException file write
+     */
+    void receiveOffer( final IOffer p_offer ) throws IOException;
+
+    /**
+     * actions needed when sending an offer
+     * @param p_route the route in the offer
+     */
+    void sendOffer( final List<IEdge> p_route );
+
+    /**
+     * actions needed for haggling
+     * @param p_offer the offer
+     * @throws IOException file write
+     */
+    void haggle( final CSimpleOffer p_offer ) throws IOException;
+
 
 }
