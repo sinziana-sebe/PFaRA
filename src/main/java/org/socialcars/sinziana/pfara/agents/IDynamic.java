@@ -47,6 +47,7 @@ public interface IDynamic extends IAgent
     Number position();
 
     /**
+     * preferences
      * @return the agent's preferences
      */
     CPreference preferences();

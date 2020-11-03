@@ -484,6 +484,7 @@ public class CVehicle implements IVehicle
     }
 
     /**
+     * last edge
      * @return the last edge travelled by the vehicle
      */
     public IEdge getLastEdge()

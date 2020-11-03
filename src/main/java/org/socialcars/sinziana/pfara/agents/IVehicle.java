@@ -50,6 +50,7 @@ public interface IVehicle extends IDynamic
     Boolean platooning();
 
     /**
+     * companions
      * @return the co-platooning vehicles
      */
     ArrayList<CVehicle> companions();
@@ -65,6 +66,7 @@ public interface IVehicle extends IDynamic
     void updatePrecedence();
 
     /**
+     * delay
      * @return the delay
      */
     Integer getDelay();
