@@ -43,6 +43,7 @@ public class CTakeItOrLeaveIt implements IProtocol
         m_routes = p_routes;
     }
 
+    @Override
     public void open( final Integer p_time )
     {
         m_crowd.forEach( p -> p.joinParty( this ) );

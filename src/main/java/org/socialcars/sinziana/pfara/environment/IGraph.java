@@ -82,5 +82,12 @@ public interface IGraph
      */
     List<IEdge> route( final String p_from, final String p_to, Stream<String> p_via );
 
+    /**
+     * gets a random node by zone
+     * @param p_zone the zone
+     * @return the node
+     */
+    INode randomnodebyzone( final String p_zone );
+
 
 }

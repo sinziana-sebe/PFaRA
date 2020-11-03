@@ -30,7 +30,6 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.IntStream;
 
 public class CPSPP implements IPSPP
@@ -45,6 +44,7 @@ public class CPSPP implements IPSPP
     private ArrayList<CVehicle> m_pods;
     private Double m_speed;
     private CUnits m_unit;
+    private final Double m_omega;
 
     private HashMap<CVehicle, Integer> m_endtimes = new HashMap<>();
     private HashMap<CVehicle, Double> m_lengths = new HashMap<>();
@@ -61,7 +61,7 @@ public class CPSPP implements IPSPP
      * @param p_pods pods
      * @throws GRBException gurobi exception
      */
-    public CPSPP( final CGraph p_env, final Integer p_source, final ArrayList<CVehicle> p_pods, final CUnits p_unit ) throws GRBException
+    public CPSPP( final CGraph p_env, final Integer p_source, final ArrayList<CVehicle> p_pods, final CUnits p_unit, final Double p_omega ) throws GRBException
     {
         m_env = new GRBEnv( "pspp.log" );
         m_model = new GRBModel( m_env );
@@ -75,6 +75,7 @@ public class CPSPP implements IPSPP
         m_results = new HashMap<>();
         p_pods.forEach( p -> m_results.put( p, new ArrayList<>() ) );
         m_unit = p_unit;
+        m_omega = p_omega;
 
         final GRBLinExpr l_obj = new GRBLinExpr();
         p_env.edges().forEach( e ->
@@ -315,7 +316,7 @@ public class CPSPP implements IPSPP
         m_results.keySet().forEach( p ->
         {
             final AtomicDouble l_cost = new AtomicDouble( 0.0 );
-            m_results.get( p ).forEach( e -> l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / 3 * m_np.get( e ) ) ) / m_np.get( e ) )  );
+            m_results.get( p ).forEach( e -> l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / m_omega * m_np.get( e ) ) ) / m_np.get( e ) )  );
             if ( l_cost.get() > p.preferences().maxCost() ) l_flagged.add( p );
         } );
         return l_flagged;
@@ -324,7 +325,7 @@ public class CPSPP implements IPSPP
     /**
      * calculates the costs of the route
      */
-    public void getCosts()
+    /*public void getCosts()
     {
         final HashMap<IEdge, Integer> l_np = new HashMap<>();
         final HashMap<CVehicle, Double> l_costs = new HashMap<>();
@@ -368,7 +369,7 @@ public class CPSPP implements IPSPP
 
         System.out.println( "Distances are: " );
         m_lengths.keySet().forEach( k -> System.out.println( "Pod " + k.name() + " length of route " + m_lengths.get( k ) ) );
-    }
+    }*/
 
     public ArrayList<CVehicle> getFlagged()
     {
@@ -393,11 +394,6 @@ public class CPSPP implements IPSPP
         System.out.println();
 
         m_np.keySet().forEach( y -> System.out.println( "y:" + y.name() ) );
-    }
-
-    public HashMap<IEdge, Integer> returnResults()
-    {
-        return m_np;
     }
 
     private void cleanUp() throws GRBException

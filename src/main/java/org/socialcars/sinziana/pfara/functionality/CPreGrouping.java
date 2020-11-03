@@ -16,6 +16,7 @@
 package org.socialcars.sinziana.pfara.functionality;
 
 import com.google.common.util.concurrent.AtomicDouble;
+import gurobi.GRBException;
 import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.ELightState;
@@ -42,7 +43,9 @@ public class CPreGrouping
     private final CUnits m_unit;
     private final Integer m_time;
     private HashMap<CVehicle, List<IEdge>> m_routes;
-    //private CPodsUtilitySPP m_opt;
+    private final Boolean m_mikro;
+    private final Boolean m_opt;
+    private final Double m_omega;
 
     /**
      * ctor
@@ -53,22 +56,19 @@ public class CPreGrouping
      * @param p_routes routes
      * @param p_time time
      */
-    public CPreGrouping( final ArrayList<CVehicle> p_pods, final CGraph p_env, final CUnits p_unit, final HashMap<CVehicle, List<IEdge>> p_routes, final Integer p_time )
+    public CPreGrouping( final ArrayList<CVehicle> p_pods, final CGraph p_env, final CUnits p_unit, final HashMap<CVehicle, List<IEdge>> p_routes,
+                         final Integer p_time, final Boolean p_mikro, final Boolean p_opt, final Double p_omega )
     {
         m_pods = p_pods;
         m_env = p_env;
         m_unit = p_unit;
         m_routes = p_routes;
         m_time = p_time;
+        m_mikro = p_mikro;
+        m_opt = p_opt;
+        m_omega = p_omega;
         checkforPlatoon();
     }
-
-    /*
-    private void runOptimiser( final ArrayList<CVehicle> p_pods, final Integer p_origin ) throws GRBException
-    {
-        m_opt = new CPodsUtilitySPP( m_env, p_origin, p_pods, m_unit );
-        m_opt.solve();
-    }*/
 
     /**
      * groups the vehicles by their location
@@ -157,12 +157,33 @@ public class CPreGrouping
     }
 
     /**
-     * given pods at certain node, checks the stoplight status and groups vehicles accordingly
-     * then runs the optimiser to group vehicles in platoon
+     * given the movement-type categorises the vehicles further
+     * also based on whether the optimiser approach is needed, runs the optimiser to group vehicles in platoon
      * @param p_platoon collection of pods
      * update routes for pods
      */
     private void groupPlatoon( final ArrayList<CVehicle> p_platoon )
+    {
+        final HashMap<String, ArrayList<CVehicle>> l_vehicles = new HashMap<>();
+        if ( m_mikro ) groupByLights( p_platoon, l_vehicles );
+        else l_vehicles.put( "", p_platoon );
+        if ( m_opt ) runOptimiser( l_vehicles );
+        else
+        {
+            l_vehicles.keySet().forEach( k ->
+            {
+                platoonSort2( l_vehicles.get( k ) );
+            } );
+        }
+    }
+
+    /**
+     * given pods at certain node, checks the stoplight status and groups vehicles accordingly
+     * then runs the optimiser to group vehicles in platoon
+     * @param p_platoon collection of vehicles
+     * @param p_vehicles the vehicles sorted by light groups
+     */
+    private void groupByLights( final ArrayList<CVehicle> p_platoon, final HashMap<String, ArrayList<CVehicle>> p_vehicles )
     {
         final ArrayList<CVehicle> l_red = new ArrayList<>();
         final ArrayList<CVehicle> l_green = new ArrayList<>();
@@ -175,31 +196,38 @@ public class CPreGrouping
             }
             else l_green.add( p );
         } );
-        final HashMap<String, ArrayList<CVehicle>> l_pods = new HashMap<>();
-        if ( l_green.size() > 0 ) l_pods.put( "green", l_green );
-        if ( l_red.size() > 0 ) l_pods.put( "red", l_red );
-        l_pods.keySet().forEach( k ->
+
+        if ( l_green.size() > 0 ) p_vehicles.put( "green", l_green );
+        if ( l_red.size() > 0 ) p_vehicles.put( "red", l_red );
+    }
+
+    /**
+     * runs the optimiser and performs the subsequent checks
+     * @param p_vehicles the mapwith the grouped vehicles
+     */
+    private void runOptimiser( final HashMap<String, ArrayList<CVehicle>> p_vehicles )
+    {
+        p_vehicles.keySet().forEach( k ->
         {
-            /*try
+            try
             {
-                runOptimiser( new ArrayList<>( l_pods.get( k ) ), Integer.valueOf( p_platoon.iterator().next().location() ) );
-                final HashMap<CVehicle, ArrayList<IEdge>> l_platroutes = m_opt.getRoutes();
+                final COptimiser l_opt = new COptimiser( m_env, Integer.valueOf( p_vehicles.get( k ).iterator().next().location() ),
+                        p_vehicles.get( k ), m_unit, m_omega );
+                final HashMap<CVehicle, ArrayList<IEdge>> l_platroutes = l_opt.getRoutes();
                 final HashMap<IEdge, ArrayList<CVehicle>> l_clusters = platoonSort1( l_platroutes );
-                if ( checkFlagged( m_opt.getFlagged(), l_platroutes, m_opt.getNP(), l_clusters ) )
+                if ( checkFlagged( l_opt.getFlagged(), l_platroutes, l_opt.getNP(), l_clusters ) )
                 {
                     l_platroutes.keySet().forEach( p ->
                     {
-                        if ( !m_opt.getFlagged().contains( p ) ) m_routes.replace( p, l_platroutes.get( p ) );
-                    }  );
-                    platoonSort2( new ArrayList<>( p_platoon ) );
+                        if ( !l_opt.getFlagged().contains( p ) ) m_routes.replace( p, l_platroutes.get( p ) );
+                    } );
                 }
             }
             catch ( final GRBException l_err )
             {
                 l_err.printStackTrace();
-            }*/
+            }
         } );
-
     }
 
 
@@ -246,7 +274,7 @@ public class CPreGrouping
                 final IEdge l_final = l_platroute.get( l_platroute.size() - 1 );
                 l_platroute.remove( l_final );
                 final AtomicDouble l_cost = new AtomicDouble( 0.0 );
-                l_platroute.forEach( e -> l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / 3 * p_np.get( e ) ) ) / p_np.get( e ) ) );
+                l_platroute.forEach( e -> l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / m_omega * p_np.get( e ) ) ) / p_np.get( e ) ) );
                 final List<IEdge> l_patched = m_env.route( l_final.from().name(), p.destination()  );
                 l_patched.forEach( e -> l_cost.getAndAdd( e.weight().doubleValue() ) );
                 if ( l_cost.get() <= p.preferences().maxCost() ) l_trig.set( true );

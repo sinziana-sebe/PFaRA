@@ -3,6 +3,9 @@
   "description" : "The structure of a graph",
   "type" : "object",
   "properties" :{
+    "zones": {
+      "type": "integer"
+    },
     "nodes" : {
       "type" : "array",
       "items" : {

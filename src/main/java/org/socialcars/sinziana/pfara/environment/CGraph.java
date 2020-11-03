@@ -24,20 +24,24 @@ import edu.uci.ics.jung.graph.util.Graphs;
 import org.socialcars.sinziana.pfara.data.input.CGraphpojo;
 import org.socialcars.sinziana.pfara.data.input.CStoplightpojo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class CGraph implements IGraph
 {
-
     private final Graph<INode, IEdge> m_graph;
     private final DijkstraShortestPath<INode, IEdge> m_pathalgorithm;
     private final Map<String, INode> m_nodes;
     private final HashMap<String, IEdge> m_edges = new HashMap<>();
+    private final HashMap<String, List<INode>> m_zones;
 
     /**
      * ctor
@@ -61,6 +65,26 @@ public class CGraph implements IGraph
 
         m_graph = Graphs.unmodifiableGraph( l_graph );
         m_pathalgorithm = new DijkstraShortestPath<>( m_graph, IEdge::weight );
+
+        m_zones = new HashMap<>();
+        if ( p_pojo.getZones() != 0 )
+        {
+            final AtomicInteger l_count = new AtomicInteger();
+            l_count.set( 1 );
+            final int l_npz =  m_nodes.size() / p_pojo.getZones();
+            IntStream.range( 1, p_pojo.getZones() + 1 ).boxed().forEach( i ->
+            {
+                final ArrayList<INode> l_mappy = new ArrayList<>();
+                IntStream.range( l_count.get(), l_count.get() + l_npz ).boxed().forEach( j -> l_mappy.add( m_nodes.get( j.toString() ) ) );
+                l_count.addAndGet( l_npz );
+                m_zones.put( String.valueOf( i ), l_mappy );
+            } );
+            if ( l_count.intValue() < m_nodes.size() )
+            {
+                final List<INode> l_local = m_zones.get( String.valueOf( p_pojo.getZones() ) );
+                IntStream.range( l_count.intValue(), m_nodes.size() + 1 ).boxed().forEach( i -> l_local.add( m_nodes.get( i.toString() ) ) );
+            }
+        }
     }
 
 
@@ -188,5 +212,11 @@ public class CGraph implements IGraph
     public void createStoplights( final List<CStoplightpojo> p_pojo )
     {
         p_pojo.forEach( s -> m_edges.get( s.getLocation() ).addStoplight( new CStoplight( s ) ) );
+    }
+
+    @Override
+    public INode randomnodebyzone( final String p_zone )
+    {
+        return m_zones.get( p_zone ).get( ThreadLocalRandom.current().nextInt( m_zones.get( p_zone ).size() ) );
     }
 }

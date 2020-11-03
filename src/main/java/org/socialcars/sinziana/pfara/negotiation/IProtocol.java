@@ -22,6 +22,13 @@ import java.io.IOException;
 
 public interface IProtocol
 {
+
+    /**
+     * opens the protocol
+     * @param p_time the time of opening
+     */
+    void open( final Integer p_time );
+
     /**
      * the type of protocol
      * @return the protocol's type

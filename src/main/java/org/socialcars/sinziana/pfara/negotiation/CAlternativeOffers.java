@@ -52,6 +52,7 @@ public class CAlternativeOffers implements IProtocol
         m_roundcount = 0;
     }
 
+    @Override
     public void open( final Integer p_time )
     {
         m_crowd.forEach( p -> p.joinParty( this ) );
