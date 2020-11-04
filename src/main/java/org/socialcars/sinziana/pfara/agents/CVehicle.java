@@ -80,6 +80,8 @@ public class CVehicle implements IVehicle
     private final ArrayList<INegotiationEvent> m_negevents;
     private IProtocol m_protocol;
 
+    private final Boolean m_mikro;
+
 
 
     /**
@@ -88,8 +90,9 @@ public class CVehicle implements IVehicle
      * @param p_timestep the cuurent time
      * @param p_log the logger
      * @param p_unit the unit object
+     * @param p_mikro movement type
      */
-    public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final Logger p_log, final CUnits p_unit )
+    public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final Logger p_log, final CUnits p_unit, final Boolean p_mikro )
     {
         s_logger = p_log;
         m_name = p_pojo.getName();
@@ -114,10 +117,13 @@ public class CVehicle implements IVehicle
         m_unit = p_unit;
 
         final CEvent l_created = new CEvent( this, EEventType.CREATED, m_origin, p_timestep, null );
+        s_logger.log( Level.INFO, l_created.toString() );
         m_events = new ArrayList<>();
         m_events.add( l_created );
 
         m_negevents = new ArrayList<>();
+
+        m_mikro = p_mikro;
     }
 
     /**
@@ -366,12 +372,12 @@ public class CVehicle implements IVehicle
     public void joinParty( final IProtocol p_protocol )
     {
         m_negotiating = true;
-        m_negmodule = new CNegotiationModule( p_protocol, m_utility, m_unit, m_preference );
+        m_negmodule = new CNegotiationModule( p_protocol, m_utility, m_unit, m_preference, m_mikro );
         m_protocol = p_protocol;
         if ( m_speed == 0.0 ) m_speed = m_preference.maxSpeed();
         final CNegotiationEvent l_join = new CNegotiationEvent( this, ENegotiationEventType.JOINED, null );
         m_negevents.add( l_join );
-        s_logger.log( Level.INFO, l_join.toString() );
+        s_logger.log( Level.INFO, l_join.toString() + " protocol " + p_protocol.getNodeID().name() );
     }
 
     @Override
@@ -384,12 +390,12 @@ public class CVehicle implements IVehicle
     }
 
     @Override
-    public void receiveOffer( final IOffer p_offer ) throws IOException
+    public void receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute ) throws IOException
     {
         final CNegotiationEvent l_getoffer = new CNegotiationEvent( this, ENegotiationEventType.RECEIVED, p_offer );
         m_negevents.add( l_getoffer );
         s_logger.log( Level.INFO, l_getoffer.toString() );
-        final String l_response = m_negmodule.receiveOffer( p_offer, m_routelength, m_speed );
+        final String l_response = m_negmodule.receiveOffer( p_offer, p_oldroute, m_speed );
         switch ( l_response )
         {
             case "haggle":

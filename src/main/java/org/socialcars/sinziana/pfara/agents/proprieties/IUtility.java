@@ -39,7 +39,7 @@ public interface IUtility
     Double sigma();
 
     /**
-     * calculates the utility for a given route
+     * calculates the utility for a given route based on cost
      * @param p_route the route
      * @param p_speed the speed
      * @param p_unit the transformation unit
@@ -47,18 +47,18 @@ public interface IUtility
      * @param p_pref the preference
      * @return the utility
      */
-    Double calculate( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
+    Double calculateMakro( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
 
     /**
-     * calculates the utility for a given route
-     * @param p_routelength the route length
+     * calculates the utility for a given route based on time
+     * @param p_route the route
      * @param p_speed the speed
      * @param p_unit the transformation unit
      * @param p_buyout the buyout
      * @param p_pref the preference
      * @return the utility
      */
-    Double calculate( final Double p_routelength, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
+    Double calculateMikro( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
 
     /**
      * calculates the reservation value
@@ -69,4 +69,5 @@ public interface IUtility
      * @return the reservation value
      */
     Double calculateRV( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_oldutility );
+
 }

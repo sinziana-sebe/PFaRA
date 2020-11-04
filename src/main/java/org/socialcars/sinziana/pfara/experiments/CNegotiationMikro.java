@@ -4,7 +4,7 @@
  *  Copyright (c) 2017-2021 Sinziana-Maria Sebe (sms14@tu-clausthal.de)
  *
  *  This program is free software: you can redistribute it and/or modify it under the terms of the
- *  GNUGeneral Public License as  published by the Free Software Foundation, either version of
+ *  GNUGeneral Public License as  published by the Free Software Foundation, either version 3 of
  *  the License, or (at your option) any later version.
  *
  *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY
@@ -21,13 +21,11 @@ package org.socialcars.sinziana.pfara.experiments;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
-import org.socialcars.sinziana.pfara.environment.CBackground;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 import org.socialcars.sinziana.pfara.environment.INode;
 import org.socialcars.sinziana.pfara.functionality.CEdgeEnd;
 import org.socialcars.sinziana.pfara.functionality.CPreGrouping;
-import org.socialcars.sinziana.pfara.functionality.CReadBackground;
 import org.socialcars.sinziana.pfara.negotiation.CAlternativeOffers;
 import org.socialcars.sinziana.pfara.negotiation.CTakeItOrLeaveIt;
 import org.socialcars.sinziana.pfara.negotiation.IProtocol;
@@ -45,14 +43,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class CNegotiationMakro
+public class CNegotiationMikro
 {
-    private static final Logger LOGGER = Logger.getLogger( CNegotiationMakro.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( CNegotiationMikro.class.getName() );
 
     private final CInputpojo m_input;
     private final CGraph m_env;
-    private final CReadBackground m_readbackground;
-    private final HashMap<IEdge, CBackground> m_backinfo;
 
     private final CUnits m_unit;
     private Integer m_time;
@@ -71,7 +67,7 @@ public class CNegotiationMakro
     private final Boolean m_ao;
     private final Integer m_deadline;
 
-    public CNegotiationMakro( final String p_outfile, final String p_infile, final String p_backfile,
+    public CNegotiationMikro( final String p_outfile, final String p_infile,
                               final Integer p_time, final Integer p_space, final Double p_omega, final Boolean p_ao, final Integer p_rounds ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
@@ -80,12 +76,10 @@ public class CNegotiationMakro
 
         m_input = new ObjectMapper().readValue( new File( p_infile ), CInputpojo.class );
         m_env = new CGraph( m_input.getGraph() );
-        m_readbackground = new CReadBackground( m_env );
-        m_backinfo = m_readbackground.getBackground( p_backfile );
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
         m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false ) ) );
+        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, true ) ) );
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
@@ -99,7 +93,7 @@ public class CNegotiationMakro
 
     public void run()
     {
-        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
+        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, true, m_omega );
         checkNegotiation();
         while ( m_status.containsValue( "Incomplete" ) )
         {
@@ -160,7 +154,7 @@ public class CNegotiationMakro
             {
                 final IEdge l_edge = m_routes.get( p ).iterator().next();
                 if ( p.position().equals( 0.0 ) ) p.departed( l_edge, m_time );
-                if ( p.position().doubleValue() < l_edge.length() ) p.moveMakro( m_backinfo.get( l_edge ).getmaxspeed() );
+                if ( p.position().doubleValue() < l_edge.length() ) p.moveMikro();
                 else
                 {
                     p.arrived( l_edge, m_time );
@@ -175,7 +169,7 @@ public class CNegotiationMakro
         if ( l_trig.get() )
         {
             m_edgeend = new CEdgeEnd( m_vehicles, m_routes, m_time, m_env );
-            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
+            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, true, m_omega );
             m_edgeend.checkLoners();
             checkNegotiation();
         }

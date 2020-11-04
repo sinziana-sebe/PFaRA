@@ -57,7 +57,19 @@ public interface IEdge
      * the stoplight
      * @return the stoplight partaining to the edge
      */
-    IStoplight stoplight();
+    CStoplight stoplight();
+
+    /**
+     * adds sections to the edge
+     * @param p_section the section lengths
+     */
+    void addSections( final CSections p_section );
+
+    /**
+     * gives the edge sections
+     * @return the sections
+     */
+    CSections sections();
 
     /**
      * adds background traffic information

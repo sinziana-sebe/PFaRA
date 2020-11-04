@@ -55,7 +55,7 @@ public class TestCVehicle
         final FileHandler l_handler = new FileHandler( "MovementOutput", true );
         LOGGER.addHandler( l_handler );
         l_handler.setFormatter( new SimpleFormatter() );
-        m_veh = new CVehicle( l_configuration.getVehicles().get( 0 ), 0, LOGGER, m_unit );
+        m_veh = new CVehicle( l_configuration.getVehicles().get( 0 ), 0, LOGGER, m_unit, false );
     }
 
     /**

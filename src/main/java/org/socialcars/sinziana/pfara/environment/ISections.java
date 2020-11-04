@@ -18,40 +18,11 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
-import org.socialcars.sinziana.pfara.data.input.CDemandpojo;
-
-public class CInstance implements IInstance
+public interface ISections
 {
-    private final String m_from;
-    private final String m_to;
-    private final Float m_howmany;
+    Double begining();
 
-    /**
-     * ctor
-     * @param p_pojo pojo object
-     */
-    public CInstance( final CDemandpojo p_pojo )
-    {
-        m_from = p_pojo.getFrom();
-        m_to = p_pojo.getTo();
-        m_howmany = (float) p_pojo.getNb();
-    }
+    Double middle();
 
-    @Override
-    public String from()
-    {
-        return m_from;
-    }
-
-    @Override
-    public String to()
-    {
-        return m_to;
-    }
-
-    @Override
-    public Float howMany()
-    {
-        return m_howmany;
-    }
+    Double end();
 }

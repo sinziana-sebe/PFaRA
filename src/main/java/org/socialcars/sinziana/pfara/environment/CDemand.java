@@ -16,26 +16,42 @@
  *
  */
 
-package org.socialcars.sinziana.pfara.experiments;
+package org.socialcars.sinziana.pfara.environment;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.socialcars.sinziana.pfara.data.input.CDemandpojo;
 
-import java.io.IOException;
-
-public class TestCNegotiationMakro
+public class CDemand implements IDemand
 {
-    private CNegotiationMakro m_negmakro;
+    private final String m_from;
+    private final String m_to;
+    private final Float m_howmany;
 
-    @Before
-    public void init() throws IOException
+    /**
+     * ctor
+     * @param p_pojo pojo object
+     */
+    public CDemand( final CDemandpojo p_pojo )
     {
-        m_negmakro = new CNegotiationMakro( "25NegMakro", "src/test/resources/25.json", "src/test/resources/25_info.json", 1, 10, 3.0, true, 10 );
+        m_from = p_pojo.getFrom();
+        m_to = p_pojo.getTo();
+        m_howmany = (float) p_pojo.getNb();
     }
 
-    @Test
-    public void run()
+    @Override
+    public String from()
     {
-        m_negmakro.run();
+        return m_from;
+    }
+
+    @Override
+    public String to()
+    {
+        return m_to;
+    }
+
+    @Override
+    public Float howMany()
+    {
+        return m_howmany;
     }
 }

@@ -24,8 +24,8 @@ import org.json.simple.JSONObject;
 import org.socialcars.sinziana.pfara.data.input.CDemandspojo;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
 import org.socialcars.sinziana.pfara.environment.CBackground;
+import org.socialcars.sinziana.pfara.environment.CDemand;
 import org.socialcars.sinziana.pfara.environment.CGraph;
-import org.socialcars.sinziana.pfara.environment.CInstance;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 import org.socialcars.sinziana.pfara.environment.IGraph;
 import org.socialcars.sinziana.pfara.units.CUnits;
@@ -46,7 +46,7 @@ public class CScenarioGeneration
     private final CDemandspojo m_inputd;
     private final CInputpojo m_input;
 
-    private ArrayList<CInstance> m_demand;
+    private ArrayList<CDemand> m_demand;
     private CGraph m_env;
 
     private final CUnits m_unit;
@@ -61,7 +61,7 @@ public class CScenarioGeneration
         m_demand = new ArrayList<>();
         m_inputd.getDemand().forEach( j ->
         {
-            final CInstance l_new = new CInstance( j );
+            final CDemand l_new = new CDemand( j );
             m_demand.add( l_new );
         } );
 

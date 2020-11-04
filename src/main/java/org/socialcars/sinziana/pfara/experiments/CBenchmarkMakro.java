@@ -4,7 +4,7 @@
  *  Copyright (c) 2017-2021 Sinziana-Maria Sebe (sms14@tu-clausthal.de)
  *
  *  This program is free software: you can redistribute it and/or modify it under the terms of the
- *  GNUGeneral Public License as  published by the Free Software Foundation, either version of
+ *  GNUGeneral Public License as  published by the Free Software Foundation, either version 3 of
  *  the License, or (at your option) any later version.
  *
  *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY
@@ -24,13 +24,9 @@ import org.socialcars.sinziana.pfara.data.input.CInputpojo;
 import org.socialcars.sinziana.pfara.environment.CBackground;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.IEdge;
-import org.socialcars.sinziana.pfara.environment.INode;
 import org.socialcars.sinziana.pfara.functionality.CEdgeEnd;
 import org.socialcars.sinziana.pfara.functionality.CPreGrouping;
 import org.socialcars.sinziana.pfara.functionality.CReadBackground;
-import org.socialcars.sinziana.pfara.negotiation.CAlternativeOffers;
-import org.socialcars.sinziana.pfara.negotiation.CTakeItOrLeaveIt;
-import org.socialcars.sinziana.pfara.negotiation.IProtocol;
 import org.socialcars.sinziana.pfara.units.CUnits;
 
 import java.io.File;
@@ -45,9 +41,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class CNegotiationMakro
+public class CBenchmarkMakro
 {
-    private static final Logger LOGGER = Logger.getLogger( CNegotiationMakro.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( CBenchmarkMakro.class.getName() );
 
     private final CInputpojo m_input;
     private final CGraph m_env;
@@ -62,17 +58,13 @@ public class CNegotiationMakro
     private final HashMap<CVehicle, List<IEdge>> m_routes = new HashMap<>();
     private final Map<IEdge, Integer> m_countingmap = new HashMap<>();
     private final Map<CVehicle, List<IEdge>> m_finalroute = new HashMap<>();
-    private final Map<INode, List<CVehicle>> m_clusters = new HashMap<>();
 
     private CPreGrouping m_grouping;
     private CEdgeEnd m_edgeend;
 
-    private Double m_omega;
-    private final Boolean m_ao;
-    private final Integer m_deadline;
 
-    public CNegotiationMakro( final String p_outfile, final String p_infile, final String p_backfile,
-                              final Integer p_time, final Integer p_space, final Double p_omega, final Boolean p_ao, final Integer p_rounds ) throws IOException
+    public CBenchmarkMakro( final String p_outfile, final String p_infile, final String p_backfile,
+                           final Integer p_time, final Integer p_space ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
@@ -92,56 +84,17 @@ public class CNegotiationMakro
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
         } );
-        m_ao = p_ao;
-        m_deadline = p_rounds;
-        m_omega = p_omega;
     }
 
     public void run()
     {
-        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
-        checkNegotiation();
+        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, false, 1.0 );
         while ( m_status.containsValue( "Incomplete" ) )
         {
             LOGGER.log( Level.INFO, "Time is " + m_time );
             move();
-            m_clusters.clear();
             m_time++;
         }
-    }
-
-    private void checkNegotiation()
-    {
-        m_vehicles.forEach( p ->
-        {
-            if ( ( !p.platooning() )
-                    && ( p.position().equals( 0.0 ) )
-                    && ( !p.location().equals( p.destination() ) ) )
-            {
-                final INode l_node = m_env.nodeByName( p.location() );
-                if ( m_clusters.containsKey( l_node ) )
-                {
-                    m_clusters.get( l_node ).add( p );
-                }
-                else
-                {
-                    m_clusters.put( l_node, new ArrayList<CVehicle>() );
-                    m_clusters.get( l_node ).add( p );
-                }
-            }
-        } );
-        m_clusters.keySet().forEach( n ->
-        {
-            if ( m_clusters.get( n ).size() > 1 )
-            {
-                final IProtocol l_protocol;
-                if ( m_ao ) l_protocol = new CAlternativeOffers( m_clusters.get( n ), n, m_env, m_routes, m_deadline );
-                else l_protocol = new CTakeItOrLeaveIt( m_clusters.get( n ), n, m_env, m_routes );
-                l_protocol.open( m_time );
-                final CVehicle l_vehicle = m_clusters.get( n ).get( 0 );
-                l_vehicle.sendOffer( m_routes.get( l_vehicle ) );
-            }
-        } );
     }
 
     /**
@@ -175,9 +128,8 @@ public class CNegotiationMakro
         if ( l_trig.get() )
         {
             m_edgeend = new CEdgeEnd( m_vehicles, m_routes, m_time, m_env );
-            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
+            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, false, 1.0 );
             m_edgeend.checkLoners();
-            checkNegotiation();
         }
     }
 }

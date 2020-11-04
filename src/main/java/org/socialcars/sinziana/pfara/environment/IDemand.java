@@ -16,26 +16,16 @@
  *
  */
 
-package org.socialcars.sinziana.pfara.experiments;
+package org.socialcars.sinziana.pfara.environment;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.IOException;
-
-public class TestCNegotiationMakro
+/**
+ * interface for demand
+ */
+public interface IDemand
 {
-    private CNegotiationMakro m_negmakro;
+    String from();
 
-    @Before
-    public void init() throws IOException
-    {
-        m_negmakro = new CNegotiationMakro( "25NegMakro", "src/test/resources/25.json", "src/test/resources/25_info.json", 1, 10, 3.0, true, 10 );
-    }
+    String to();
 
-    @Test
-    public void run()
-    {
-        m_negmakro.run();
-    }
+    Float howMany();
 }

@@ -34,33 +34,53 @@ public class CNegotiationModule implements INegotiationModule
 
     private EAgentType m_role;
     private final IProtocol m_protocol;
+    private Double m_altroutecost;
     private IOffer m_offer;
     private Double m_lastoffer;
     private Double m_rv;
     private Double m_av;
-    private Double m_altroucost;
     private final CUtility m_utility;
     private final CUnits m_unit;
     private final CPreference m_preference;
     private CBiddingModule m_bb;
     private Double m_rvpeak;
+    private final Boolean m_mikro;
 
-    public CNegotiationModule( final IProtocol p_protocol, final CUtility p_utility, final CUnits p_unit, final CPreference p_preference )
+    public CNegotiationModule( final IProtocol p_protocol, final CUtility p_utility, final CUnits p_unit, final CPreference p_preference, final Boolean p_mikro )
     {
         m_protocol = p_protocol;
         m_utility = p_utility;
         m_unit = p_unit;
         m_preference = p_preference;
+        m_mikro = p_mikro;
     }
 
     @Override
-    public String receiveOffer( final IOffer p_offer, final Double p_oldroutelength, final Double p_speed ) throws IOException
+    public String receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute, final Double p_speed )
     {
         m_role = EAgentType.ACCEPTOR;
         m_lastoffer = p_offer.buyout();
         final List<IEdge> l_newroute = p_offer.route();
-        final Double l_oldutility = m_utility.calculate( p_oldroutelength, p_speed, m_unit, 0.0, m_preference );
-        final Double l_newutility = m_utility.calculate( l_newroute, p_speed, m_unit, p_offer.buyout(), m_preference );
+        final Double l_oldutility;
+        final Double l_newutility;
+        if ( !m_mikro )
+        {
+            l_oldutility = m_utility.calculateMakro( p_oldroute, p_speed, m_unit, 0.0, m_preference );
+            l_newutility = m_utility.calculateMakro( l_newroute, p_speed, m_unit, p_offer.buyout(), m_preference );
+            final AtomicDouble l_altroutecost = new AtomicDouble();
+            l_newroute.forEach( e -> l_altroutecost.getAndAdd( e.weight() ) );
+            m_altroutecost = l_altroutecost.get();
+        }
+        else
+        {
+            l_oldutility = m_utility.calculateMikro( p_oldroute, p_speed, m_unit, 0.0, m_preference );
+            l_newutility = m_utility.calculateMikro( l_newroute, p_speed, m_unit, p_offer.buyout(), m_preference );
+            final AtomicDouble l_altroutecost = new AtomicDouble();
+            l_newroute.forEach( e -> l_altroutecost.getAndAdd(
+                    m_unit.distanceToBlocks( e.length().doubleValue() ).doubleValue() / m_unit.speedToBlocks( p_speed ).doubleValue( ) ) );
+            m_altroutecost = l_altroutecost.get();
+        }
+
         switch ( m_protocol.type() )
         {
             case AO:
@@ -151,19 +171,18 @@ public class CNegotiationModule implements INegotiationModule
     private String acceptorHaggle( final CSimpleOffer p_offer ) throws IOException
     {
         if ( ( m_protocol.getRoundCounter() < m_protocol.getDeadline() )
-                && ( m_altroucost - p_offer.buyout() > m_rv ) || ( m_protocol.getRoundCounter() < m_protocol.getDeadline() * 0.75 ) )
+                && ( m_altroutecost - p_offer.buyout() > m_rv ) || ( m_protocol.getRoundCounter() < m_protocol.getDeadline() * 0.75 ) )
         {
             chooseBestBid();
-            if (  m_av < m_altroucost - m_rv ) m_av = m_altroucost - m_rv;
+            if (  m_av < m_altroutecost - m_rv ) m_av = m_altroutecost - m_rv;
             p_offer.changeBuyout( m_av );
             m_lastoffer = p_offer.buyout();
             return "haggle";
-
         }
         else if (  ( ( m_protocol.getRoundCounter() >= m_protocol.getDeadline() )
-                && ( m_altroucost - p_offer.buyout() > m_rv ) )
+                && ( m_altroutecost - p_offer.buyout() > m_rv ) )
                 || ( ( m_protocol.getRoundCounter() >= m_protocol.getDeadline() )
-                && ( m_altroucost - p_offer.buyout() >= m_preference.maxCost() ) ) ) return "reject";
+                && ( m_altroutecost - p_offer.buyout() >= m_preference.maxCost() ) ) ) return "reject";
         else return "accept";
     }
 
@@ -203,7 +222,6 @@ public class CNegotiationModule implements INegotiationModule
             }
         }
         m_av = l_bb;
-        //return l_bb;
     }
 
 }

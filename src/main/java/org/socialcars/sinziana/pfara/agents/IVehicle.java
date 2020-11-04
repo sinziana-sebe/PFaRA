@@ -91,9 +91,10 @@ public interface IVehicle extends IDynamic
     /**
      * actions needed when receiving an offer
      * @param p_offer the offer
+     * @param p_oldroute the old routes
      * @throws IOException file write
      */
-    void receiveOffer( final IOffer p_offer ) throws IOException;
+    void receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute ) throws IOException;
 
     /**
      * actions needed when sending an offer

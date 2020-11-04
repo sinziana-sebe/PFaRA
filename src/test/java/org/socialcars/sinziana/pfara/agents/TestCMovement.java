@@ -59,7 +59,7 @@ public class TestCMovement
         final List<CVehiclepojo> l_pods = l_configuration.getVehicles();
         m_env = new CGraph( l_configuration.getGraph() );
         m_time = 0;
-        l_pods.forEach( p -> m_pods.add( new CVehicle( p, 0, LOGGER, m_unit ) ) );
+        l_pods.forEach( p -> m_pods.add( new CVehicle( p, 0, LOGGER, m_unit, false ) ) );
         m_routes = new HashMap<>();
     }
 

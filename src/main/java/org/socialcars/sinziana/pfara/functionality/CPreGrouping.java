@@ -168,13 +168,7 @@ public class CPreGrouping
         if ( m_mikro ) groupByLights( p_platoon, l_vehicles );
         else l_vehicles.put( "", p_platoon );
         if ( m_opt ) runOptimiser( l_vehicles );
-        else
-        {
-            l_vehicles.keySet().forEach( k ->
-            {
-                platoonSort2( l_vehicles.get( k ) );
-            } );
-        }
+        l_vehicles.keySet().forEach( k -> platoonSort2( l_vehicles.get( k ) ) );
     }
 
     /**

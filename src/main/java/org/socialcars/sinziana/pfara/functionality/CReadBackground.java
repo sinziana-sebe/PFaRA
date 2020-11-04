@@ -21,9 +21,9 @@ package org.socialcars.sinziana.pfara.functionality;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.socialcars.sinziana.pfara.environment.CBackground;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.IEdge;
-import org.socialcars.sinziana.pfara.environment.CBackground;
 
 import java.io.FileReader;
 import java.util.ArrayList;

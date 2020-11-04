@@ -23,19 +23,19 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestCNegotiationMakro
+public class TestCBenchmarkMakro
 {
-    private CNegotiationMakro m_negmakro;
+    private CBenchmarkMakro m_benchmakro;
 
     @Before
     public void init() throws IOException
     {
-        m_negmakro = new CNegotiationMakro( "25NegMakro", "src/test/resources/25.json", "src/test/resources/25_info.json", 1, 10, 3.0, true, 10 );
+        m_benchmakro = new CBenchmarkMakro( "25BenchmarkMakro", "src/test/resources/25.json", "src/test/resources/25_info.json", 1, 10 );
     }
 
     @Test
     public void run()
     {
-        m_negmakro.run();
+        m_benchmakro.run();
     }
 }

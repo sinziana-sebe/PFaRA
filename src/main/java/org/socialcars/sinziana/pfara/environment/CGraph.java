@@ -21,6 +21,7 @@ import edu.uci.ics.jung.graph.DirectedGraph;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.graph.util.Graphs;
+import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.data.input.CGraphpojo;
 import org.socialcars.sinziana.pfara.data.input.CStoplightpojo;
 
@@ -200,7 +201,7 @@ public class CGraph implements IGraph
     public List<IEdge> route( final String p_finish, final List<IEdge> p_via )
     {
         final List<IEdge> l_route = p_via;
-        final List<IEdge> l_altroute = m_pathalgorithm.getPath( p_via.get( p_via.size() ).to(), nodeByName( p_finish ) );
+        final List<IEdge> l_altroute = m_pathalgorithm.getPath( p_via.get( p_via.size() - 1 ).to(), nodeByName( p_finish ) );
         l_altroute.forEach( e -> l_route.add( e ) );
         return l_route;
     }
@@ -212,6 +213,12 @@ public class CGraph implements IGraph
     public void createStoplights( final List<CStoplightpojo> p_pojo )
     {
         p_pojo.forEach( s -> m_edges.get( s.getLocation() ).addStoplight( new CStoplight( s ) ) );
+    }
+
+    public void delayVehicle( final CVehicle p_pod )
+    {
+        final IEdge l_edge = edgeByName( p_pod.location() );
+        if ( l_edge.stoplight().state().equals( ELightState.RED ) ) p_pod.setDelay( l_edge.stoplight().timeLeft() );
     }
 
     @Override

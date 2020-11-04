@@ -18,14 +18,34 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
-/**
- * interface for demand
- */
-public interface IInstance
+public class CSections implements ISections
 {
-    String from();
+    private final Double m_begining;
+    private final Double m_middle;
+    private final Double m_end;
 
-    String to();
+    public CSections( final Double p_begining, final Double p_midddle, final Double p_end )
+    {
+        m_begining = p_begining;
+        m_middle = p_midddle;
+        m_end = p_end;
+    }
 
-    Float howMany();
+    @Override
+    public Double begining()
+    {
+        return m_begining;
+    }
+
+    @Override
+    public Double middle()
+    {
+        return m_middle;
+    }
+
+    @Override
+    public Double end()
+    {
+        return m_end;
+    }
 }

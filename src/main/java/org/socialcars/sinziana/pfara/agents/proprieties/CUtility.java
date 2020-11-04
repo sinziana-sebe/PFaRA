@@ -28,8 +28,6 @@ public class CUtility implements IUtility
     private final Double m_rho;
     private final Double m_sigma;
 
-    private Double m_altcost;
-
     /**
      * ctor
      * @param p_pojo the pojo object
@@ -60,9 +58,8 @@ public class CUtility implements IUtility
         return m_sigma;
     }
 
-    //todo have two separate functions based on the evaluation type; money or time
     /**
-     * calculates the utility for a given route
+     * calculates the utility for a given route based on cost
      * @param p_route the route
      * @param p_speed the speed
      * @param p_unit the transformation unit
@@ -71,32 +68,43 @@ public class CUtility implements IUtility
      * @return the utility
      */
     @Override
-    public Double calculate( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref )
+    public Double calculateMakro( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref )
     {
         final AtomicDouble l_time = new AtomicDouble( 0.0 );
         final AtomicDouble l_length = new AtomicDouble( 0.0 );
+        final AtomicDouble l_cost = new AtomicDouble( 0.0 );
         p_route.forEach( e ->
         {
             //time
             l_time.getAndAdd( p_unit.distanceToBlocks( e.length().doubleValue() ).doubleValue() / p_unit.speedToBlocks( p_speed ).doubleValue( ) );
             //length
             l_length.getAndAdd( p_unit.distanceToBlocks( e.length().doubleValue() ).doubleValue() );
+            //cost
+            l_cost.getAndAdd( e.weight().doubleValue() );
         } );
-        //m_altcost = l_cost.get();
-        //l_cost.getAndAdd( -p_buyout );
+        l_cost.getAndAdd( -p_buyout );
         if ( ( l_length.get() > p_pref.lengthLimit() ) || ( l_time.get() > p_pref.timeLimit() ) )
             return null;
-        else return m_rho * l_length.get() + m_sigma * l_time.get();
+        else return m_rho * l_length.get() + m_sigma * l_cost.get();
     }
 
     @Override
-    public Double calculate( final Double p_routelength, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref )
+    public Double calculateMikro( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref )
     {
-        //m_altcost = l_cost.get();
-        //l_cost.getAndAdd( -p_buyout );
-        if ( ( p_routelength > p_pref.lengthLimit() ) || ( p_routelength / p_speed > p_pref.timeLimit() ) )
+        final AtomicDouble l_time = new AtomicDouble( 0.0 );
+        final AtomicDouble l_length = new AtomicDouble( 0.0 );
+
+        p_route.forEach( e ->
+        {
+            //time
+            l_time.getAndAdd( p_unit.distanceToBlocks( e.length().doubleValue() ).doubleValue() / p_unit.speedToBlocks( p_speed ).doubleValue( ) );
+            //length
+            l_length.getAndAdd( p_unit.distanceToBlocks( e.length().doubleValue() ).doubleValue() );
+
+        } );
+        if ( ( l_length.get() > p_pref.lengthLimit() ) || ( l_time.get() > p_pref.timeLimit() ) )
             return null;
-        else return m_rho * p_routelength + m_sigma * p_routelength / p_speed;
+        else return m_rho * l_length.get() + m_sigma * l_time.get();
     }
 
     /**
@@ -116,6 +124,4 @@ public class CUtility implements IUtility
         l_rv = l_rv / m_sigma;
         return Math.abs( l_rv );
     }
-
-
 }

@@ -22,7 +22,7 @@ import java.util.List;
 
 public interface INegotiationModule
 {
-    String receiveOffer( final IOffer p_offer, final Double p_oldroutelength, final Double p_speed ) throws IOException;
+    String receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute, final Double p_speed ) throws IOException;
 
     CInitialOffer sendOffer( final List<IEdge> p_route, final String p_name );
 

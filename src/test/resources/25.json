@@ -1919,9 +1919,13 @@
     },
     {
       "name" : "pod2",
+      "start": "0",
+      "finish": "1",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -1930,31 +1934,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "start": {
-        "name" : "0",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "1",
-        "coordinates": {
-
-          "lat": 100,
-          "lon": 0
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod3",
+      "start": "0",
+      "finish": "2",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -1963,34 +1953,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "DHL",
-      "start": {
-        "name" : "0",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "2",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 0
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod4",
+      "start": "0",
+      "finish": "7",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -1999,34 +1972,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "DHL",
-      "start": {
-        "name" : "0",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "7",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 100
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod5",
+      "start": "0",
+      "finish": "12",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2035,214 +1991,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "DHL",
-      "start": {
-        "name" : "0",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
-        "name" : "pod10",
-        "preference": {
-          "min-speed": 0.01,
-          "max-speed": 1,
-          "max-time": 100,
-          "max-length": 1000,
-          "max-cost": 20
-        },
-        "utility": {
-          "alpha": 0.2,
-          "beta": 0.8
-        },
-        "agent-type":"pod",
-        "capacity": 1,
-        "provider": "DPD",
-        "start": {
-          "name" : "20",
-          "coordinates": {
-
-            "lat": 0,
-            "lon": 400
-          }
-        },
-        "finish" : {
-          "name" : "24",
-          "coordinates": {
-
-            "lat": 400,
-            "lon": 400
-          }
-        },
-        "max-speed": 1,
-        "max-accel" : 0.5,
-        "max-decel": 0.3
-      },
-    {
-        "name" : "pod11",
-        "preference": {
-          "min-speed": 0.01,
-          "max-speed": 1,
-          "max-time": 100,
-          "max-length": 1000,
-          "max-cost": 20
-        },
-        "utility": {
-          "alpha": 0.2,
-          "beta": 0.8
-        },
-        "agent-type":"pod",
-        "capacity": 1,
-        "provider": "DPD",
-        "start": {
-          "name" : "20",
-          "coordinates": {
-
-            "lat": 0,
-            "lon": 400
-          }
-        },
-        "finish" : {
-          "name" : "23",
-          "coordinates": {
-
-            "lat": 300,
-            "lon": 400
-          }
-        },
-        "max-speed": 1,
-        "max-accel" : 0.5,
-        "max-decel": 0.3
-      },
-    {
-        "name" : "pod12",
-        "preference": {
-          "min-speed": 0.01,
-          "max-speed": 1,
-          "max-time": 100,
-          "max-length": 1000,
-          "max-cost": 20
-        },
-        "utility": {
-          "alpha": 0.2,
-          "beta": 0.8
-        },
-        "agent-type":"pod",
-        "capacity": 1,
-        "provider": "DPD",
-        "start": {
-          "name" : "20",
-          "coordinates": {
-
-            "lat": 0,
-            "lon": 400
-          }
-        },
-        "finish" : {
-          "name" : "22",
-          "coordinates": {
-
-            "lat": 200,
-            "lon": 400
-          }
-        },
-        "max-speed": 1,
-        "max-accel" : 0.5,
-        "max-decel": 0.3
-      },
-    {
-        "name" : "pod13",
-        "preference": {
-          "min-speed": 0.01,
-          "max-speed": 1,
-          "max-time": 100,
-          "max-length": 1000,
-          "max-cost": 20
-        },
-        "utility": {
-          "alpha": 0.2,
-          "beta": 0.8
-        },
-        "agent-type":"pod",
-        "capacity": 1,
-        "provider": "DPD",
-        "start": {
-          "name" : "20",
-          "coordinates": {
-
-            "lat": 0,
-            "lon": 400
-          }
-        },
-        "finish" : {
-          "name" : "21",
-          "coordinates": {
-
-            "lat": 400,
-            "lon": 100
-          }
-        },
-        "max-speed": 1,
-        "max-accel" : 0.5,
-        "max-decel": 0.3
-      },
-    {
-        "name" : "pod14",
-        "preference": {
-          "min-speed": 0.01,
-          "max-speed": 1,
-          "max-time": 100,
-          "max-length": 1000,
-          "max-cost": 20
-        },
-        "utility": {
-          "alpha": 0.2,
-          "beta": 0.8
-        },
-        "agent-type":"pod",
-        "capacity": 1,
-        "provider": "DPD",
-        "start": {
-          "name" : "20",
-          "coordinates": {
-
-            "lat": 0,
-            "lon": 400
-          }
-        },
-        "finish" : {
-          "name" : "19",
-          "coordinates": {
-
-            "lat": 300,
-            "lon": 300
-          }
-        },
-        "max-speed": 1,
-        "max-accel" : 0.5,
-        "max-decel": 0.3
-      },
-    {
-      "name" : "pod20",
+      "name" : "pod10",
+      "start": "20",
+      "finish": "24",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2251,34 +2010,112 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Hermes",
-      "start": {
-        "name" : "4",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 0
-        }
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod11",
+      "start": "20",
+      "finish": "23",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 100,
+        "max-length": 1000,
+        "max-cost": 20
       },
-      "finish" : {
-        "name" : "11",
-        "coordinates": {
-
-          "lat": 100,
-          "lon": 200
-        }
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
       },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod12",
+      "start": "20",
+      "finish": "22",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 100,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod13",
+      "start": "20",
+      "finish": "21",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 100,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod14",
+      "start": "20",
+      "finish": "19",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 100,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod20",
+      "start": "4",
+      "finish": "11",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 100,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod21",
+      "start": "4",
+      "finish": "1",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2287,34 +2124,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Hermes",
-      "start": {
-        "name" : "4",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "1",
-        "coordinates": {
-
-          "lat": 100,
-          "lon": 0
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod22",
+      "start": "4",
+      "finish": "13",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2323,34 +2143,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Hermes",
-      "start": {
-        "name" : "4",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "13",
-        "coordinates": {
-
-          "lat": 300,
-          "lon": 200
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod23",
+      "start": "4",
+      "finish": "21",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2359,34 +2162,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Hermes",
-      "start": {
-        "name" : "4",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "21",
-        "coordinates": {
-
-          "lat": 100,
-          "lon": 400
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod24",
+      "start": "4",
+      "finish": "15",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2395,34 +2181,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Hermes",
-      "start": {
-        "name" : "4",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 0
-        }
-      },
-      "finish" : {
-        "name" : "15",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 300
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod30",
+      "start": "12",
+      "finish": "18",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2431,34 +2200,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Ups",
-      "start": {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "finish" : {
-        "name" : "18",
-        "coordinates": {
-
-          "lat": 300,
-          "lon": 300
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod31",
+      "start": "12",
+      "finish": "10",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2467,34 +2219,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Ups",
-      "start": {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "finish" : {
-        "name" : "10",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 200
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod32",
+      "start": "12",
+      "finish": "3",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2503,34 +2238,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Ups",
-      "start": {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "finish" : {
-        "name" : "3",
-        "coordinates": {
-
-          "lat": 300,
-          "lon": 0
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod33",
+      "start": "12",
+      "finish": "23",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2539,34 +2257,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Ups",
-      "start": {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "finish" : {
-        "name" : "23",
-        "coordinates": {
-
-          "lat": 300,
-          "lon": 400
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod34",
+      "start": "12",
+      "finish": "5",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2575,34 +2276,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "Ups",
-      "start": {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "finish" : {
-        "name" : "5",
-        "coordinates": {
-
-          "lat": 0,
-          "lon": 100
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod40",
+      "start": "24",
+      "finish": "12",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2611,34 +2295,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "TNT",
-      "start": {
-        "name" : "24",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 400
-        }
-      },
-      "finish" : {
-        "name" : "12",
-        "coordinates": {
-
-          "lat": 200,
-          "lon": 200
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod41",
+      "start": "24",
+      "finish": "21",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2647,34 +2314,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "TNT",
-      "start": {
-        "name" : "24",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 400
-        }
-      },
-      "finish" : {
-        "name" : "21",
-        "coordinates": {
-
-          "lat": 100,
-          "lon": 400
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod42",
+      "start": "24",
+      "finish": "23",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2683,34 +2333,17 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "TNT",
-      "start": {
-        "name" : "24",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 400
-        }
-      },
-      "finish" : {
-        "name" : "23",
-        "coordinates": {
-
-          "lat": 300,
-          "lon": 400
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod43",
+      "start": "24",
+      "finish": "4",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
         "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
@@ -2719,35 +2352,18 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "TNT",
-      "start": {
-        "name" : "24",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 400
-        }
-      },
-      "finish" : {
-        "name" : "4",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 0
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     },
     {
       "name" : "pod44",
+      "start": "24",
+      "finish": "6",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
-        "max-time": 10000,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 100,
         "max-length": 1000,
         "max-cost": 20
       },
@@ -2755,28 +2371,7 @@
         "alpha": 0.2,
         "beta": 0.8
       },
-      "agent-type":"pod",
-      "capacity": 1,
-      "provider": "TNT",
-      "start": {
-        "name" : "24",
-        "coordinates": {
-
-          "lat": 400,
-          "lon": 400
-        }
-      },
-      "finish" : {
-        "name" : "6",
-        "coordinates": {
-
-          "lat": 100,
-          "lon": 100
-        }
-      },
-      "max-speed": 1,
-      "max-accel" : 0.5,
-      "max-decel": 0.3
+      "agent-type": "vehicle"
     }
   ],
   "bikes":[
@@ -2801,68 +2396,6 @@
       "max-speed": 0,
       "max-accel" : 0,
       "max-decel": 0
-    }
-  ],
-  "vehicles": [
-    {
-      "name": "vehicle1",
-      "filename": "",
-      "agent-type": "vehicle",
-      "start": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "max-speed": 0,
-      "max-accel" : 0,
-      "max-decel": 0
-    }
-  ],
-  "humans":[
-    {
-      "name": "human1",
-      "filename": "",
-      "agent-type": "human",
-      "start": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "max-speed": 0,
-      "max-accel" : 0,
-      "max-decel": 0
-    }
-  ],
-  "clients":[
-    {
-      "name":"client1",
-      "filename":"",
-      "agent-type":"client",
-      "location":{
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      }
     }
   ]
 }

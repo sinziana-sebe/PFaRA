@@ -26,6 +26,7 @@ public class CEdge implements IEdge
     private final INode m_to;
     private final Double m_weight;
     private CStoplight m_stoplight;
+    private CSections m_sections;
     private CTraffic m_traffic;
 
     /**
@@ -111,6 +112,18 @@ public class CEdge implements IEdge
     public CStoplight stoplight()
     {
         return m_stoplight;
+    }
+
+    @Override
+    public void addSections( final CSections p_sections )
+    {
+        m_sections = p_sections;
+    }
+
+    @Override
+    public CSections sections()
+    {
+        return m_sections;
     }
 
     /**
