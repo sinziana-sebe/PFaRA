@@ -23,8 +23,6 @@ import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
 import org.socialcars.sinziana.pfara.environment.CBackground;
 import org.socialcars.sinziana.pfara.environment.CGraph;
-import org.socialcars.sinziana.pfara.environment.CSections;
-import org.socialcars.sinziana.pfara.environment.CStoplight;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 import org.socialcars.sinziana.pfara.functionality.CEdgeEnd;
 import org.socialcars.sinziana.pfara.functionality.CPreGrouping;
@@ -43,15 +41,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class CBenchmarkMikro
+public class COptimisationMakro
 {
-    private static final Logger LOGGER = Logger.getLogger( CBenchmarkMikro.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( CBenchmarkMakro.class.getName() );
 
     private final CInputpojo m_input;
+    private final CGraph m_env;
     private final CReadBackground m_readbackground;
     private final HashMap<IEdge, CBackground> m_backinfo;
-    private final CGraph m_env;
-    private HashMap<CStoplight, String> m_stoplights = new HashMap<>();
 
     private final CUnits m_unit;
     private Integer m_time;
@@ -65,9 +62,11 @@ public class CBenchmarkMikro
     private CPreGrouping m_grouping;
     private CEdgeEnd m_edgeend;
 
+    private final Double m_omega;
 
-    public CBenchmarkMikro( final String p_infile, final String p_backfile, final String p_outfile,
-                           final Integer p_time, final Double p_space ) throws IOException
+
+    public COptimisationMakro( final String p_infile, final String p_backfile, final String p_outfile,
+                            final Integer p_time, final Double p_space, final Double p_omega ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
@@ -77,70 +76,26 @@ public class CBenchmarkMikro
         m_env = new CGraph( m_input.getGraph() );
         m_readbackground = new CReadBackground( m_env );
         m_backinfo = m_readbackground.getBackground( p_backfile );
-        m_env.createStoplights( m_input.getStoplights() );
-        m_env.edges().forEach( n ->
-        {
-            n.stoplight().setLogger( LOGGER );
-            m_stoplights.put( n.stoplight(), "Incomplete" );
-        } );
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
         m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, true, 1.0 ) ) );
+        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, p_omega ) ) );
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
         } );
-        syncLights();
-        addSections();
-    }
-
-    private void addSections()
-    {
-        m_env.edges().forEach( e ->
-        {
-            final Double l_beg = 0.1 * e.length();
-            final Double l_end = 0.3 * e.length();
-            final CSections l_section = new CSections( l_beg, e.length() - l_beg - l_end, l_end );
-            e.addSections( l_section );
-        } );
-    }
-
-    private void syncLights()
-    {
-        while ( m_stoplights.containsValue( "Incomplete" ) )
-        {
-            m_stoplights.keySet().forEach( l ->
-            {
-                if ( l.startTime() == m_time )
-                {
-                    l.start();
-                    m_stoplights.put( l, "Complete" );
-                }
-                if ( m_stoplights.get( l ).equals( "Complete" ) ) l.update();
-            } );
-            LOGGER.log( Level.INFO, "Time is " + m_time );
-            m_time++;
-        }
-    }
-
-    private void switchmovement( final CVehicle p_pod, final IEdge p_edge )
-    {
-        if ( p_pod.position().doubleValue() <= p_edge.sections().begining() ) p_pod.moveMikro();
-        else if ( p_pod.position().doubleValue() <= p_edge.sections().begining() + p_edge.sections().middle() ) p_pod.moveMakro( m_backinfo.get( p_edge ).getmaxspeed() );
-        else p_pod.brake();
+        m_omega = p_omega;
     }
 
     public void run()
     {
-        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, false, 1.0 );
+        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
         while ( m_status.containsValue( "Incomplete" ) )
         {
             LOGGER.log( Level.INFO, "Time is " + m_time );
             move();
-            m_env.edges().forEach( n -> n.stoplight().update() );
             m_time++;
         }
     }
@@ -160,15 +115,10 @@ public class CBenchmarkMikro
             else if ( p.getDelay() <= 0 )
             {
                 final IEdge l_edge = m_routes.get( p ).iterator().next();
-                if ( p.position().equals( 0.0 ) )
-                {
-                    p.departed( l_edge, m_time );
-                    p.moveMikro();
-                }
-                if ( p.position().doubleValue() < l_edge.length() ) switchmovement( p, l_edge );
+                if ( p.position().equals( 0.0 ) ) p.departed( l_edge, m_time );
+                if ( p.position().doubleValue() < l_edge.length() ) p.moveMakro( m_backinfo.get( l_edge ).getmaxspeed() );
                 else
                 {
-                    m_env.delayVehicle( p );
                     p.arrived( l_edge, m_time );
                     m_countingmap.put( l_edge, m_countingmap.getOrDefault( l_edge, 0 ) + 1 );
                     m_finalroute.get( p ).add( l_edge );
@@ -181,7 +131,7 @@ public class CBenchmarkMikro
         if ( l_trig.get() )
         {
             m_edgeend = new CEdgeEnd( m_vehicles, m_routes, m_time, m_env );
-            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, false, 1.0 );
+            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
             m_edgeend.checkLoners();
         }
     }

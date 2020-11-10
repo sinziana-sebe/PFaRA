@@ -24,6 +24,12 @@ public class CSections implements ISections
     private final Double m_middle;
     private final Double m_end;
 
+    /**
+     * ctor
+     * @param p_begining begining
+     * @param p_midddle middle
+     * @param p_end end
+     */
     public CSections( final Double p_begining, final Double p_midddle, final Double p_end )
     {
         m_begining = p_begining;
@@ -31,18 +37,31 @@ public class CSections implements ISections
         m_end = p_end;
     }
 
+
+    /**
+     * the begining portion of the edge
+     * @return the length
+     */
     @Override
     public Double begining()
     {
         return m_begining;
     }
 
+    /**
+     * the middle portion of the edge
+     * @return the length
+     */
     @Override
     public Double middle()
     {
         return m_middle;
     }
 
+    /**
+     * the end portion of the edge
+     * @return the length
+     */
     @Override
     public Double end()
     {

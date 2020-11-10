@@ -43,7 +43,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class CBenchmarkMikro
+public class COptimisationMikro
 {
     private static final Logger LOGGER = Logger.getLogger( CBenchmarkMikro.class.getName() );
 
@@ -65,9 +65,11 @@ public class CBenchmarkMikro
     private CPreGrouping m_grouping;
     private CEdgeEnd m_edgeend;
 
+    private final Double m_omega;
 
-    public CBenchmarkMikro( final String p_infile, final String p_backfile, final String p_outfile,
-                           final Integer p_time, final Double p_space ) throws IOException
+
+    public COptimisationMikro( final String p_infile, final String p_backfile, final String p_outfile,
+                            final Integer p_time, final Double p_space, final Double p_omega ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
@@ -85,14 +87,16 @@ public class CBenchmarkMikro
         } );
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
+        m_omega = p_omega;
         m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, true, 1.0 ) ) );
+        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, true, m_omega ) ) );
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
         } );
+
         syncLights();
         addSections();
     }
@@ -135,7 +139,7 @@ public class CBenchmarkMikro
 
     public void run()
     {
-        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, false, 1.0 );
+        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, true, m_omega );
         while ( m_status.containsValue( "Incomplete" ) )
         {
             LOGGER.log( Level.INFO, "Time is " + m_time );
@@ -181,7 +185,7 @@ public class CBenchmarkMikro
         if ( l_trig.get() )
         {
             m_edgeend = new CEdgeEnd( m_vehicles, m_routes, m_time, m_env );
-            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, false, 1.0 );
+            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, true, 3.0 );
             m_edgeend.checkLoners();
         }
     }

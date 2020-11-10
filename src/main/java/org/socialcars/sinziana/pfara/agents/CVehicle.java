@@ -81,6 +81,7 @@ public class CVehicle implements IVehicle
     private IProtocol m_protocol;
 
     private final Boolean m_mikro;
+    private final Double m_omega;
 
 
 
@@ -92,7 +93,7 @@ public class CVehicle implements IVehicle
      * @param p_unit the unit object
      * @param p_mikro movement type
      */
-    public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final Logger p_log, final CUnits p_unit, final Boolean p_mikro )
+    public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final Logger p_log, final CUnits p_unit, final Boolean p_mikro, final Double p_omega )
     {
         s_logger = p_log;
         m_name = p_pojo.getName();
@@ -124,6 +125,7 @@ public class CVehicle implements IVehicle
         m_negevents = new ArrayList<>();
 
         m_mikro = p_mikro;
+        m_omega = p_omega;
     }
 
     /**
@@ -266,8 +268,9 @@ public class CVehicle implements IVehicle
         m_routelength += p_position.length();
         if ( m_companions.size() > 0 )
         {
-            m_cost = m_cost + ( p_position.weight().doubleValue() + ( p_position.weight().doubleValue() / 3 * ( m_companions.size() + 1 ) ) ) / ( m_companions.size() + 1 );
-            m_preference.reduceMaxCost( ( p_position.weight().doubleValue() + ( p_position.weight().doubleValue() / 3 * ( m_companions.size() + 1 ) ) )
+            m_cost = m_cost + ( p_position.weight().doubleValue() + ( p_position.weight().doubleValue() / m_omega * ( m_companions.size() + 1 ) ) )
+                    / ( m_companions.size() + 1 );
+            m_preference.reduceMaxCost( ( p_position.weight().doubleValue() + ( p_position.weight().doubleValue() / m_omega * ( m_companions.size() + 1 ) ) )
                     / ( m_companions.size() + 1 ) );
         }
         else

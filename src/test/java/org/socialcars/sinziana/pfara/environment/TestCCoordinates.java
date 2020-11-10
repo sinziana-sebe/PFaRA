@@ -37,7 +37,7 @@ public class TestCCoordinates
     @Before
     public void init() throws IOException
     {
-        m_input = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
+        m_input = new ObjectMapper().readValue( new File( "src/test/resources/negmid.json" ), CInputpojo.class );
         m_coordinates = new CCoordinates( m_input.getGraph().getNodes().iterator().next().getCoordinates() );
     }
 

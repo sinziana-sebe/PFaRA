@@ -1,10 +1,4 @@
 {
-  "configuration": {
-    "number of waiting clients": 1,
-    "time unit": "second",
-    "speed unit": "m/s",
-    "length unit": "meter"
-  },
   "graph": {
     "zones":26,
     "nodes": [
@@ -14028,169 +14022,44 @@
       "start": 5
     }
   ],
-  "providers": [
+  "vehicles": [
     {
-      "name": "DHL",
-      "filename": "",
-      "agent-type": "provider",
-      "colour": "yellow",
-      "location": {
-        "name": "272",
-        "coordinates": {
-          "lat": 1.2471000000,
-          "lon": 1.1862000000
-        }
+      "name": "blue",
+      "start": "312",
+      "finish": "308",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000000,
+        "max-length": 1000000000,
+        "max-cost": 20000000
       },
-      "depots": [
-      ],
-      "available-pods": 2,
-      "pods": [
-        {
-          "name": "blue",
-          "preference": {
-            "min-speed": 0.01,
-            "max-speed": 1,
-            "max-time": 1000000000,
-            "max-length": 1000000000,
-            "max-cost": 20000000
-          },
-          "utility": {
-            "alpha": 0.2,
-            "beta": 0.8
-          },
-          "agent-type": "pod",
-          "capacity": 1,
-          "provider": "DHL",
-          "start": {
-            "name": "312",
-            "coordinates": {
-              "lat": 2.1779100000,
-              "lon": 1.2110600000
-            }
-          },
-          "finish": {
-            "name": "308",
-            "coordinates": {
-              "lat": 1.9492500000,
-              "lon": 1.2154100000
-            }
-          },
-          "max-speed": 1,
-          "max-accel": 0.5,
-          "max-decel": 0.3
-        },
-        {
-          "name": "red",
-          "preference": {
-            "min-speed": 0.01,
-            "max-speed": 1,
-            "max-time": 1000000,
-            "max-length": 10000000,
-            "max-cost": 1530
-          },
-          "utility": {
-            "alpha": 0.2,
-            "beta": 0.8
-          },
-          "agent-type": "pod",
-          "capacity": 1,
-          "provider": "DHL",
-          "start": {
-            "name": "312",
-            "coordinates": {
-              "lat": 2.1779100000,
-              "lon": 1.2110600000
-            }
-          },
-          "finish": {
-            "name": "311",
-            "coordinates": {
-              "lat": 1.9970900000,
-              "lon": 1.2241000000
-            }
-          },
-          "max-speed": 1,
-          "max-accel": 0.5,
-          "max-decel": 0.3
-        }
-      ],
-      "maximum-customers": 1,
-      "max-out-pods/time": 1,
-      "client-selection": {
-        "name": "normal",
-        "parameters": [
-          {
-            "name": "sigma",
-            "value": 1
-          },
-          {
-            "name": "mu",
-            "value": 1
-          }
-        ]
-      }
-    }
-  ],
-  "bikes":[
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
     {
-      "name": "bike1",
-      "filename": "",
-      "agent-type": "bike",
-      "start": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
+      "name": "red",
+      "start": "312",
+      "finish": "311",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
       },
-      "finish": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
       },
-      "max-speed": 0,
-      "max-accel" : 0,
-      "max-decel": 0
-    }
-  ],
-  "humans":[
-    {
-      "name": "human1",
-      "filename": "",
-      "agent-type": "human",
-      "start": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "max-speed": 0,
-      "max-accel" : 0,
-      "max-decel": 0
-    }
-  ],
-  "clients":[
-    {
-      "name":"client1",
-      "filename":"",
-      "agent-type":"client",
-      "location":{
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      }
+      "agent-type": "vehicle"
     }
   ]
 }

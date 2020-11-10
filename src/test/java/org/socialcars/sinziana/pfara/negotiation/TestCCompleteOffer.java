@@ -47,7 +47,7 @@ public class TestCCompleteOffer
         final Set<CVehiclepojo> l_pod = new HashSet<>();
         final ArrayList<CVehicle> l_pods = new ArrayList<>();
         new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class ).getVehicles().forEach( p -> l_pod.add( p ) );
-        l_pod.forEach( p -> l_pods.add( new CVehicle( p, 0, null, l_unit, false ) ) );
+        l_pod.forEach( p -> l_pods.add( new CVehicle( p, 0, null, l_unit, false, 1.0 ) ) );
         final CInitialOffer l_offer = new CInitialOffer( "01", 5.0, Collections.emptyList() );
 
         m_offer = new CCompleteOffer( l_pods.get( 1 ), l_offer, l_pods.get( 0 ), null  );

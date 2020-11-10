@@ -23,19 +23,19 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestCBenchmarkMakro
+public class TestCOptimiserMikro
 {
-    private CBenchmarkMakro m_benchmakro;
+    private COptimisationMikro m_optmikro;
 
     @Before
     public void init() throws IOException
     {
-        m_benchmakro = new CBenchmarkMakro( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "TiergartenBenchmarkMakro", 1, 0.1 );
+        m_optmikro = new COptimisationMikro( "src/test/resources/25.json", "src/test/resources/25_info.json", "25OptMikro", 1, 10.0, 3.0 );
     }
 
     @Test
     public void run()
     {
-        m_benchmakro.run();
+        m_optmikro.run();
     }
 }

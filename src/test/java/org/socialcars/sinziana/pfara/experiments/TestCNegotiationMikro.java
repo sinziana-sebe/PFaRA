@@ -30,7 +30,7 @@ public class TestCNegotiationMikro
     @Before
     public void init() throws IOException
     {
-        m_negmikro = new CNegotiationMikro( "25NegMikro", "src/test/resources/25.json", 1, 10, 3.0, true, 10 );
+        m_negmikro = new CNegotiationMikro( "src/test/resources/25.json", "src/test/resources/25_info.json", "25NegMikro", 1, 10.0, 3.0, true, 10 );
     }
 
     @Test

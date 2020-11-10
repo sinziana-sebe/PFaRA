@@ -47,7 +47,7 @@ public class TestCInput
     @Before
     public final void init() throws IOException
     {
-        m_input = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
+        m_input = new ObjectMapper().readValue( new File( "src/test/resources/tiergarten.json" ), CInputpojo.class );
     }
 
     /**
@@ -75,6 +75,8 @@ public class TestCInput
         final CGraphpojo l_graph = m_input.getGraph();
         Assert.assertTrue( l_graph.equals( l_graph ) );
         Assert.assertTrue( !l_graph.toString().isEmpty() );
+        Assert.assertNotNull( l_graph.getZones() );
+        Assert.assertTrue( l_graph.getZones() == 26 );
         Assert.assertTrue( l_graph.getAdditionalProperties().size() == 0 );
         l_graph.setAdditionalProperty( "extra1", 1 );
         Assert.assertTrue( l_graph.getAdditionalProperties().size() == 1 );
@@ -91,10 +93,10 @@ public class TestCInput
         final CGraphpojo l_graph = m_input.getGraph();
         Assert.assertNotNull( l_graph.getNodes() );
         final Set<CNodepojo> l_nodes = l_graph.getNodes();
-        Assert.assertTrue( l_nodes.size() == 2 );
+        Assert.assertTrue( l_nodes.size() == 361 );
         l_nodes.forEach( j ->
         {
-            Assert.assertTrue( j.getName().contains( "node" ) );
+            Assert.assertTrue( j.getName().contains( "" ) );
             final CCoordinatespojo l_coo = j.getCoordinates();
             Assert.assertTrue( l_coo.equals( l_coo ) );
             Assert.assertTrue( l_coo.getAdditionalProperties().size() == 0 );
@@ -119,18 +121,18 @@ public class TestCInput
         Assert.assertNotNull( m_input.getGraph() );
         final CGraphpojo l_graph = m_input.getGraph();
         Assert.assertNotNull( l_graph.getEdges() );
-        Assert.assertTrue( l_graph.getEdges().size() == 1 );
+        Assert.assertTrue( l_graph.getEdges().size() == 765 );
         final Set<CEdgepojo> l_edges = l_graph.getEdges();
         l_edges.forEach( e ->
         {
             Assert.assertTrue( e.equals( e ) );
+            Assert.assertTrue( e.getName().contains( "edge" ) );
+            Assert.assertTrue( e.getFrom().contains( "" ) );
+            Assert.assertTrue( e.getTo().contains( "" ) );
+            Assert.assertTrue( e.getWeight() >= 0 );
             Assert.assertTrue( e.getAdditionalProperties().size() == 0 );
             e.setAdditionalProperty( "extra3", 1 );
             Assert.assertTrue( e.getAdditionalProperties().size() == 1 );
-            Assert.assertTrue( e.getName().contains( "edge" ) );
-            Assert.assertTrue( e.getFrom().contains( "node" ) );
-            Assert.assertTrue( e.getTo().contains( "node" ) );
-            Assert.assertTrue( e.getWeight() == 10 );
         } );
     }
 

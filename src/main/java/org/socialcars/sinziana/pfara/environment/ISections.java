@@ -20,9 +20,21 @@ package org.socialcars.sinziana.pfara.environment;
 
 public interface ISections
 {
+    /**
+     * the begining portion of the edge
+     * @return the length
+     */
     Double begining();
 
+    /**
+     * the middle portion of the edge
+     * @return the length
+     */
     Double middle();
 
+    /**
+     * the end portion of the edge
+     * @return the length
+     */
     Double end();
 }

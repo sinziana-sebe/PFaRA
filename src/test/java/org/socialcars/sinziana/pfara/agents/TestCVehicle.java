@@ -48,14 +48,14 @@ public class TestCVehicle
     @Before
     public void init() throws IOException
     {
-        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
+        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/tiergarten.json" ), CInputpojo.class );
         m_time = 0;
-        m_unit = new CUnits( 1, 10 );
+        m_unit = new CUnits( 1, 0.1 );
         m_graph = new CGraph( l_configuration.getGraph() );
         final FileHandler l_handler = new FileHandler( "MovementOutput", true );
         LOGGER.addHandler( l_handler );
         l_handler.setFormatter( new SimpleFormatter() );
-        m_veh = new CVehicle( l_configuration.getVehicles().get( 0 ), 0, LOGGER, m_unit, false );
+        m_veh = new CVehicle( l_configuration.getVehicles().get( 1 ), 0, LOGGER, m_unit, false, 1.0 );
     }
 
     /**
@@ -75,7 +75,7 @@ public class TestCVehicle
     public void testLocation()
     {
         Assume.assumeNotNull( m_veh );
-        Assert.assertTrue( m_veh.location().contentEquals( "node0" ) );
+        Assert.assertTrue( m_veh.location().contentEquals( "312" ) );
     }
 
     /**
@@ -85,7 +85,7 @@ public class TestCVehicle
     public void testOrigin()
     {
         Assume.assumeNotNull( m_veh );
-        Assert.assertTrue( m_veh.origin().contentEquals( "node0" ) );
+        Assert.assertTrue( m_veh.origin().contentEquals( "312" ) );
     }
 
     /**
@@ -95,7 +95,7 @@ public class TestCVehicle
     public void testDestination()
     {
         Assume.assumeNotNull( m_veh );
-        Assert.assertTrue( m_veh.destination().contentEquals( "node1" ) );
+        Assert.assertTrue( m_veh.destination().contentEquals( "311" ) );
     }
 
     /**
@@ -171,7 +171,7 @@ public class TestCVehicle
     {
         Assume.assumeNotNull( m_veh );
         m_veh.arrived( m_graph.edgeByName( "edge0-1" ), 10 );
-        Assert.assertTrue( m_veh.location().contentEquals( "node1" ) );
+        Assert.assertTrue( m_veh.location().contentEquals( "1" ) );
         Assert.assertTrue( m_veh.position().equals( 0.0 ) );
         Assert.assertTrue( m_veh.events().size() == 2 );
     }
@@ -183,7 +183,7 @@ public class TestCVehicle
     public void testCompleted()
     {
         Assume.assumeNotNull( m_veh );
-        m_veh.completed( "node1", 10 );
+        m_veh.completed( "1", 10 );
         Assert.assertTrue( m_veh.events().size() == 2 );
     }
 
@@ -192,7 +192,7 @@ public class TestCVehicle
     {
         Assume.assumeNotNull( m_veh );
         Assert.assertFalse( m_veh.platooning() );
-        m_veh.formed( "node0", 0, new ArrayList<>() );
+        m_veh.formed( "0", 0, new ArrayList<>() );
         Assert.assertTrue( m_veh.platooning() );
         Assert.assertTrue( m_veh.events().size() == 2 );
     }

@@ -63,8 +63,8 @@ public class CBenchmarkMakro
     private CEdgeEnd m_edgeend;
 
 
-    public CBenchmarkMakro( final String p_outfile, final String p_infile, final String p_backfile,
-                           final Integer p_time, final Integer p_space ) throws IOException
+    public CBenchmarkMakro( final String p_infile, final String p_backfile, final String p_outfile,
+                            final Integer p_time, final Double p_space ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
@@ -77,7 +77,7 @@ public class CBenchmarkMakro
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
         m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false ) ) );
+        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, 1.0 ) ) );
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );

@@ -114,12 +114,20 @@ public class CEdge implements IEdge
         return m_stoplight;
     }
 
+    /**
+     * adds sections to the edge
+     * @param p_sections the section lengths
+     */
     @Override
     public void addSections( final CSections p_sections )
     {
         m_sections = p_sections;
     }
 
+    /**
+     * gives the edge sections
+     * @return the sections
+     */
     @Override
     public CSections sections()
     {

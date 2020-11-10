@@ -38,7 +38,7 @@ public class TestCUtility
     @Before
     public void init() throws IOException
     {
-        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
+        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/negmid.json" ), CInputpojo.class );
         l_configuration.getVehicles().forEach( v -> m_utility = new CUtility( v.getUtility() ) );
     }
 

@@ -1,0 +1,257 @@
+{
+  "graph":
+  {
+    "zones": 8,
+    "nodes": [
+      {
+        "name" : "0",
+        "coordinates": {
+          "lat": 0,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "1",
+        "coordinates": {
+
+          "lat": 0,
+          "lon": 10
+        }
+      },
+      {
+        "name" : "2",
+        "coordinates": {
+          "lat": 10,
+          "lon": 10
+        }
+      },
+      {
+        "name": "3",
+        "coordinates": {
+          "lat": 10,
+          "lon": 0
+        }
+      },
+      {
+        "name": "4",
+        "coordinates": {
+          "lat": 15,
+          "lon": -8.7
+        }
+      },
+      {
+        "name": "5",
+        "coordinates": {
+          "lat": 20,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "6",
+        "coordinates": {
+          "lat": 25,
+          "lon": 8.7
+        }
+      },
+      {
+        "name": "7",
+        "coordinates": {
+          "lat": 30,
+          "lon": 0
+        }
+      }
+    ],
+    "edges": [
+      {
+        "name": "edge0-1",
+        "from": "0",
+        "to": "1",
+        "weight" : 1
+      },
+      {
+        "name": "edge1-2",
+        "from": "1",
+        "to": "2",
+        "weight" : 1
+      },
+      {
+        "name": "edge2-3",
+        "from": "2",
+        "to": "3",
+        "weight" : 1
+      },
+      {
+        "name": "edge0-3",
+        "from": "0",
+        "to": "3",
+        "weight" : 4
+      },
+      {
+        "name": "edge1-3",
+        "from": "1",
+        "to": "3",
+        "weight" : 2
+      },
+      {
+        "name": "edge0-2",
+        "from": "0",
+        "to": "2",
+        "weight" : 2
+      },
+      {
+        "name": "edge3-4",
+        "from": "3",
+        "to": "4",
+        "weight" : 2
+      },
+      {
+        "name": "edge3-5",
+        "from": "3",
+        "to": "5",
+        "weight" : 3
+      },
+      {
+        "name": "edge4-5",
+        "from": "4",
+        "to": "5",
+        "weight" : 1
+      },
+      {
+        "name": "edge5-7",
+        "from": "5",
+        "to": "7",
+        "weight" : 7
+      },
+      {
+        "name": "edge6-7",
+        "from": "6",
+        "to": "7",
+        "weight" : 0
+      },
+      {
+        "name": "edge5-6",
+        "from": "5",
+        "to": "6",
+        "weight" : 9
+      }
+    ]
+  },
+  "stoplights": [
+    {
+      "location": "edge0-1",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge1-2",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge2-3",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge0-3",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge1-3",
+      "red": 5,
+      "green": 5,
+      "start": 5
+    },
+    {
+      "location": "edge0-2",
+      "red": 5,
+      "green": 5,
+      "start": 5
+    },
+    {
+      "location": "edge3-4",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge3-5",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge4-5",
+      "red": 5,
+      "green": 5,
+      "start": 5
+    },
+    {
+      "location": "edge5-7",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge5-6",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge6-7",
+      "red": 5,
+      "green": 5,
+      "start": 5
+    }
+  ],
+  "vehicles": [
+    {
+        "name": "red",
+        "start": "0",
+        "finish": "6",
+        "preference":
+        {
+          "min-speed": 0.1,
+          "max-speed": 1.0,
+          "max-acceleration": 0.9,
+          "max-deceleration": 0.7,
+          "max-time": 100,
+          "max-length": 100,
+          "max-cost": 10
+        },
+      "utility":
+      {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+      },
+      {
+        "name": "blue",
+        "start": "0",
+        "finish": "7",
+        "preference":
+        {
+          "min-speed": 0.1,
+          "max-speed": 1.0,
+          "max-acceleration": 0.9,
+          "max-deceleration": 0.7,
+          "max-time": 100,
+          "max-length": 100,
+          "max-cost": 10
+        },
+        "utility":
+        {
+          "alpha": 0.2,
+          "beta": 0.8
+        },
+        "agent-type": "vehicle"
+      }
+    ]
+}

@@ -23,19 +23,19 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestCBenchmarkMakro
+public class TestCScenarioGeneration
 {
-    private CBenchmarkMakro m_benchmakro;
+    private CScenarioGeneration m_scengen;
 
     @Before
     public void init() throws IOException
     {
-        m_benchmakro = new CBenchmarkMakro( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "TiergartenBenchmarkMakro", 1, 0.1 );
+        m_scengen = new CScenarioGeneration( "src/test/resources/negmid_demand.json", "src/test/resources/negmid.json", 10.0, 1 );
     }
 
     @Test
-    public void run()
+    public void  generate() throws IOException
     {
-        m_benchmakro.run();
+        m_scengen.generateDensityFlow( 1, "negmid_info.json" );
     }
 }

@@ -71,8 +71,8 @@ public class CNegotiationMakro
     private final Boolean m_ao;
     private final Integer m_deadline;
 
-    public CNegotiationMakro( final String p_outfile, final String p_infile, final String p_backfile,
-                              final Integer p_time, final Integer p_space, final Double p_omega, final Boolean p_ao, final Integer p_rounds ) throws IOException
+    public CNegotiationMakro( final String p_infile, final String p_backfile, final String p_outfile,
+                              final Integer p_time, final Double p_space, final Double p_omega, final Boolean p_ao, final Integer p_rounds ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
@@ -85,7 +85,7 @@ public class CNegotiationMakro
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
         m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false ) ) );
+        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, p_omega ) ) );
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );

@@ -312,8 +312,8 @@ public class CPreGrouping
             final AtomicDouble l_cost = new AtomicDouble( 0.0 );
             p_platroutes.get( p ).forEach( e ->
             {
-                if ( p_flaggedroute.contains( e ) ) l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / 3 * p_np.get( e ) ) ) / p_np.get( e ) );
-                else  l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / 3 * ( p_np.get( e ) - 1 )  ) ) / ( p_np.get( e ) - 1 ) );
+                if ( p_flaggedroute.contains( e ) ) l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / m_omega * p_np.get( e ) ) ) / p_np.get( e ) );
+                else  l_cost.getAndAdd( ( e.weight().doubleValue() + ( e.weight().doubleValue() / m_omega * ( p_np.get( e ) - 1 )  ) ) / ( p_np.get( e ) - 1 ) );
             } );
             if ( l_cost.get() > p.preferences().maxCost() ) l_trig.set( false );
         } );

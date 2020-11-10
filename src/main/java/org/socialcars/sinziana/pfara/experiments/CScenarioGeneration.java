@@ -51,8 +51,7 @@ public class CScenarioGeneration
 
     private final CUnits m_unit;
 
-    CScenarioGeneration( final String p_demand, final String p_graph, final Double p_space,
-                         final Double p_time, final Integer p_ratio, final String p_endfile ) throws IOException
+    CScenarioGeneration( final String p_demand, final String p_graph, final Double p_space, final Integer p_time ) throws IOException
     {
         m_input = new ObjectMapper().readValue( new File( p_graph ), CInputpojo.class );
         m_inputd = new ObjectMapper().readValue( new File( p_demand ), CDemandspojo.class );
@@ -65,7 +64,6 @@ public class CScenarioGeneration
             m_demand.add( l_new );
         } );
 
-        generateDensityFlow( p_ratio, p_endfile );
     }
 
     public void generateDensityFlow( final Integer p_ratio, final String p_endfile ) throws IOException

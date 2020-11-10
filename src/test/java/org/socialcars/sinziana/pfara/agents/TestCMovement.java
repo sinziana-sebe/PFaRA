@@ -55,11 +55,11 @@ public class TestCMovement
         LOGGER.addHandler( l_handler );
         l_handler.setFormatter( new SimpleFormatter() );
         m_unit = new CUnits( 1, 1 );
-        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
+        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/negmid.json" ), CInputpojo.class );
         final List<CVehiclepojo> l_pods = l_configuration.getVehicles();
         m_env = new CGraph( l_configuration.getGraph() );
         m_time = 0;
-        l_pods.forEach( p -> m_pods.add( new CVehicle( p, 0, LOGGER, m_unit, false ) ) );
+        l_pods.forEach( p -> m_pods.add( new CVehicle( p, 0, LOGGER, m_unit, false, 1.0 ) ) );
         m_routes = new HashMap<>();
     }
 

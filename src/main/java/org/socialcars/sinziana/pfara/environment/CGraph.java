@@ -71,9 +71,9 @@ public class CGraph implements IGraph
         if ( p_pojo.getZones() != 0 )
         {
             final AtomicInteger l_count = new AtomicInteger();
-            l_count.set( 1 );
+            l_count.set( 0 );
             final int l_npz =  m_nodes.size() / p_pojo.getZones();
-            IntStream.range( 1, p_pojo.getZones() + 1 ).boxed().forEach( i ->
+            IntStream.range( 0, p_pojo.getZones() ).boxed().forEach( i ->
             {
                 final ArrayList<INode> l_mappy = new ArrayList<>();
                 IntStream.range( l_count.get(), l_count.get() + l_npz ).boxed().forEach( j -> l_mappy.add( m_nodes.get( j.toString() ) ) );
@@ -215,12 +215,21 @@ public class CGraph implements IGraph
         p_pojo.forEach( s -> m_edges.get( s.getLocation() ).addStoplight( new CStoplight( s ) ) );
     }
 
+    /**
+     * delays the vehicle based on the time left of a red light cycle
+     * @param p_pod the vehicle
+     */
     public void delayVehicle( final CVehicle p_pod )
     {
         final IEdge l_edge = edgeByName( p_pod.location() );
         if ( l_edge.stoplight().state().equals( ELightState.RED ) ) p_pod.setDelay( l_edge.stoplight().timeLeft() );
     }
 
+    /**
+     * pulls a random node out of a zone
+     * @param p_zone the zone
+     * @return the node
+     */
     @Override
     public INode randomnodebyzone( final String p_zone )
     {
