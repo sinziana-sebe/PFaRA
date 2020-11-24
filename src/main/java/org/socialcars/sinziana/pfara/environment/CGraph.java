@@ -82,8 +82,8 @@ public class CGraph implements IGraph
             } );
             if ( l_count.intValue() < m_nodes.size() )
             {
-                final List<INode> l_local = m_zones.get( String.valueOf( p_pojo.getZones() ) );
-                IntStream.range( l_count.intValue(), m_nodes.size() + 1 ).boxed().forEach( i -> l_local.add( m_nodes.get( i.toString() ) ) );
+                final List<INode> l_local = m_zones.get( String.valueOf( p_pojo.getZones() - 1 ) );
+                IntStream.range( l_count.intValue(), m_nodes.size() ).boxed().forEach( i -> l_local.add( m_nodes.get( i.toString() ) ) );
             }
         }
     }
