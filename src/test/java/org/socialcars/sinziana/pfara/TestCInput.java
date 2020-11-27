@@ -47,7 +47,7 @@ public class TestCInput
     @Before
     public final void init() throws IOException
     {
-        m_input = new ObjectMapper().readValue( new File( "src/test/resources/tiergarten.json" ), CInputpojo.class );
+        m_input = new ObjectMapper().readValue( new File( "src/test/resources/t-orig.json" ), CInputpojo.class );
     }
 
     /**

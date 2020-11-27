@@ -48,7 +48,7 @@ public class TestCVehicle
     @Before
     public void init() throws IOException
     {
-        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/tiergarten.json" ), CInputpojo.class );
+        final CInputpojo l_configuration = new ObjectMapper().readValue( new File( "src/test/resources/t-orig.json" ), CInputpojo.class );
         m_time = 0;
         m_unit = new CUnits( 1, 0.1 );
         m_graph = new CGraph( l_configuration.getGraph() );

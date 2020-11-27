@@ -1,0 +1,96 @@
+[{
+  "name": "blue",
+  "start": "311",
+  "finish": "307",
+  "preference": {
+    "min-speed": 0.01,
+    "max-speed": 1,
+    "max-acceleration": 0.5,
+    "max-deceleration": 0.3,
+    "max-time": 1000000000,
+    "max-length": 1000000000,
+    "max-cost": 20000000
+  },
+  "utility": {
+    "alpha": 0.2,
+    "beta": 0.8
+  },
+  "agent-type": "vehicle"
+},
+{
+"name": "red",
+"start": "311",
+"finish": "310",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration": 0.5,
+"max-deceleration": 0.3,
+"max-time": 1000000,
+"max-length": 10000000,
+"max-cost": 1530
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name": "yellow",
+"start": "311",
+"finish": "320",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration": 0.5,
+"max-deceleration": 0.3,
+"max-time": 1000000,
+"max-length": 10000000,
+"max-cost": 1530
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name": "purple",
+"start": "311",
+"finish": "321",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration": 0.5,
+"max-deceleration": 0.3,
+"max-time": 1000000,
+"max-length": 10000000,
+"max-cost": 1530
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name": "green",
+"start": "311",
+"finish": "322",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration": 0.5,
+"max-deceleration": 0.3,
+"max-time": 1000000,
+"max-length": 10000000,
+"max-cost": 1530
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+}
+  ]
