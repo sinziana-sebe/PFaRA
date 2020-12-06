@@ -1,0 +1,198 @@
+Dec 04, 2020 3:51:15 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: blue CREATED at 311 at 0 timestep
+Dec 04, 2020 3:51:15 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: red CREATED at 311 at 0 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: red FORMED at 311 at 0 timestep with null blue
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: blue FORMED at 311 at 0 timestep with null red
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 0
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 311 at 0 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 311 at 0 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 1
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 2
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 3
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 4
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 5
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 6
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 3 at 6 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 3 at 6 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 7
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 3 at 7 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 3 at 7 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 8
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 9
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 10
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 11
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 12
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 13
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 14
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 15
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 16
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 17
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 18
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 19
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 297 at 19 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 297 at 19 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 20
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 297 at 20 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 297 at 20 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 21
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 22
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 23
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 24
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 25
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 26
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 27
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 28
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 29
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 30
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 31
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 306 at 31 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 306 at 31 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: blue SPLIT at 306 at 31 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: red SPLIT at 306 at 31 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle joinParty
+INFO: blue  JOINED protocol 306
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle joinParty
+INFO: red  JOINED protocol 306
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle sendOffer
+INFO: blue  SENT with buyout 0.001
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle receiveOffer
+INFO: red  RECEIVED with buyout 2.5010000000000003
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: red  SENT with buyout 15.0
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: blue  RECEIVED with buyout 12.5
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: blue  SENT with buyout 0.1507920619876482
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: red  RECEIVED with buyout 2.650792061987649
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: red  SENT with buyout 13.621661932086951
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: blue  RECEIVED with buyout 11.121661932086951
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: blue  SENT with buyout 0.5239519611479526
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: red  RECEIVED with buyout 3.023951961147953
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: red  SENT with buyout 12.892792159941516
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: blue  RECEIVED with buyout 10.392792159941516
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: blue  SENT with buyout 0.9414736224120188
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: red  RECEIVED with buyout 3.441473622412019
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: red  SENT with buyout 11.84924650131358
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: blue  RECEIVED with buyout 9.34924650131358
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: blue  SENT with buyout 1.3156551693669405
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: red  RECEIVED with buyout 3.815655169366941
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: red  SENT with buyout 11.125236096085663
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: blue  RECEIVED with buyout 8.625236096085663
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeHaggle
+INFO: blue  SENT with buyout 1.480254886231395
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle haggle
+INFO: red  RECEIVED with buyout 3.9802548862313953
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle writeReject
+INFO: red  REJECTED with buyout 3.9802548862313953
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle release
+INFO: blue  LEFT
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle release
+INFO: red  LEFT
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 32
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 306 at 32 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 306 at 32 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 33
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 310 at 33 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red COMPLETED at 310 at 33 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red cost: 5.833333333333334, 0.1947365855414427 blocks
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red has an allowance of 299999.80526341446 blocks, 29999967 timesteps and  99994.16666666667 cost
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 34
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 35
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 36
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 37
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 38
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 39
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 40
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 41
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 42
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 307 at 42 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue COMPLETED at 307 at 42 timestep
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue cost: 14.833333333333334, 0.23193871651172965 blocks
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue has an allowance of 999999.7680612834 blocks, 99958 timesteps and  199985.16666666666 cost
+Dec 04, 2020 3:51:16 PM org.socialcars.sinziana.pfara.experiments.CNegotiationMakro run
+INFO: Time is 43

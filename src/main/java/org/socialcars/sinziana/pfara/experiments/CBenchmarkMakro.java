@@ -88,7 +88,9 @@ public class CBenchmarkMakro
 
     public void run()
     {
+        System.out.println( System.currentTimeMillis() );
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, false, 1.0 );
+        System.out.println( System.currentTimeMillis() );
         while ( m_status.containsValue( "Incomplete" ) )
         {
             LOGGER.log( Level.INFO, "Time is " + m_time );

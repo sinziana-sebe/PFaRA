@@ -28,5 +28,5 @@ public interface INegotiationModule
 
     String haggle( final CSimpleOffer p_offer ) throws IOException;
 
-
+    Double alternativeRouteCost();
 }

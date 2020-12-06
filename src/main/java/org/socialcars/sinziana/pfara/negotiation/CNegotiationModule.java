@@ -84,11 +84,12 @@ public class CNegotiationModule implements INegotiationModule
         switch ( m_protocol.type() )
         {
             case AO:
-                if ( ( l_newutility != null ) && ( m_utility.rho() < 0.75 ) && ( m_utility.sigma() < 0.75 ) )
+                if ( ( l_newutility != null ) && ( m_utility.rho() <= 0.75 ) && ( m_utility.sigma() <= 0.80 ) )
                 {
                     m_rv = m_utility.calculateRV( p_offer.route(), p_speed, m_unit, l_oldutility );
                     if ( l_newutility > l_oldutility )
                     {
+                        m_av = m_altroutecost;
                         m_bb = new CBiddingModule( "Initiator", p_offer.buyout(), m_protocol.getDeadline() );
                         return "haggle";
                     }
@@ -147,6 +148,12 @@ public class CNegotiationModule implements INegotiationModule
             default:
                 return "";
         }
+    }
+
+    @Override
+    public Double alternativeRouteCost()
+    {
+        return m_altroutecost;
     }
 
     private String initiatorHaggle( final CSimpleOffer p_offer ) throws IOException

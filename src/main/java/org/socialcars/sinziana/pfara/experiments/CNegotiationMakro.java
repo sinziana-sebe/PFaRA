@@ -59,7 +59,7 @@ public class CNegotiationMakro
 
     private final ArrayList<CVehicle> m_vehicles;
     private final HashMap<CVehicle, String> m_status = new HashMap<>();
-    private final HashMap<CVehicle, List<IEdge>> m_routes = new HashMap<>();
+    private HashMap<CVehicle, List<IEdge>> m_routes = new HashMap<>();
     private final Map<IEdge, Integer> m_countingmap = new HashMap<>();
     private final Map<CVehicle, List<IEdge>> m_finalroute = new HashMap<>();
     private final Map<INode, List<CVehicle>> m_clusters = new HashMap<>();
@@ -89,8 +89,10 @@ public class CNegotiationMakro
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
-            m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
+            //m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
+            if ( p.name().equals("red") ) m_routes.put( p, List.of( m_env.edgeByName(  "edge322-14" ) ) );
+            if ( p.name().equals( "blue" ) ) m_routes.put( p, List.of( m_env.edgeByName( "edge322-318" ) ) );
         } );
         m_ao = p_ao;
         m_deadline = p_rounds;

@@ -402,8 +402,8 @@ public class CVehicle implements IVehicle
         switch ( l_response )
         {
             case "haggle":
-                writeHaggle( new CSimpleOffer( p_offer.id(), m_routelength ) );
-                m_protocol.haggle( this, new CSimpleOffer( p_offer.id(), m_routelength ) );
+                writeHaggle( new CSimpleOffer( p_offer.id(), m_negmodule.alternativeRouteCost() ) );
+                m_protocol.haggle( this, new CSimpleOffer( p_offer.id(), m_negmodule.alternativeRouteCost() ) );
                 break;
             case "accept":
                 writeAccept( p_offer );
