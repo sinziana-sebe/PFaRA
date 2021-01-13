@@ -153,9 +153,9 @@ public class CAlternativeOffers implements IProtocol
         }
         m_routes.get( l_co.acceptor() ).clear();
         m_routes.put( l_co.acceptor(), l_co.alternativeRoute() );
-        //l_co.offeror().updateCost( l_co.buyout() );
+        l_co.offeror().acceptUpdateCost( l_co.buyout() );
         l_co.offeror().release( this );
-        //l_co.acceptor().updateCost( l_co.buyout() );
+        l_co.acceptor().acceptUpdateCost( l_co.buyout() );
         l_co.acceptor().release( this );
         final ArrayList<CVehicle> l_of = new ArrayList<>();
         l_of.add( l_co.offeror() );
@@ -190,4 +190,5 @@ public class CAlternativeOffers implements IProtocol
     {
         return m_id;
     }
+
 }

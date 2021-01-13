@@ -156,6 +156,12 @@ public class CNegotiationModule implements INegotiationModule
         return m_altroutecost;
     }
 
+    @Override
+    public EAgentType role()
+    {
+        return m_role;
+    }
+
     private String initiatorHaggle( final CSimpleOffer p_offer ) throws IOException
     {
         if ( m_lastoffer == null )

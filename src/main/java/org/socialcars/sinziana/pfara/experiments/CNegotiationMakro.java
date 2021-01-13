@@ -89,10 +89,10 @@ public class CNegotiationMakro
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
-            //m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
+            m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
-            if ( p.name().equals("red") ) m_routes.put( p, List.of( m_env.edgeByName(  "edge322-14" ) ) );
-            if ( p.name().equals( "blue" ) ) m_routes.put( p, List.of( m_env.edgeByName( "edge322-318" ) ) );
+            //if ( p.name().equals("red") ) m_routes.put( p, List.of( m_env.edgeByName(  "edge322-14" ) ) );
+            //if ( p.name().equals( "blue" ) ) m_routes.put( p, List.of( m_env.edgeByName( "edge322-318" ) ) );
         } );
         m_ao = p_ao;
         m_deadline = p_rounds;
@@ -140,7 +140,7 @@ public class CNegotiationMakro
                 if ( m_ao ) l_protocol = new CAlternativeOffers( m_clusters.get( n ), n, m_env, m_routes, m_deadline );
                 else l_protocol = new CTakeItOrLeaveIt( m_clusters.get( n ), n, m_env, m_routes );
                 l_protocol.open( m_time );
-                final CVehicle l_vehicle = m_clusters.get( n ).get( 0 );
+                final CVehicle l_vehicle = m_clusters.get( n ).get( 1 );
                 l_vehicle.sendOffer( m_routes.get( l_vehicle ) );
             }
         } );

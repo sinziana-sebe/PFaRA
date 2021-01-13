@@ -1,144 +1,158 @@
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
-INFO: blue CREATED at 311 at 0 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
-INFO: red CREATED at 311 at 0 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
-INFO: blue FORMED at 311 at 0 timestep with null red
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
-INFO: red FORMED at 311 at 0 timestep with null blue
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: red CREATED at 0 at 0 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: blue CREATED at 0 at 0 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: red FORMED at 0 at 0 timestep with null blue
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: blue FORMED at 0 at 0 timestep with null red
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 0
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: blue DEPARTED at 311 at 0 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: red DEPARTED at 311 at 0 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 0 at 0 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 0 at 0 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 1
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 2
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 3
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 4
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 5
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 6
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: blue ARRIVED at 3 at 6 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: red ARRIVED at 3 at 6 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 7
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: blue DEPARTED at 3 at 7 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: red DEPARTED at 3 at 7 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 8
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 9
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 10
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 1 at 10 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 1 at 10 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 11
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 1 at 11 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 1 at 11 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 12
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 13
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 14
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 15
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 16
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 17
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 18
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 19
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: blue ARRIVED at 297 at 19 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: red ARRIVED at 297 at 19 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 20
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: blue DEPARTED at 297 at 20 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: red DEPARTED at 297 at 20 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 21
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 22
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 23
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 24
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 25
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 26
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 3 at 26 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 3 at 26 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 27
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 3 at 27 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 3 at 27 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 28
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 29
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 30
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 31
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: blue ARRIVED at 306 at 31 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: red ARRIVED at 306 at 31 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle split
-INFO: blue SPLIT at 306 at 31 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle split
-INFO: red SPLIT at 306 at 31 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 32
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: blue DEPARTED at 306 at 32 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
-INFO: red DEPARTED at 306 at 32 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 33
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: red ARRIVED at 310 at 33 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
-INFO: red COMPLETED at 310 at 33 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
-INFO: red cost: 5.833333333333334, 0.1947365855414427 blocks
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
-INFO: red has an allowance of 299999.80526341446 blocks, 29999967 timesteps and  99994.16666666667 cost
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 34
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 35
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 36
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 37
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 5 at 37 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 5 at 37 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: red SPLIT at 5 at 37 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: blue SPLIT at 5 at 37 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 38
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 5 at 38 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 5 at 38 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 39
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 40
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 41
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 42
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
-INFO: blue ARRIVED at 307 at 42 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
-INFO: blue COMPLETED at 307 at 42 timestep
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
-INFO: blue cost: 14.833333333333334, 0.23193871651172965 blocks
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
-INFO: blue has an allowance of 999999.7680612834 blocks, 99958 timesteps and  199985.16666666666 cost
-Dec 04, 2020 3:50:45 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
 INFO: Time is 43
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 44
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 45
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 46
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 47
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 48
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 7 at 48 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue COMPLETED at 7 at 48 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue cost: 12.0, 44.14213562373095 blocks
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue has an allowance of 55.85786437626905 blocks, 52 timesteps and  -2.0 cost
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 49
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 6 at 49 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red COMPLETED at 6 at 49 timestep
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red cost: 14.0, 44.176576315667894 blocks
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red has an allowance of 55.823423684332106 blocks, 51 timesteps and  -4.0 cost
+Jan 13, 2021 10:24:24 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 50

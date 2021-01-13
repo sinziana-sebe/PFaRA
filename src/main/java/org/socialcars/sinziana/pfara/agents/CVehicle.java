@@ -278,6 +278,7 @@ public class CVehicle implements IVehicle
             m_cost = m_cost + ( p_position.weight().doubleValue() );
             m_preference.reduceMaxCost( p_position.weight().doubleValue() );
         }
+        System.out.println( m_name + "  cost is: " + m_cost );
         m_preference.reduceMaxTime( p_timestep - m_timelastarrival );
         m_timelastarrival = p_timestep;
     }
@@ -455,6 +456,24 @@ public class CVehicle implements IVehicle
                 break;
         }
     }
+
+    @Override
+    public void acceptUpdateCost( final Double p_cost )
+    {
+        switch ( m_negmodule.role() )
+        {
+            case INITIATOR:
+                m_cost += p_cost;
+                m_preference.reduceMaxCost( p_cost );
+                break;
+            case ACCEPTOR:
+                m_cost -= p_cost;
+                m_preference.reduceMaxCost( -p_cost );
+                break;
+            default:
+        }
+    }
+
 
     /**
      * writes an accept event

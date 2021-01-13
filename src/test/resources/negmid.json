@@ -120,19 +120,19 @@
         "name": "edge5-7",
         "from": "5",
         "to": "7",
-        "weight" : 7
+        "weight" : 9
       },
       {
-        "name": "edge6-7",
-        "from": "6",
-        "to": "7",
+        "name": "edge7-6",
+        "from": "7",
+        "to": "6",
         "weight" : 0
       },
       {
         "name": "edge5-6",
         "from": "5",
         "to": "6",
-        "weight" : 9
+        "weight" : 7
       }
     ]
   },
@@ -204,7 +204,7 @@
       "start": 0
     },
     {
-      "location": "edge6-7",
+      "location": "edge7-6",
       "red": 5,
       "green": 5,
       "start": 5
@@ -223,7 +223,7 @@
           "max-deceleration": 0.7,
           "max-time": 100,
           "max-length": 100,
-          "max-cost": 10
+          "max-cost": 12
         },
       "utility":
       {
@@ -244,7 +244,7 @@
           "max-deceleration": 0.7,
           "max-time": 100,
           "max-length": 100,
-          "max-cost": 10
+          "max-cost": 14
         },
         "utility":
         {

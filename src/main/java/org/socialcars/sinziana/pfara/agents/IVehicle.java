@@ -110,4 +110,12 @@ public interface IVehicle extends IDynamic
     void haggle( final CSimpleOffer p_offer ) throws IOException;
 
 
+    /**
+     * updates the cost to factor sending/receiving a buyout
+     * after the successful completion of a negotiation
+     * @param p_cost the cost of the buyout
+     */
+    void acceptUpdateCost( final Double p_cost );
+
+
 }
