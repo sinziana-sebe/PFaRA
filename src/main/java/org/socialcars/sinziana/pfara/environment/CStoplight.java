@@ -17,11 +17,14 @@ package org.socialcars.sinziana.pfara.environment;
 
 import org.socialcars.sinziana.pfara.data.input.CStoplightpojo;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CStoplight implements IStoplight
 {
     private static Logger s_logger;
+
+    private String m_edgename;
 
     private final Integer m_red;
     private final Integer m_green;
@@ -36,6 +39,7 @@ public class CStoplight implements IStoplight
      */
     public CStoplight( final CStoplightpojo p_pojo )
     {
+        m_edgename = p_pojo.getLocation();
         m_red = p_pojo.getRed();
         m_green = p_pojo.getGreen();
         m_start = p_pojo.getStart();
@@ -78,6 +82,12 @@ public class CStoplight implements IStoplight
         return m_current;
     }
 
+    @Override
+    public String edgeName()
+    {
+        return m_edgename;
+    }
+
     /**
      * time left
      * @return how many timesteps untill light changes
@@ -101,13 +111,13 @@ public class CStoplight implements IStoplight
             {
                 case RED:
                     m_state = ELightState.GREEN;
-                    //s_logger.log( Level.INFO, m_edgename + " switched to green" );
+                    s_logger.log( Level.INFO, m_edgename + " switched to green" );
                     m_current = m_green;
                     break;
 
 
                 case GREEN: m_state = ELightState.RED;
-                    //s_logger.log( Level.INFO, m_edgename + " switched to red" );
+                    s_logger.log( Level.INFO, m_edgename + " switched to red" );
                     m_current = m_red;
                     break;
 

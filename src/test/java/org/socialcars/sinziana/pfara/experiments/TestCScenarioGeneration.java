@@ -30,12 +30,12 @@ public class TestCScenarioGeneration
     @Before
     public void init() throws IOException
     {
-        m_scengen = new CScenarioGeneration( "src/test/resources/negmid_demand.json", "src/test/resources/negmid.json", 10.0, 1 );
+        m_scengen = new CScenarioGeneration( "src/test/resources/5_demand.json", "src/test/resources/5.json", 100.0, 1 );
     }
 
     @Test
     public void  generate() throws IOException
     {
-        m_scengen.generateDensityFlow( 1, "negmid_info.json" );
+        m_scengen.generateDensityFlow( 1, "5_info.json" );
     }
 }

@@ -1,0 +1,477 @@
+[
+{
+  "name" : "pod1",
+  "start": "0",
+  "finish" : "17",
+  "preference": {
+    "min-speed": 0.01,
+    "max-speed": 1,
+    "max-acceleration" : 0.5,
+    "max-deceleration": 0.3,
+    "max-time": 100,
+    "max-length": 1000,
+    "max-cost": 20
+  },
+  "utility": {
+    "alpha": 0.2,
+    "beta": 0.8
+  },
+  "agent-type": "vehicle"
+},
+{
+"name" : "pod2",
+"start": "0",
+"finish": "1",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod3",
+"start": "0",
+"finish": "2",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod4",
+"start": "0",
+"finish": "7",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod5",
+"start": "0",
+"finish": "12",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod10",
+"start": "20",
+"finish": "24",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod11",
+"start": "20",
+"finish": "23",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod12",
+"start": "20",
+"finish": "22",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod13",
+"start": "20",
+"finish": "21",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod14",
+"start": "20",
+"finish": "19",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod20",
+"start": "4",
+"finish": "11",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod21",
+"start": "4",
+"finish": "1",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod22",
+"start": "4",
+"finish": "13",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod23",
+"start": "4",
+"finish": "21",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod24",
+"start": "4",
+"finish": "15",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod30",
+"start": "12",
+"finish": "18",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod31",
+"start": "12",
+"finish": "10",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod32",
+"start": "12",
+"finish": "3",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod33",
+"start": "12",
+"finish": "23",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod34",
+"start": "12",
+"finish": "5",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod40",
+"start": "24",
+"finish": "12",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod41",
+"start": "24",
+"finish": "21",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod42",
+"start": "24",
+"finish": "23",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod43",
+"start": "24",
+"finish": "4",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+},
+{
+"name" : "pod44",
+"start": "24",
+"finish": "6",
+"preference": {
+"min-speed": 0.01,
+"max-speed": 1,
+"max-acceleration" : 0.5,
+"max-deceleration": 0.3,
+"max-time": 100,
+"max-length": 1000,
+"max-cost": 20
+},
+"utility": {
+"alpha": 0.2,
+"beta": 0.8
+},
+"agent-type": "vehicle"
+}
+]

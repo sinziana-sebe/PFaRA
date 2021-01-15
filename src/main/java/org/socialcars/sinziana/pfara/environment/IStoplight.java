@@ -28,4 +28,10 @@ public interface IStoplight
      * @return how many timesteps untill light changes
      */
     Integer timeLeft();
+
+    /**
+     * the edge where the light sits
+     * @return the edge name
+     */
+    String edgeName();
 }

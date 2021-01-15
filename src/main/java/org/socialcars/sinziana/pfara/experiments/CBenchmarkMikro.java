@@ -118,6 +118,7 @@ public class CBenchmarkMikro
                 {
                     l.start();
                     m_stoplights.put( l, "Complete" );
+                    LOGGER.log( Level.INFO, "Stoplight " + l.edgeName() + " synced" );
                 }
                 if ( m_stoplights.get( l ).equals( "Complete" ) ) l.update();
             } );
