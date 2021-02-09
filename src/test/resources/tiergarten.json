@@ -7149,16 +7149,16 @@
   "vehicles": [
     {
       "name": "blue",
-      "start": "322",
-      "finish": "18",
+      "start": "311",
+      "finish": "307",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
         "max-acceleration": 0.5,
         "max-deceleration": 0.3,
-        "max-time": 100000,
-        "max-length": 0.3,
-        "max-cost": 5
+        "max-time": 1000000000,
+        "max-length": 1000000000,
+        "max-cost": 20000000
       },
       "utility": {
         "alpha": 0.2,
@@ -7168,16 +7168,16 @@
     },
     {
       "name": "red",
-      "start": "322",
-      "finish": "14",
+      "start": "311",
+      "finish": "310",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
         "max-acceleration": 0.5,
         "max-deceleration": 0.3,
-        "max-time": 30000000,
-        "max-length": 300000,
-        "max-cost": 7
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
       },
       "utility": {
         "alpha": 0.2,

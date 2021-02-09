@@ -66,6 +66,7 @@ public class COptimisationMikro
     private CEdgeEnd m_edgeend;
 
     private final Double m_omega;
+    private CReporting m_report;
 
 
     public COptimisationMikro( final String p_infile, final String p_backfile, final String p_outfile,
@@ -99,6 +100,8 @@ public class COptimisationMikro
 
         syncLights();
         addSections();
+
+        m_report = new CReporting( p_outfile, true );
     }
 
     private void addSections()
@@ -137,7 +140,7 @@ public class COptimisationMikro
         else p_pod.brake();
     }
 
-    public void run()
+    public void run() throws IOException
     {
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, true, m_omega );
         while ( m_status.containsValue( "Incomplete" ) )
@@ -147,6 +150,7 @@ public class COptimisationMikro
             m_env.edges().forEach( n -> n.stoplight().update() );
             m_time++;
         }
+        m_report.writeCSV( m_vehicles );
     }
 
     /**

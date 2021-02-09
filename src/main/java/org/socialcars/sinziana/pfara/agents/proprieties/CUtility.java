@@ -124,4 +124,16 @@ public class CUtility implements IUtility
         l_rv = l_rv / m_sigma;
         return Math.abs( l_rv );
     }
+
+    @Override
+    public Double calculateMakroFinal( final Double p_distance, final Double p_cost )
+    {
+        return m_rho * p_distance + m_sigma * p_cost;
+    }
+
+    @Override
+    public Double calculateMikroFinal( final Integer p_duration, final Double p_distance )
+    {
+        return m_rho * p_distance + m_sigma * p_duration;
+    }
 }

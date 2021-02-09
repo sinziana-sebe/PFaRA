@@ -217,7 +217,9 @@ public class CPSPP implements IPSPP
     private void addTimeConstraint()
     {
         final HashMap<IEdge, Double> l_times = new HashMap<>();
-        m_graph.edges().forEach( e -> l_times.put( e, e.length() / ( m_speed * m_unit.getBlock().doubleValue() ) ) );
+        m_graph.edges().forEach( e ->
+                l_times.put( e, e.length() / ( m_speed * m_unit.getBlock().doubleValue() ) )
+        );
         m_pods.forEach( p ->
         {
             try

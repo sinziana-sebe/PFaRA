@@ -1168,15 +1168,34 @@
   ],
   "vehicles": [
     {
+      "name" : "pod1",
+      "start": "0",
+      "finish": "11",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
       "name" : "pod2",
       "start": "0",
-      "finish": "1",
+      "finish": "12",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
         "max-acceleration" : 0.5,
         "max-deceleration": 0.3,
-        "max-time": 100,
+        "max-time": 1000,
         "max-length": 1000,
         "max-cost": 20
       },
@@ -1185,86 +1204,6 @@
         "beta": 0.8
       },
       "agent-type": "vehicle"
-    },
-    {
-      "name" : "pod3",
-      "start": "0",
-      "finish": "2",
-      "preference": {
-        "min-speed": 0.01,
-        "max-speed": 1,
-        "max-acceleration" : 0.5,
-        "max-deceleration": 0.3,
-        "max-time": 100,
-        "max-length": 1000,
-        "max-cost": 20
-      },
-      "utility": {
-        "alpha": 0.2,
-        "beta": 0.8
-      },
-      "agent-type": "vehicle"
-    },
-    {
-      "name" : "pod4",
-      "start": "0",
-      "finish": "3",
-      "preference": {
-        "min-speed": 0.01,
-        "max-speed": 1,
-        "max-acceleration" : 0.5,
-        "max-deceleration": 0.3,
-        "max-time": 100,
-        "max-length": 1000,
-        "max-cost": 20
-      },
-      "utility": {
-        "alpha": 0.2,
-        "beta": 0.8
-      },
-      "agent-type": "vehicle"
-    },
-    {
-      "name": "pod5",
-      "start": "0",
-      "finish": "4",
-      "preference": {
-        "min-speed": 0.01,
-        "max-speed": 1,
-        "max-acceleration": 0.5,
-        "max-deceleration": 0.3,
-        "max-time": 100,
-        "max-length": 1000,
-        "max-cost": 20
-      },
-      "utility": {
-        "alpha": 0.2,
-        "beta": 0.8
-      }
-    }
-  ],
-  "bikes":[
-    {
-      "name": "bike1",
-      "filename": "",
-      "agent-type": "bike",
-      "start": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "finish": {
-        "name": "0",
-        "coordinates": {
-          "lat": 0,
-          "lon": 0
-        }
-      },
-      "max-speed": 0,
-      "max-accel" : 0,
-      "max-decel": 0
     }
   ]
 }

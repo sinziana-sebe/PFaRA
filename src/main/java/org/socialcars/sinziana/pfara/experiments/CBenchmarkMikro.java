@@ -65,6 +65,7 @@ public class CBenchmarkMikro
     private CPreGrouping m_grouping;
     private CEdgeEnd m_edgeend;
 
+    private CReporting m_report;
 
     public CBenchmarkMikro( final String p_infile, final String p_backfile, final String p_outfile,
                            final Integer p_time, final Double p_space ) throws IOException
@@ -95,6 +96,8 @@ public class CBenchmarkMikro
         } );
         syncLights();
         addSections();
+
+        m_report = new CReporting( p_outfile, true );
     }
 
     private void addSections()
@@ -134,7 +137,7 @@ public class CBenchmarkMikro
         else p_pod.brake();
     }
 
-    public void run()
+    public void run() throws IOException
     {
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, false, 1.0 );
         while ( m_status.containsValue( "Incomplete" ) )
@@ -144,6 +147,7 @@ public class CBenchmarkMikro
             m_env.edges().forEach( n -> n.stoplight().update() );
             m_time++;
         }
+        m_report.writeCSV( m_vehicles );
     }
 
     /**

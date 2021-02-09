@@ -71,6 +71,8 @@ public class CNegotiationMakro
     private final Boolean m_ao;
     private final Integer m_deadline;
 
+    private CReporting m_report;
+
     public CNegotiationMakro( final String p_infile, final String p_backfile, final String p_outfile,
                               final Integer p_time, final Double p_space, final Double p_omega, final Boolean p_ao, final Integer p_rounds ) throws IOException
     {
@@ -97,9 +99,11 @@ public class CNegotiationMakro
         m_ao = p_ao;
         m_deadline = p_rounds;
         m_omega = p_omega;
+
+        m_report = new CReporting( p_outfile, false );
     }
 
-    public void run()
+    public void run() throws IOException
     {
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
         checkNegotiation();
@@ -110,6 +114,7 @@ public class CNegotiationMakro
             m_clusters.clear();
             m_time++;
         }
+        m_report.writeCSV( m_vehicles );
     }
 
     private void checkNegotiation()

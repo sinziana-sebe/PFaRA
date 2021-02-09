@@ -1,0 +1,182 @@
+{
+  "graph": {
+    "zones": 5,
+    "nodes": [
+      {
+        "name": "0",
+        "coordinates": {
+          "lat": 0,
+          "lon": 0
+        }
+      },
+      {
+        "name": "1",
+        "coordinates": {
+          "lat": 100,
+          "lon": 0
+        }
+      },
+      {
+        "name": "2",
+        "coordinates": {
+          "lat": 200,
+          "lon": 0
+        }
+      },
+      {
+        "name": "3",
+        "coordinates": {
+          "lat": 300,
+          "lon": 0
+        }
+      },
+      {
+        "name": "4",
+        "coordinates": {
+          "lat": 400,
+          "lon": 0
+        }
+      }
+    ],
+    "edges": [
+      {
+        "name": "edge0-1",
+        "from": "0",
+        "to": "1",
+        "weight": 3
+      },
+      {
+        "name": "edge1-0",
+        "from": "1",
+        "to": "0",
+        "weight": 3
+      },
+      {
+        "name": "edge1-2",
+        "from": "1",
+        "to": "2",
+        "weight": 3
+      },
+      {
+        "name": "edge2-1",
+        "from": "2",
+        "to": "1",
+        "weight": 3
+      },
+      {
+        "name": "edge2-3",
+        "from": "2",
+        "to": "3",
+        "weight": 3
+      },
+      {
+        "name": "edge3-2",
+        "from": "3",
+        "to": "2",
+        "weight": 3
+      },
+      {
+        "name": "edge3-4",
+        "from": "3",
+        "to": "4",
+        "weight": 3
+      },
+      {
+        "name": "edge4-3",
+        "from": "4",
+        "to": "3",
+        "weight": 3
+      }
+    ]
+  },
+  "stoplights": [
+    {
+      "location": "edge0-1",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge1-0",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge1-2",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge2-1",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge2-3",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge3-2",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge3-4",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge4-3",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    }
+  ],
+  "vehicles": [
+    {
+      "name": "pod1",
+      "start": "0",
+      "finish": "4",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "pod2",
+      "start": "0",
+      "finish": "4",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000,
+        "max-length": 1000,
+        "max-cost": 20
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    }
+  ]
+}

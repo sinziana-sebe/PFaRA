@@ -23,19 +23,19 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestCBenchmarkMakro
+public class TestCWeirdExperiments
 {
-    private CBenchmarkMakro m_benchmakro;
+    private CWeirdExperiments m_weirdexp;
 
     @Before
     public void init() throws IOException
     {
-        m_benchmakro = new CBenchmarkMakro( "src/test/resources/negmid.json", "src/test/resources/negmid_info.json", "NegmidBenchmark", 1, 1.0 );
+        m_weirdexp = new CWeirdExperiments( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "weird", 1, 1.0 );
     }
 
     @Test
-    public void run() throws IOException
+    public void run()
     {
-        m_benchmakro.run();
+        m_weirdexp.function();
     }
 }

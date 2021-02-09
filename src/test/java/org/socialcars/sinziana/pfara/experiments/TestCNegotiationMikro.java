@@ -34,7 +34,7 @@ public class TestCNegotiationMikro
     }
 
     @Test
-    public void run()
+    public void run() throws IOException
     {
         m_negmikro.run();
     }

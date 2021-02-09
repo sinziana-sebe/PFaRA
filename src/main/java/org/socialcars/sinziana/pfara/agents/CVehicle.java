@@ -73,6 +73,7 @@ public class CVehicle implements IVehicle
     private Double m_cost;
     private Double m_routelength;
     private Integer m_timelastarrival;
+    private Integer m_departuretime;
 
 
     private Boolean m_negotiating;
@@ -88,7 +89,7 @@ public class CVehicle implements IVehicle
     /**
      * ctor
      * @param p_pojo plain old java object
-     * @param p_timestep the cuurent time
+     * @param p_timestep the current time
      * @param p_log the logger
      * @param p_unit the unit object
      * @param p_mikro movement type
@@ -106,7 +107,7 @@ public class CVehicle implements IVehicle
         m_acceleration = 0.0;
         m_position = 0.0;
         m_location = m_origin;
-        m_timelastarrival = p_timestep;
+        //m_timelastarrival = p_timestep;
         m_routelength = 0.0;
         m_cost = 0.0;
         m_precedence = 0;
@@ -249,6 +250,8 @@ public class CVehicle implements IVehicle
         s_logger.log( Level.INFO, l_departed.toString() );
         m_location = p_position.name();
         m_lastedge = p_position;
+        if( m_departuretime == null ) m_departuretime = p_timestep;
+        if ( m_timelastarrival == null ) m_timelastarrival = p_timestep;
     }
 
     /**
@@ -527,6 +530,27 @@ public class CVehicle implements IVehicle
     public ArrayList<IEvent> events()
     {
         return m_events;
+    }
+
+    public Double routeCost()
+    {
+        return m_cost;
+    }
+
+    public Double routeLength()
+    {
+        return m_routelength;
+    }
+
+    public Integer routeDuration()
+    {
+        return m_timelastarrival - m_departuretime;
+    }
+
+    public Double endUtility( final Boolean p_mikro )
+    {
+        if ( p_mikro ) return m_utility.calculateMikroFinal( routeDuration(), m_routelength );
+        else return m_utility.calculateMakroFinal( m_routelength, m_cost );
     }
 
 }

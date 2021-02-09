@@ -70,4 +70,20 @@ public interface IUtility
      */
     Double calculateRV( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_oldutility );
 
+    /**
+     * calculates the utility based on cost at the end of the route
+     * @param p_distance the distance of the travel
+     * @param p_cost the cost of the travel
+     * @return the utility
+     */
+    Double calculateMakroFinal( final Double p_distance, final Double p_cost );
+
+    /**
+     * calculates the utility based on time at the end of the route
+     * @param p_duration the duration of the travel
+     * @param p_distance the distance of the travel
+     * @return the utility
+     */
+    Double calculateMikroFinal( final Integer p_duration, final Double p_distance );
+
 }

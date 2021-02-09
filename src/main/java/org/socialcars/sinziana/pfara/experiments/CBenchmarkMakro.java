@@ -62,6 +62,7 @@ public class CBenchmarkMakro
     private CPreGrouping m_grouping;
     private CEdgeEnd m_edgeend;
 
+    private CReporting m_report;
 
     public CBenchmarkMakro( final String p_infile, final String p_backfile, final String p_outfile,
                             final Integer p_time, final Double p_space ) throws IOException
@@ -84,9 +85,11 @@ public class CBenchmarkMakro
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
         } );
+
+        m_report = new CReporting( p_outfile, false );
     }
 
-    public void run()
+    public void run() throws IOException
     {
         System.out.println( System.currentTimeMillis() );
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, false, 1.0 );
@@ -97,6 +100,7 @@ public class CBenchmarkMakro
             move();
             m_time++;
         }
+        m_report.writeCSV( m_vehicles );
     }
 
     /**

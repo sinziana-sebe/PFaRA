@@ -19,6 +19,7 @@
 package org.socialcars.sinziana.pfara.experiments;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.util.concurrent.AtomicDouble;
 import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
 import org.socialcars.sinziana.pfara.environment.CBackground;
@@ -35,15 +36,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.FileHandler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class COptimisationMakro
+public class CWeirdExperiments
 {
-    private static final Logger LOGGER = Logger.getLogger( CBenchmarkMakro.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( CWeirdExperiments.class.getName() );
 
     private final CInputpojo m_input;
     private final CGraph m_env;
@@ -62,11 +61,9 @@ public class COptimisationMakro
     private CPreGrouping m_grouping;
     private CEdgeEnd m_edgeend;
 
-    private final Double m_omega;
-    private CReporting m_report;
 
-    public COptimisationMakro( final String p_infile, final String p_backfile, final String p_outfile,
-                            final Integer p_time, final Double p_space, final Double p_omega ) throws IOException
+    public CWeirdExperiments( final String p_infile, final String p_backfile, final String p_outfile,
+                            final Integer p_time, final Double p_space ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
@@ -79,64 +76,25 @@ public class COptimisationMakro
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
         m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, p_omega ) ) );
+        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, 1.0 ) ) );
         m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
         } );
-        m_omega = p_omega;
-        m_report = new CReporting( p_outfile, false );
     }
 
-    public void run() throws IOException
+    public void function()
     {
-        System.out.println( System.currentTimeMillis() );
-        m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
-        System.out.println( System.currentTimeMillis() );
-        while ( m_status.containsValue( "Incomplete" ) )
+        final AtomicDouble l_minweight = new AtomicDouble( 0 );
+        final AtomicDouble l_maxweight = new AtomicDouble( 0 );
+        m_env.edges().forEach( e ->
         {
-            LOGGER.log( Level.INFO, "Time is " + m_time );
-            move();
-            m_time++;
-        }
-        m_report.writeCSV( m_vehicles );
-    }
-
-    /**
-     * moves vehicles one by one
-     * if vehicle reached the destination updates status
-     * if any vehicle reached the end of an edge
-     * triggers the platoon search
-     */
-    private void move()
-    {
-        final AtomicBoolean l_trig = new AtomicBoolean( false );
-        m_vehicles.forEach( p ->
-        {
-            if ( m_routes.get( p ).isEmpty() ) m_status.put( p, "Complete" );
-            else if ( p.getDelay() <= 0 )
-            {
-                final IEdge l_edge = m_routes.get( p ).iterator().next();
-                if ( p.position().equals( 0.0 ) ) p.departed( l_edge, m_time );
-                if ( p.position().doubleValue() < l_edge.length() ) p.moveMakro( m_backinfo.get( l_edge ).getmaxspeed() );
-                else
-                {
-                    p.arrived( l_edge, m_time );
-                    m_countingmap.put( l_edge, m_countingmap.getOrDefault( l_edge, 0 ) + 1 );
-                    m_finalroute.get( p ).add( l_edge );
-                    m_routes.get( p ).remove( 0 );
-                    l_trig.set( true );
-                }
-            }
-            else if ( p.getDelay() > 0 ) p.updateDelay();
+            if ( l_maxweight.get() < e.weight() ) l_maxweight.set( e.weight() );
+            else if ( l_minweight.get() > e.weight() ) l_minweight.set( e.weight() );
         } );
-        if ( l_trig.get() )
-        {
-            m_edgeend = new CEdgeEnd( m_vehicles, m_routes, m_time, m_env );
-            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
-            m_edgeend.checkLoners();
-        }
+        System.out.println( "Min weight: " + l_minweight.get() );
+        System.out.println( "Max weight: " + l_maxweight.get() );
     }
 }

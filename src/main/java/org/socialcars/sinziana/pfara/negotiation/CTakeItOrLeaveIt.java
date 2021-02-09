@@ -30,7 +30,7 @@ public class CTakeItOrLeaveIt implements IProtocol
     private final CGraph m_env;
     private final INode m_id;
     private final List<CVehicle> m_crowd;
-    private HashMap<String, CCompleteOffer> m_offers;
+    private CCompleteOffer m_offer;
     private HashMap<CVehicle, List<IEdge>> m_routes;
     private Integer m_time;
 
@@ -39,7 +39,6 @@ public class CTakeItOrLeaveIt implements IProtocol
         m_env = p_env;
         m_id = p_id;
         m_crowd = p_potentials;
-        m_offers = new HashMap<>();
         m_routes = p_routes;
     }
 
@@ -65,7 +64,7 @@ public class CTakeItOrLeaveIt implements IProtocol
             {
                 final List<IEdge> l_newroute = m_env.route( p.destination(), p_offer.route() );
                 final CCompleteOffer l_newoffer = new CCompleteOffer( p_offeror, p_offer, p, l_newroute );
-                m_offers.put( l_newoffer.id(), l_newoffer );
+                m_offer = l_newoffer;
                 try
                 {
                     p.receiveOffer( new CInitialOffer( l_newoffer.id(), l_newoffer.savings() + p_offer.buyout(), l_newroute ), m_routes.get( p ) );
@@ -81,7 +80,7 @@ public class CTakeItOrLeaveIt implements IProtocol
     @Override
     public void receiveAccept( final CVehicle p_pod, final IOffer p_offer ) throws IOException
     {
-        final CCompleteOffer l_co = m_offers.get( p_offer.id() );
+        final CCompleteOffer l_co = m_offer;
         l_co.accept();
         if ( l_co.acceptor().equals( p_pod ) )
         {
@@ -108,21 +107,19 @@ public class CTakeItOrLeaveIt implements IProtocol
     @Override
     public void receiveReject( final IOffer p_offer ) throws IOException
     {
-        final CCompleteOffer l_co = m_offers.get( p_offer.id() );
+        final CCompleteOffer l_co = m_offer;
         l_co.reject();
         l_co.offeror().release( this );
         l_co.acceptor().release( this );
-        m_offers.remove( l_co );
     }
 
     @Override
     public void receiveBreakaway( final IOffer p_offer ) throws IOException
     {
-        final CCompleteOffer l_co = m_offers.get( p_offer.id() );
+        final CCompleteOffer l_co = m_offer;
         l_co.reject();
         l_co.offeror().release( this );
         l_co.acceptor().release( this );
-        m_offers.remove( l_co );
     }
 
     @Override
