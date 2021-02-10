@@ -79,7 +79,6 @@ public class CNegotiationMakro
         final FileHandler l_handler = new FileHandler( p_outfile );
         LOGGER.addHandler( l_handler );
         l_handler.setFormatter( new SimpleFormatter() );
-
         m_input = new ObjectMapper().readValue( new File( p_infile ), CInputpojo.class );
         m_env = new CGraph( m_input.getGraph() );
         m_readbackground = new CReadBackground( m_env );

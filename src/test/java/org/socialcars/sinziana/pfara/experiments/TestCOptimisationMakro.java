@@ -30,7 +30,7 @@ public class TestCOptimisationMakro
     @Before
     public void init() throws IOException
     {
-        m_optmakro = new COptimisationMakro( "src/test/resources/25h.json", "src/test/resources/25h_info.json", "25OptMakro3_2veh_HtoL", 1, 1.0, 3.0 );
+        m_optmakro = new COptimisationMakro( "src/test/resources/tiergartenN.json", "src/test/resources/tiergartenN_info.json", "TiergartenNOptOptMakro2_5veh", 1, 0.01, 2.0 );
     }
 
     @Test

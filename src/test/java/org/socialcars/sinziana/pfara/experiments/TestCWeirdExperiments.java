@@ -36,6 +36,6 @@ public class TestCWeirdExperiments
     @Test
     public void run()
     {
-        m_weirdexp.function();
+        System.out.println( m_weirdexp.edgeLength( "edge322-318" ) );
     }
 }

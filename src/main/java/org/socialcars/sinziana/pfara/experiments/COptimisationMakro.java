@@ -92,9 +92,7 @@ public class COptimisationMakro
 
     public void run() throws IOException
     {
-        System.out.println( System.currentTimeMillis() );
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
-        System.out.println( System.currentTimeMillis() );
         while ( m_status.containsValue( "Incomplete" ) )
         {
             LOGGER.log( Level.INFO, "Time is " + m_time );
@@ -135,7 +133,7 @@ public class COptimisationMakro
         if ( l_trig.get() )
         {
             m_edgeend = new CEdgeEnd( m_vehicles, m_routes, m_time, m_env );
-            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
+            m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, false, m_omega );
             m_edgeend.checkLoners();
         }
     }

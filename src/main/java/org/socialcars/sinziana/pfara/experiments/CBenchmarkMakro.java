@@ -91,9 +91,7 @@ public class CBenchmarkMakro
 
     public void run() throws IOException
     {
-        System.out.println( System.currentTimeMillis() );
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, false, 1.0 );
-        System.out.println( System.currentTimeMillis() );
         while ( m_status.containsValue( "Incomplete" ) )
         {
             LOGGER.log( Level.INFO, "Time is " + m_time );
@@ -119,11 +117,7 @@ public class CBenchmarkMakro
             {
                 final IEdge l_edge = m_routes.get( p ).iterator().next();
                 if ( p.position().equals( 0.0 ) ) p.departed( l_edge, m_time );
-                if ( p.position().doubleValue() < l_edge.length() )
-                {
-                    //System.out.println(l_edge);
-                    p.moveMakro( m_backinfo.get( l_edge ).getmaxspeed() );
-                }
+                if ( p.position().doubleValue() < l_edge.length() ) p.moveMakro( m_backinfo.get( l_edge ).getmaxspeed() );
                 else
                 {
                     p.arrived( l_edge, m_time );

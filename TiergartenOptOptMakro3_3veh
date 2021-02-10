@@ -1,0 +1,1320 @@
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: blue CREATED at 311 at 0 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: red CREATED at 311 at 0 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: yellow CREATED at 311 at 0 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: red FORMED at 311 at 0 timestep with null blue yellow
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: blue FORMED at 311 at 0 timestep with null red yellow
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: yellow FORMED at 311 at 0 timestep with null red blue
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 0
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 311 at 0 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 311 at 0 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 311 at 0 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 1
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 2
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 3
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 4
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 5
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 6
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 3 at 6 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 3 at 6 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 3 at 6 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 7
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 3 at 7 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 3 at 7 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 3 at 7 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 8
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 9
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 10
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 11
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 12
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 13
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 14
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 15
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 16
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 17
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 18
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 19
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 297 at 19 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 297 at 19 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 297 at 19 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 20
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 297 at 20 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 297 at 20 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 297 at 20 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 21
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 22
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 23
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 24
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 25
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 26
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 27
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 28
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 29
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 30
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 31
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 306 at 31 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 306 at 31 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 306 at 31 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: blue SPLIT at 306 at 31 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: red SPLIT at 306 at 31 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: yellow SPLIT at 306 at 31 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: blue FORMED at 306 at 31 timestep with null yellow
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: yellow FORMED at 306 at 31 timestep with null blue
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 32
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 306 at 32 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 306 at 32 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 306 at 32 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 33
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 310 at 33 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red COMPLETED at 310 at 33 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red cost: 4.666666666666667, 0.1947365855414427 blocks
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red has an allowance of 9999999.805263413 blocks, 999967 timesteps and  1525.3333333333333 cost
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 34
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 35
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 36
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 37
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 38
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 39
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 40
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 41
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 42
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 307 at 42 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 307 at 42 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: blue SPLIT at 307 at 42 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue COMPLETED at 307 at 42 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue cost: 12.166666666666668, 0.23193871651172965 blocks
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue has an allowance of 9.999999997680614E8 blocks, 999999958 timesteps and  1.9999987833333332E7 cost
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: yellow SPLIT at 307 at 42 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 43
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 307 at 43 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 44
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 45
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 46
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 47
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 48
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 49
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 50
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 51
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 52
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 53
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 54
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 303 at 54 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 55
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 303 at 55 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 56
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 57
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 58
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 59
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 60
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 61
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 62
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 63
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 64
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 65
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 198 at 65 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 66
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 198 at 66 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 67
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 68
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 69
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 70
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 71
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 72
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 73
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 74
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 75
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 76
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 77
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 78
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 79
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 80
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 81
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 82
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 83
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 84
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 85
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 227 at 85 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 86
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 227 at 86 timestep
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 87
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 88
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 89
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 90
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 91
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 92
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 93
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 94
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 95
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 96
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 97
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 98
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 99
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 100
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 101
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 102
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 103
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 104
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 105
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 106
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 107
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 108
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 109
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 110
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 111
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 112
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 113
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 114
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 115
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 116
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 117
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 118
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 119
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 120
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 121
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 122
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 123
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 124
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 125
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 126
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 127
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 128
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 129
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 130
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 131
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 132
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 133
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 134
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 135
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 136
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 137
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 138
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 139
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 140
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 141
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 142
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 143
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 144
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 145
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 146
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 147
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 148
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 149
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 150
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 151
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 152
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 153
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 154
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 155
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 156
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 157
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 158
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 159
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 160
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 161
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 162
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 163
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 164
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 165
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 166
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 167
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 168
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 169
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 170
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 171
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 172
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 173
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 174
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 175
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 176
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 177
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 178
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 179
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 180
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 181
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 182
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 183
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 184
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 185
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 186
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 187
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 188
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 189
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 190
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 191
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 192
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 193
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 194
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 195
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 196
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 197
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 198
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 199
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 200
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 201
+Feb 10, 2021 2:10:43 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 202
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 203
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 204
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 205
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 206
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 207
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 208
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 209
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 210
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 211
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 212
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 213
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 214
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 215
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 216
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 217
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 218
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 219
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 220
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 221
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 222
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 223
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 224
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 225
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 226
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 227
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 228
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 229
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 230
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 231
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 232
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 233
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 234
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 235
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 236
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 237
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 238
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 239
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 240
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 241
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 242
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 243
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 244
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 245
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 246
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 247
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 248
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 249
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 250
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 251
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 252
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 253
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 254
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 255
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 256
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 257
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 258
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 259
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 260
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 261
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 262
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 263
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 264
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 265
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 266
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 267
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 268
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 269
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 270
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 271
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 272
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 273
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 274
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 275
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 276
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 277
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 278
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 279
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 280
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 281
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 282
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 283
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 284
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 285
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 286
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 287
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 288
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 289
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 290
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 291
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 292
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 293
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 294
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 295
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 296
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 297
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 298
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 299
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 300
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 301
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 302
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 303
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 304
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 305
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 306
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 307
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 308
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 309
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 310
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 311
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 312
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 313
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 314
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 315
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 316
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 317
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 318
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 319
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 320
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 321
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 322
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 323
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 324
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 325
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 326
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 327
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 328
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 329
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 330
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 331
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 332
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 333
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 334
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 335
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 336
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 337
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 338
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 339
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 340
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 341
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 342
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 343
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 344
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 345
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 346
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 347
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 348
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 349
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 350
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 351
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 352
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 353
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 354
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 355
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 356
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 357
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 358
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 359
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 360
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 361
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 362
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 363
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 364
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 365
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 366
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 367
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 368
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 369
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 370
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 371
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 372
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 373
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 374
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 375
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 376
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 377
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 378
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 379
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 380
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 381
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 382
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 383
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 384
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 385
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 386
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 387
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 388
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 389
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 390
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 391
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 392
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 393
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 394
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 395
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 396
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 397
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 398
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 399
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 400
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 401
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 402
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 403
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 404
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 405
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 406
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 407
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 408
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 409
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 410
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 411
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 412
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 413
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 414
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 415
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 416
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 417
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 418
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 419
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 420
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 421
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 422
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 423
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 424
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 425
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 426
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 427
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 428
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 429
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 430
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 431
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 432
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 433
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 434
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 435
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 436
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 437
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 438
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 439
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 440
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 441
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 442
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 443
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 444
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 445
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 446
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 447
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 448
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 449
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 450
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 451
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 452
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 453
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 454
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 455
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 456
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 457
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 458
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 459
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 460
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 461
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 462
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 463
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 201 at 463 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 464
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 201 at 464 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 465
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 466
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 467
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 468
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 469
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 470
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 471
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 472
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 473
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 474
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 475
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 206 at 475 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 476
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 206 at 476 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 477
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 478
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 479
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 480
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 481
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 482
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 483
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 484
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 485
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 486
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 322 at 486 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 487
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 322 at 487 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 488
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 489
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 490
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 491
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 492
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 493
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 494
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 495
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 496
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 497
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 498
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 499
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 500
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 14 at 500 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 501
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 14 at 501 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 502
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 503
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 504
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 505
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 506
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 507
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 508
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 509
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 510
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 511
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 512
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 513
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 514
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 515
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 516
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 517
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 518
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 519
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 520
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 317 at 520 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 521
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 317 at 521 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 522
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 523
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 524
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 525
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 526
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 527
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 528
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 529
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 530
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 531
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 278 at 531 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 532
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 278 at 532 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 533
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 534
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 535
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 536
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 537
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 538
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 539
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 540
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 541
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 542
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 277 at 542 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 543
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 277 at 543 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 544
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 545
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 546
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 547
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 548
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 549
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 550
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 551
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 552
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 553
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 343 at 553 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 554
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 343 at 554 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 555
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 556
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 557
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 558
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 559
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 560
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 561
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 562
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 563
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 564
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 565
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 566
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 567
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 568
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 569
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 570
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 571
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 572
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 573
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 574
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 575
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 346 at 575 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 576
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: yellow DEPARTED at 346 at 576 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 577
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 578
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 579
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 580
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 581
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 582
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 583
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 584
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 585
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 586
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: yellow ARRIVED at 320 at 586 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: yellow COMPLETED at 320 at 586 timestep
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: yellow cost: 214.16666666666669, 1.8403143024629742 blocks
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: yellow has an allowance of 9999998.159685696 blocks, 999414 timesteps and  1315.8333333333333 cost
+Feb 10, 2021 2:10:44 PM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 587

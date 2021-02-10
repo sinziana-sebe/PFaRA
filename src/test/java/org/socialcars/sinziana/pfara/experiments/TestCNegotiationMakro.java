@@ -30,7 +30,7 @@ public class TestCNegotiationMakro
     @Before
     public void init() throws IOException
     {
-        m_negmakro = new CNegotiationMakro( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "TiergartenNegChecks", 1,  1.0, 3.0, true, 10 );
+        m_negmakro = new CNegotiationMakro( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "TiergartenNegChecks", 1,  0.01, 3.0, true, 10 );
     }
 
     @Test

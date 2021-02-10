@@ -250,7 +250,7 @@ public class CVehicle implements IVehicle
         s_logger.log( Level.INFO, l_departed.toString() );
         m_location = p_position.name();
         m_lastedge = p_position;
-        if( m_departuretime == null ) m_departuretime = p_timestep;
+        if ( m_departuretime == null ) m_departuretime = p_timestep;
         if ( m_timelastarrival == null ) m_timelastarrival = p_timestep;
     }
 
@@ -271,10 +271,10 @@ public class CVehicle implements IVehicle
         m_routelength += p_position.length();
         if ( m_companions.size() > 0 )
         {
-            m_cost = m_cost + ( p_position.weight().doubleValue() + ( p_position.weight().doubleValue() / m_omega * ( m_companions.size() + 1 ) ) )
-                    / ( m_companions.size() + 1 );
-            m_preference.reduceMaxCost( ( p_position.weight().doubleValue() + ( p_position.weight().doubleValue() / m_omega * ( m_companions.size() + 1 ) ) )
-                    / ( m_companions.size() + 1 ) );
+            // d_e/nvp + d_e/omega
+            final Double l_cost = p_position.weight().doubleValue() / ( m_companions.size() + 1 ) + p_position.weight().doubleValue() / m_omega;
+            m_cost = m_cost + l_cost;
+            m_preference.reduceMaxCost( l_cost );
         }
         else
         {

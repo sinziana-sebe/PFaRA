@@ -85,7 +85,7 @@ public class CWeirdExperiments
         } );
     }
 
-    public void function()
+    public void minmaxweight()
     {
         final AtomicDouble l_minweight = new AtomicDouble( 0 );
         final AtomicDouble l_maxweight = new AtomicDouble( 0 );
@@ -96,5 +96,10 @@ public class CWeirdExperiments
         } );
         System.out.println( "Min weight: " + l_minweight.get() );
         System.out.println( "Max weight: " + l_maxweight.get() );
+    }
+
+    public Double edgeLength( final String p_edge )
+    {
+        return m_env.edgeByName( p_edge ).length();
     }
 }

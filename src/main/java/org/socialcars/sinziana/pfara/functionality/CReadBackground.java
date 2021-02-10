@@ -74,6 +74,16 @@ public class CReadBackground
             l_err.printStackTrace();
         }
         l_storing.remove( null );
+
+        m_env.edges().forEach( e ->
+        {
+            if( l_storing.get( e ) == null )
+            {
+                final CBackground l_cbg = new CBackground( 0.0, 1.0 );
+                l_storing.put( e, l_cbg );
+            }
+        });
+
         return l_storing;
     }
 }
