@@ -16,15 +16,21 @@
 package org.socialcars.sinziana.pfara.environment;
 
 import com.codepoetics.protonpack.StreamUtils;
+import com.google.common.base.Function;
+import edu.uci.ics.jung.algorithms.layout.FRLayout;
+import edu.uci.ics.jung.algorithms.layout.util.RandomLocationTransformer;
 import edu.uci.ics.jung.algorithms.shortestpath.DijkstraShortestPath;
 import edu.uci.ics.jung.graph.DirectedGraph;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.graph.util.Graphs;
+import edu.uci.ics.jung.visualization.VisualizationViewer;
+import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
 import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.data.input.CGraphpojo;
 import org.socialcars.sinziana.pfara.data.input.CStoplightpojo;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -36,7 +42,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CGraph implements IGraph
+public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
 {
     private final Graph<INode, IEdge> m_graph;
     private final DijkstraShortestPath<INode, IEdge> m_pathalgorithm;
@@ -235,4 +241,19 @@ public class CGraph implements IGraph
     {
         return m_zones.get( p_zone ).get( ThreadLocalRandom.current().nextInt( m_zones.get( p_zone ).size() ) );
     }
+
+    @Override
+    public VisualizationViewer<INode, IEdge> panel( final Dimension p_dimension )
+    {
+        final FRLayout<INode, IEdge> l_projection = new FRLayout<>( m_graph, p_dimension );
+        l_projection.setInitializer( new RandomLocationTransformer<>( p_dimension, 1 ) );
+
+        final Function<Object, String> l_labeling = new ToStringLabeller();
+        final VisualizationViewer<INode, IEdge> l_view = new VisualizationViewer<>( l_projection );
+        l_view.getRenderContext().setVertexLabelTransformer( l_labeling );
+        l_view.getRenderContext().setEdgeLabelTransformer( l_labeling );
+
+        return l_view;
+    }
+
 }

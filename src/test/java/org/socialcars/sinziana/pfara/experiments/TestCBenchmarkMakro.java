@@ -30,7 +30,7 @@ public class TestCBenchmarkMakro
     @Before
     public void init() throws IOException
     {
-        m_benchmakro = new CBenchmarkMakro( "src/test/resources/tiergartenN.json", "src/test/resources/tiergartenN_info.json", "TiergartenNOptBenchmarkMakro_5veh", 1, 0.01 );
+        m_benchmakro = new CBenchmarkMakro( "src/test/resources/25.json", "src/test/resources/25_info.json", "25HtoLBenchmarkMakro_2veh", 1, 1.0 );
     }
 
     @Test
@@ -38,4 +38,6 @@ public class TestCBenchmarkMakro
     {
         m_benchmakro.run();
     }
+
+
 }

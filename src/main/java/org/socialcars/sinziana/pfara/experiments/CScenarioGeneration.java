@@ -20,6 +20,7 @@ package org.socialcars.sinziana.pfara.experiments;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.uci.ics.jung.visualization.VisualizationViewer;
 import org.json.simple.JSONObject;
 import org.socialcars.sinziana.pfara.data.input.CDemandspojo;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
@@ -28,6 +29,7 @@ import org.socialcars.sinziana.pfara.environment.CDemand;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 import org.socialcars.sinziana.pfara.environment.IGraph;
+import org.socialcars.sinziana.pfara.environment.INode;
 import org.socialcars.sinziana.pfara.units.CUnits;
 
 import java.io.BufferedWriter;
@@ -69,7 +71,7 @@ public class CScenarioGeneration
     public void generateDensityFlow( final Integer p_ratio, final String p_endfile ) throws IOException
     {
         //this generates deltaN
-        final IGraph l_env = new CGraph( m_input.getGraph() );
+        final IGraph<VisualizationViewer<INode, IEdge>> l_env = new CGraph( m_input.getGraph() );
         final HashMap<IEdge, Integer> l_countingmap = new HashMap<>();
 
         m_demand.forEach( i -> IntStream.range( 0, Math.round( i.howMany() ) ).boxed()

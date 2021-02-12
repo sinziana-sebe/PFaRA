@@ -20,7 +20,7 @@ import org.socialcars.sinziana.pfara.environment.IEdge;
 import javax.annotation.Nullable;
 import java.awt.*;
 import java.util.Map;
-import java.util.function.Function;
+import com.google.common.base.Function;
 import java.util.stream.Collectors;
 
 /**

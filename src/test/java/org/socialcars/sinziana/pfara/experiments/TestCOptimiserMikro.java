@@ -30,7 +30,7 @@ public class TestCOptimiserMikro
     @Before
     public void init() throws IOException
     {
-        m_optmikro = new COptimisationMikro( "src/test/resources/5nonsynch.json", "src/test/resources/5_info.json", "5OptMikroNonSync3_2veh", 1, 1.0, 3.0 );
+        m_optmikro = new COptimisationMikro( "src/test/resources/25.json", "src/test/resources/25_info.json", "25HtoLOptMikro2_2veh", 1, 1.0, 2.0 );
     }
 
     @Test

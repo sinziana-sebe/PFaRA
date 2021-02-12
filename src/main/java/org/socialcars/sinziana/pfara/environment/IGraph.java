@@ -15,11 +15,13 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
-public interface IGraph
+public interface IGraph<V extends JPanel>
 {
 
     /**
@@ -89,5 +91,12 @@ public interface IGraph
      */
     INode randomnodebyzone( final String p_zone );
 
+    /**
+     * returns a panel with graph visualization
+     *
+     * @param p_dimension dimension
+     * @return panel
+     */
+    V panel( final Dimension p_dimension );
 
 }

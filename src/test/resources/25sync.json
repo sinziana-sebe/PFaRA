@@ -206,109 +206,109 @@
         "name": "edge0-1",
         "from": "0",
         "to": "1",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge1-0",
         "from": "1",
         "to": "0",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge1-2",
         "from": "1",
         "to": "2",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge2-1",
         "from": "2",
         "to": "1",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge2-3",
         "from": "2",
         "to": "3",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge3-2",
         "from": "3",
         "to": "2",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge3-4",
         "from": "3",
         "to": "4",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge4-3",
         "from": "4",
         "to": "3",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge5-6",
         "from": "5",
         "to": "6",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge6-5",
         "from": "6",
         "to": "5",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge6-7",
         "from": "6",
         "to": "7",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge7-6",
         "from": "7",
         "to": "6",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge7-8",
         "from": "7",
         "to": "8",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge8-7",
         "from": "8",
         "to": "7",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge8-9",
         "from": "8",
         "to": "9",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge9-8",
         "from": "9",
         "to": "8",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge10-11",
         "from": "10",
         "to": "11",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge11-10",
         "from": "11",
         "to": "10",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge11-12",
@@ -338,109 +338,109 @@
         "name": "edge13-14",
         "from": "13",
         "to": "14",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge14-13",
         "from": "14",
         "to": "13",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge15-16",
         "from": "15",
         "to": "16",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge16-15",
         "from": "16",
         "to": "15",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge16-17",
         "from": "16",
         "to": "17",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge17-16",
         "from": "17",
         "to": "16",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge17-18",
         "from": "17",
         "to": "18",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge18-17",
         "from": "18",
         "to": "17",
-        "weight" : 3
+        "weight" : 2
       },
       {
         "name": "edge18-19",
         "from": "18",
         "to": "19",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge19-18",
         "from": "19",
         "to": "18",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge20-21",
         "from": "20",
         "to": "21",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge21-20",
         "from": "21",
         "to": "20",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge21-22",
         "from": "21",
         "to": "22",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge22-21",
         "from": "22",
         "to": "21",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge22-23",
         "from": "22",
         "to": "23",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge23-22",
         "from": "23",
         "to": "22",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge23-24",
         "from": "23",
         "to": "24",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge24-23",
         "from": "24",
         "to": "23",
-        "weight" : 3
+        "weight" : 1
       },
       {
         "name": "edge0-5",
@@ -518,37 +518,37 @@
         "name": "edge6-11",
         "from": "6",
         "to": "11",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge11-6",
         "from": "11",
         "to": "6",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge7-12",
         "from": "7",
         "to": "12",
-        "weight" : 1
+        "weight" : 3
       },
       {
         "name": "edge12-7",
         "from": "12",
         "to": "7",
-        "weight" : 1
+        "weight" : 3
       },
       {
         "name": "edge8-13",
         "from": "8",
         "to": "13",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge13-8",
         "from": "13",
         "to": "8",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge9-14",
@@ -578,37 +578,37 @@
         "name": "edge11-16",
         "from": "11",
         "to": "16",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge16-11",
         "from": "16",
         "to": "11",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge12-17",
         "from": "12",
         "to": "17",
-        "weight" : 1
+        "weight" : 3
       },
       {
         "name": "edge17-12",
         "from": "17",
         "to": "12",
-        "weight" : 1
+        "weight" : 3
       },
       {
         "name": "edge13-18",
         "from": "13",
         "to": "18",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge18-13",
         "from": "18",
         "to": "13",
-        "weight" : 1
+        "weight" : 2
       },
       {
         "name": "edge14-19",
