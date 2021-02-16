@@ -29,8 +29,8 @@ import java.io.IOException;
 public class TestCTraffic
 {
     private CGraph m_graph;
-    private CTraffic m_traffic;
-    private CTraffic m_traffic1;
+    private CBackground m_traffic;
+    private CBackground m_traffic1;
     private CTrafficpojo m_trafficpojo;
     private CInputpojo m_input;
 
@@ -41,8 +41,8 @@ public class TestCTraffic
         m_input = new ObjectMapper().readValue( new File( "src/test/resources/minimal-graph.json" ), CInputpojo.class );
         m_graph = new CGraph( m_input.getGraph() );
         m_trafficpojo = m_input.getTraffic().iterator().next();
-        m_traffic = new CTraffic( m_trafficpojo.getDensity(), m_trafficpojo.getFlow() );
-        m_traffic1 = new CTraffic( 0.0, 0.0 );
+        m_traffic = new CBackground( m_trafficpojo.getDensity(), m_trafficpojo.getFlow() );
+        m_traffic1 = new CBackground( 0.0, 0.0 );
     }
 
     @Test
@@ -67,9 +67,9 @@ public class TestCTraffic
     public void testSpeed()
     {
         Assume.assumeNotNull( m_traffic );
-        Assert.assertTrue( m_traffic.maxSpeed().equals( 1.0 ) );
+        Assert.assertTrue( m_traffic.maxspeed().equals( 1.0 ) );
         Assume.assumeNotNull( m_traffic1 );
-        Assert.assertTrue( m_traffic1.maxSpeed().equals( 100000.0 ) );
+        Assert.assertTrue( m_traffic1.maxspeed().equals( 100000.0 ) );
     }
 
     @Test

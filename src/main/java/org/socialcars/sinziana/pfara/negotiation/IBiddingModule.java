@@ -19,7 +19,18 @@ import java.util.ArrayList;
 
 public interface IBiddingModule
 {
+    /**
+     * gives the best bid in the current round
+     * @param p_bids the previous bids
+     * @param p_time the current round
+     * @param p_rv opponent's estimated reservation value
+     * @return best offer
+     */
     Double getBestBid( final ArrayList<Double> p_bids, final Integer p_time, final Double p_rv );
 
+    /**
+     * updates the opponents perceived strategy
+     * @param p_offer the current offer made by the opponent
+     */
     void updateStrategy( final Double p_offer );
 }

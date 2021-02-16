@@ -1,0 +1,495 @@
+{
+  "graph": {
+    "zones":26,
+    "nodes": [
+      {
+        "name" : "2",
+        "coordinates": {
+          "lat": 1.8212400000,
+          "lon": 0.8618440000
+        }
+      },
+      {
+        "name" : "14",
+        "coordinates": {
+          "lat": 1.4471800000,
+          "lon": 0.8289110000
+        }
+      },
+      {
+        "name" : "154",
+        "coordinates": {
+          "lat": 1.7423300000,
+          "lon": 0.9929540000
+        }
+      },
+      {
+        "name" : "158",
+        "coordinates": {
+          "lat": 1.7839600000,
+          "lon": 1.0774600000
+        }
+      },
+      {
+        "name" : "198",
+        "coordinates": {
+          "lat": 1.8299400000,
+          "lon": 1.2178900000
+        }
+      },
+      {
+        "name" : "199",
+        "coordinates": {
+          "lat": 1.7609700000,
+          "lon": 1.2011100000
+        }
+      },
+      {
+        "name" : "201",
+        "coordinates": {
+          "lat": 1.5857400000,
+          "lon": 0.6623830000
+        }
+      },
+      {
+        "name" : "202",
+        "coordinates": {
+          "lat": 1.6373200000,
+          "lon": 0.6642470000
+        }
+      },
+      {
+        "name" : "221",
+        "coordinates": {
+          "lat": 1.8815200000,
+          "lon": 0.6828890000
+        }
+      },
+      {
+        "name" : "277",
+        "coordinates": {
+          "lat": 1.3061300000,
+          "lon": 1.0830500000
+        }
+      },
+      {
+        "name" : "278",
+        "coordinates": {
+          "lat": 1.3266300000,
+          "lon": 1.0600600000
+        }
+      },
+      {
+        "name" : "280",
+        "coordinates": {
+          "lat": 1.3123400000,
+          "lon": 1.0886500000
+        }
+      },
+      {
+        "name" : "281",
+        "coordinates": {
+          "lat": 1.6721100000,
+          "lon": 1.1843400000
+        }
+      },
+      {
+        "name" : "283",
+        "coordinates": {
+          "lat": 1.3539700000,
+          "lon": 1.1122600000
+        }
+      },
+      {
+        "name" : "288",
+        "coordinates": {
+          "lat": 1.4322600000,
+          "lon": 1.1470500000
+        }
+      },
+      {
+        "name" : "301",
+        "coordinates": {
+          "lat": 1.8417500000,
+          "lon": 1.2278300000
+        }
+      },
+      {
+        "name" : "303",
+        "coordinates": {
+          "lat": 1.8411300000,
+          "lon": 1.2178900000
+        }
+      },
+      {
+        "name" : "306",
+        "coordinates": {
+          "lat": 1.9958500000,
+          "lon": 1.2147800000
+        }
+      },
+      {
+        "name" : "307",
+        "coordinates": {
+          "lat": 1.9492500000,
+          "lon": 1.2154100000
+        }
+      },
+      {
+        "name" : "310",
+        "coordinates": {
+          "lat": 1.9970900000,
+          "lon": 1.2241000000
+        }
+      },
+      {
+        "name" : "311",
+        "coordinates": {
+          "lat": 2.1779100000,
+          "lon": 1.2110600000
+        }
+      },
+      {
+        "name" : "312",
+        "coordinates": {
+          "lat": 2.0238100000,
+          "lon": 1.2141600000
+        }
+      },
+      {
+        "name" : "317",
+        "coordinates": {
+          "lat": 1.3682600000,
+          "lon": 0.9935750000
+        }
+      },
+      {
+        "name" : "320",
+        "coordinates": {
+          "lat": 1.0047600000,
+          "lon": 0.9438650000
+        }
+      },
+      {
+        "name" : "321",
+        "coordinates": {
+          "lat": 1.6963500000,
+          "lon": 0.8413390000
+        }
+      },
+      {
+        "name" : "322",
+        "coordinates": {
+          "lat": 1.5279600000,
+          "lon": 0.7313560000
+        }
+      },
+      {
+        "name" : "343",
+        "coordinates": {
+          "lat": 1.2228600000,
+          "lon": 1.0451500000
+        }
+      },
+      {
+        "name" : "345",
+        "coordinates": {
+          "lat": 1.7019400000,
+          "lon": 0.8711650000
+        }
+      },
+      {
+        "name" : "346",
+        "coordinates": {
+          "lat": 1.0364500000,
+          "lon": 0.9544290000
+        }
+      }
+    ],
+    "edges": [
+      {
+        "name": "edge2-154",
+        "from": "2",
+        "to": "154",
+        "weight" : 4
+      },
+      {
+        "name": "edge2-160",
+        "from": "2",
+        "to": "160",
+        "weight" : 1
+      },
+      {
+        "name": "edge2-194",
+        "from": "2",
+        "to": "194",
+        "weight" : 16
+      },
+      {
+        "name": "edge2-345",
+        "from": "2",
+        "to": "345",
+        "weight" : 33
+      },
+      {
+        "name": "edge14-317",
+        "from": "14",
+        "to": "317",
+        "weight" : 1
+      },
+      {
+        "name": "edge14-318",
+        "from": "14",
+        "to": "318",
+        "weight" : 0
+      },
+      {
+        "name": "edge14-319",
+        "from": "14",
+        "to": "319",
+        "weight" : 3
+      },
+      {
+        "name": "edge14-322",
+        "from": "14",
+        "to": "322",
+        "weight" : 0
+      },
+	  {
+        "name": "edge154-158",
+        "from": "154",
+        "to": "158",
+        "weight" : 1
+      },
+	  
+      {
+        "name": "edge158-199",
+        "from": "158",
+        "to": "199",
+        "weight" : 1
+      },
+      {
+        "name": "edge199-281",
+        "from": "199",
+        "to": "281",
+        "weight" : 4
+      },
+      {
+        "name": "edge201-202",
+        "from": "201",
+        "to": "202",
+        "weight" : 10
+      },,
+      {
+        "name": "edge202-321",
+        "from": "202",
+        "to": "321",
+        "weight" : 3
+      },
+      {
+        "name": "edge277-343",
+        "from": "277",
+        "to": "343",
+        "weight" : 0
+      },
+      {
+        "name": "edge278-277",
+        "from": "278",
+        "to": "277",
+        "weight" : 3
+      },
+      {
+        "name": "edge278-317",
+        "from": "278",
+        "to": "317",
+        "weight" : 1
+      },
+      {
+        "name": "edge280-277",
+        "from": "280",
+        "to": "277",
+        "weight" : 191
+      },
+      {
+        "name": "edge280-278",
+        "from": "280",
+        "to": "278",
+        "weight" : 0
+      },
+      {
+        "name": "edge281-288",
+        "from": "281",
+        "to": "288",
+        "weight" : 1
+      },
+      {
+        "name": "edge283-280",
+        "from": "283",
+        "to": "280",
+        "weight" : 0
+      },
+      {
+        "name": "edge288-283",
+        "from": "288",
+        "to": "283",
+        "weight" : 2
+      },
+      {
+        "name": "edge301-303",
+        "from": "301",
+        "to": "303",
+        "weight" : 0
+      },
+      {
+        "name": "edge301-310",
+        "from": "301",
+        "to": "310",
+        "weight" : 0
+      },
+      {
+        "name": "edge303-301",
+        "from": "303",
+        "to": "301",
+        "weight" : 0
+      },
+      {
+        "name": "edge303-198",
+        "from": "303",
+        "to": "198",
+        "weight" : 45
+      },
+      {
+        "name": "edge306-307",
+        "from": "306",
+        "to": "307",
+        "weight" : 9
+      },
+      {
+        "name": "edge306-310",
+        "from": "306",
+        "to": "310",
+        "weight" : 96
+      },
+      {
+        "name": "edge307-303",
+        "from": "307",
+        "to": "303",
+        "weight" : 4
+      },
+      {
+        "name": "edge311-312",
+        "from": "311",
+        "to": "312",
+        "weight" : 1
+      },
+      {
+        "name": "edge312-306",
+        "from": "312",
+        "to": "306",
+        "weight" : 11
+      },
+      {
+        "name": "edge317-14",
+        "from": "317",
+        "to": "14",
+        "weight" : 1
+      },
+      {
+        "name": "edge317-278",
+        "from": "317",
+        "to": "278",
+        "weight" : 3
+      },
+      {
+        "name": "edge321-345",
+        "from": "321",
+        "to": "345",
+        "weight" : 20
+      },
+      {
+        "name": "edge322-14",
+        "from": "322",
+        "to": "14",
+        "weight" : 3
+      },
+      {
+        "name": "edge343-346",
+        "from": "343",
+        "to": "346",
+        "weight" : 0
+      },
+      {
+        "name": "edge345-2",
+        "from": "345",
+        "to": "2",
+        "weight" : 1
+      },
+	  {
+        "name": "edge345-154",
+        "from": "345",
+        "to": "154",
+        "weight" : 34
+      },
+      {
+        "name": "edge346-320",
+        "from": "346",
+        "to": "320",
+        "weight" : 0
+      }
+    ]
+  },
+  "stoplights": [
+    {
+      "location": "edge36-166",
+      "red": 5,
+      "green": 5,
+      "start": 0
+    },
+    {
+      "location": "edge360-42",
+      "red": 5,
+      "green": 5,
+      "start": 5
+    }
+  ],
+  "vehicles": [
+    {
+      "name": "blue",
+      "start": "311",
+      "finish": "307",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000000,
+        "max-length": 1000000000,
+        "max-cost": 20000000
+      },
+      "utility": {
+       "alpha": 0.2,
+       "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "red",
+      "start": "311",
+      "finish": "310",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    }
+  ]
+}

@@ -102,4 +102,9 @@ public class CWeirdExperiments
     {
         return m_env.edgeByName( p_edge ).length();
     }
+
+    public void allEdgeLengths()
+    {
+        m_env.edges().forEach( e -> System.out.println( e.name() + ": " + e.length() ) );
+    }
 }

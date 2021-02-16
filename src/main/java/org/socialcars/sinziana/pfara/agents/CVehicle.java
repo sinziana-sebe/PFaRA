@@ -185,6 +185,12 @@ public class CVehicle implements IVehicle
         return m_preference;
     }
 
+    @Override
+    public CUtility utility()
+    {
+        return m_utility;
+    }
+
     /**
      * moves the vehicle in a microscopic fashion
      * based on the vehicles acceleration, current speed

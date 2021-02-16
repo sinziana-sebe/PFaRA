@@ -20,9 +20,24 @@ package org.socialcars.sinziana.pfara.environment;
 
 public interface IBackground
 {
+    /**
+     * the maximum speed on the edge
+     * flow divided by density
+     * @return maximum speed
+     */
     Double maxSpeed();
 
+    /**
+     * traffic density on the edge
+     * number of vehicles per distance unit
+     * @return the density
+     */
     Double density();
 
+    /**
+     * traffic flow on the edge
+     * number of vehicles per time unit
+     * @return the flow
+     */
     Double flow();
 }

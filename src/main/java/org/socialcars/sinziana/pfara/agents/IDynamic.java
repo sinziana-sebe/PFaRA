@@ -15,6 +15,7 @@
 
 package org.socialcars.sinziana.pfara.agents;
 
+import org.socialcars.sinziana.pfara.agents.proprieties.CUtility;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 
 /**
@@ -51,6 +52,12 @@ public interface IDynamic extends IAgent
      * @return the agent's preferences
      */
     CPreference preferences();
+
+    /**
+     * utility
+     * @return the agent's utility function
+     */
+    CUtility utility();
 
     /**
      * moves the agent in a microscopic fashion

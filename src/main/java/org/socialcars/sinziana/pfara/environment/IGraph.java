@@ -31,6 +31,12 @@ public interface IGraph<V extends JPanel>
     Integer size();
 
     /**
+     * all the nodes
+     * @return nodes
+     */
+    Collection<INode> nodes();
+
+    /**
      * all the edges
      * @return edges
      */

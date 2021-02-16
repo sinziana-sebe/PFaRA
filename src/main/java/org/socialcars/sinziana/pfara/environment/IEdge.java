@@ -75,7 +75,7 @@ public interface IEdge
      * adds background traffic information
      * @param p_traffic the traffic object
      */
-    void addBackgroundTraffic( final CTraffic p_traffic );
+    void addBackgroundTraffic( final CBackground p_traffic );
 
     /**
      * returns the maximum speed permitted by traffic

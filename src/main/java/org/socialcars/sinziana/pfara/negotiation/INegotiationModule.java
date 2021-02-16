@@ -22,14 +22,42 @@ import java.util.List;
 
 public interface INegotiationModule
 {
+    /**
+     * handles offers received
+     * @param p_offer the offer
+     * @param p_oldroute the ego-agent's old route
+     * @param p_speed the speed of travel
+     * @return string with the response to the offer (accept,reject,haggle)
+     * @throws IOException file
+     */
     String receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute, final Double p_speed ) throws IOException;
 
+    /**
+     * handles the sending of an offer
+     * @param p_route the route offered
+     * @param p_name the name of the ego agent
+     * @return the offer
+     */
     CInitialOffer sendOffer( final List<IEdge> p_route, final String p_name );
 
+    /**
+     * handles the haggling process
+     * @param p_offer the offer in discussion
+     * @return string with response to the offer (accept, reject, haggle)
+     * @throws IOException file
+     */
     String haggle( final CSimpleOffer p_offer ) throws IOException;
 
+    /**
+     * gives the cost of the alternative (the one offered) route
+     * @return cost
+     */
     Double alternativeRouteCost();
 
+    /**
+     * the role of the ego agent
+     * @return role
+     */
     EAgentType role();
 
 }

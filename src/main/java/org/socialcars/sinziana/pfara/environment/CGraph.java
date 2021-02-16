@@ -188,6 +188,12 @@ public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
         return m_nodes.size();
     }
 
+    @Override
+    public Collection<INode> nodes()
+    {
+        return m_graph.getVertices();
+    }
+
     /**
      * all the edges
      * @return edges
@@ -229,6 +235,28 @@ public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
     {
         final IEdge l_edge = edgeByName( p_pod.location() );
         if ( l_edge.stoplight().state().equals( ELightState.RED ) ) p_pod.setDelay( l_edge.stoplight().timeLeft() );
+    }
+
+    public List<IEdge> findMultiplePaths( final IEdge p_edge )
+    {
+        final Function<IEdge, Integer> l_transformer = new Function<IEdge, Integer>()
+        {
+            public Integer apply( final IEdge p_otheredge )
+            {
+                if ( p_otheredge.equals( p_edge ) )
+                    return Integer.MAX_VALUE;
+                else
+                    return 1;
+            }
+        };
+
+        final DijkstraShortestPath<INode, IEdge> l_algorithm = new DijkstraShortestPath<>( m_graph, l_transformer );
+        final Double l_distance = l_algorithm.getDistance( p_edge.from(), p_edge.to() ).doubleValue();
+
+        if ( l_distance < Integer.MAX_VALUE )
+            return l_algorithm.getPath( p_edge.from(), p_edge.to() );
+        else
+            return null;
     }
 
     /**

@@ -136,7 +136,7 @@ public class COptimisationMikro
     private void switchmovement( final CVehicle p_pod, final IEdge p_edge )
     {
         if ( p_pod.position().doubleValue() <= p_edge.sections().begining() ) p_pod.moveMikro();
-        else if ( p_pod.position().doubleValue() <= p_edge.sections().begining() + p_edge.sections().middle() ) p_pod.moveMakro( m_backinfo.get( p_edge ).getmaxspeed() );
+        else if ( p_pod.position().doubleValue() <= p_edge.sections().begining() + p_edge.sections().middle() ) p_pod.moveMakro( m_backinfo.get( p_edge ).maxspeed() );
         else p_pod.brake();
     }
 

@@ -16,26 +16,31 @@
  *
  */
 
-package org.socialcars.sinziana.pfara.experiments;
+package org.socialcars.sinziana.pfara.environment.negotiables;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.IOException;
-
-public class TestCBenchmarkMikro
+public interface IFingNegotiables
 {
-    private CBenchmarkMikro m_benchmikro;
+    /**
+     * finds simple negotiable triangles
+     */
+    void findSimple();
 
-    @Before
-    public void init() throws IOException
-    {
-        m_benchmikro = new CBenchmarkMikro( "src/test/resources/tiersection.json", "src/test/resources/tiergarten_info.json", "TiersectionBenchmarkMikro_5veh", 1, 0.01 );
-    }
+    /**
+     * validates simple negotiable triangles
+     * @param p_el the triangle
+     * @return whether it is valid or not
+     */
+    Boolean validateSimple( final INegotiableElement p_el );
 
-    @Test
-    public void run() throws IOException
-    {
-        m_benchmikro.run();
-    }
+    /**
+     * finds complex negotiable shapes (trapezoids)
+     */
+    void findComplex();
+
+    /**
+     * validates the complex negotiable trapezoid
+     * @param p_el the trapezoid
+     * @return whether it is valid or not
+     */
+    Boolean validateComplex( final INegotiableElement p_el );
 }

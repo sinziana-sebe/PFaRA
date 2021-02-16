@@ -16,26 +16,17 @@
  *
  */
 
-package org.socialcars.sinziana.pfara.experiments;
+package org.socialcars.sinziana.pfara.environment.negotiables;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.socialcars.sinziana.pfara.environment.IEdge;
 
-import java.io.IOException;
+import java.util.List;
 
-public class TestCBenchmarkMikro
+public interface INegotiableElement
 {
-    private CBenchmarkMikro m_benchmikro;
+    List<IEdge> original();
 
-    @Before
-    public void init() throws IOException
-    {
-        m_benchmikro = new CBenchmarkMikro( "src/test/resources/tiersection.json", "src/test/resources/tiergarten_info.json", "TiersectionBenchmarkMikro_5veh", 1, 0.01 );
-    }
+    List<IEdge> common();
 
-    @Test
-    public void run() throws IOException
-    {
-        m_benchmikro.run();
-    }
+    List<IEdge> alone();
 }

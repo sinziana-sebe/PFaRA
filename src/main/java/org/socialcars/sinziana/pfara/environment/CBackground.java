@@ -26,6 +26,11 @@ public class CBackground
     private final Double m_density;
     private final Double m_flow;
 
+    /**
+     * ctor simple
+     * @param p_density the density of the edge
+     * @param p_flow the flow of the edge
+     */
     public CBackground( final Double p_density, final Double p_flow )
     {
         m_density = p_density;
@@ -34,6 +39,10 @@ public class CBackground
         else m_maxspeed = m_flow / m_density;
     }
 
+    /**
+     * ctor from pojo
+     * @param p_pojo the input pojo
+     */
     public CBackground( final CBackgroundpojo p_pojo )
     {
         m_flow = p_pojo.getFlow();
@@ -42,21 +51,40 @@ public class CBackground
         else m_maxspeed = m_flow / m_density;
     }
 
-    public Double getmaxspeed()
+    /**
+     * the maximum speed on the edge
+     * flow divided by density
+     * @return maximum speed
+     */
+    public Double maxspeed()
     {
         return m_maxspeed;
     }
 
-    public Double getdensity()
+    /**
+     * traffic density on the edge
+     * number of vehicles per distance unit
+     * @return the density
+     */
+    public Double density()
     {
         return m_density;
     }
 
-    public Double getflow()
+    /**
+     * traffic flow on the edge
+     * number of vehicles per time unit
+     * @return the flow
+     */
+    public Double flow()
     {
         return m_flow;
     }
 
+    /**
+     * changes to the to String function
+     * @return the new string message
+     */
     @Override
     public String toString()
     {

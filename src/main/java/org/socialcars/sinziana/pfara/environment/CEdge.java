@@ -27,7 +27,7 @@ public class CEdge implements IEdge
     private final Double m_weight;
     private CStoplight m_stoplight;
     private CSections m_sections;
-    private CTraffic m_traffic;
+    private CBackground m_traffic;
 
     /**
      * ctor
@@ -140,7 +140,7 @@ public class CEdge implements IEdge
      * @param p_traffic the traffic object
      */
     @Override
-    public void addBackgroundTraffic( final CTraffic p_traffic )
+    public void addBackgroundTraffic( final CBackground p_traffic )
     {
         m_traffic = p_traffic;
     }
@@ -152,7 +152,7 @@ public class CEdge implements IEdge
     @Override
     public Double maxSpeed()
     {
-        if ( m_traffic != null ) return m_traffic.maxSpeed();
+        if ( m_traffic != null ) return m_traffic.maxspeed();
         return null;
     }
 

@@ -1,0 +1,495 @@
+{
+  "graph": {
+    "zones":26,
+    "nodes": [
+      {
+        "name" : "3",
+        "coordinates": {
+          "lat": 2.1188800000,
+          "lon": 1.2129200000
+        }
+      },
+      {
+        "name" : "14",
+        "coordinates": {
+          "lat": 1.4471800000,
+          "lon": 0.8289110000
+        }
+      },
+      {
+        "name" : "198",
+        "coordinates": {
+          "lat": 1.8299400000,
+          "lon": 1.2178900000
+        }
+      },
+      {
+        "name" : "201",
+        "coordinates": {
+          "lat": 1.5857400000,
+          "lon": 0.6623830000
+        }
+      },
+      {
+        "name" : "202",
+        "coordinates": {
+          "lat": 1.6373200000,
+          "lon": 0.6642470000
+        }
+      },
+      {
+        "name" : "206",
+        "coordinates": {
+          "lat": 1.5751800000,
+          "lon": 0.6524410000
+        }
+      },
+      {
+        "name" : "227",
+        "coordinates": {
+          "lat": 1.8355400000,
+          "lon": 1.0333400000
+        }
+      },
+      {
+        "name" : "277",
+        "coordinates": {
+          "lat": 1.3061300000,
+          "lon": 1.0830500000
+        }
+      },
+      {
+        "name" : "278",
+        "coordinates": {
+          "lat": 1.3266300000,
+          "lon": 1.0600600000
+        }
+      },
+      {
+        "name" : "297",
+        "coordinates": {
+          "lat": 2.0082800000,
+          "lon": 1.2234800000
+        }
+      },
+      {
+        "name" : "303",
+        "coordinates": {
+          "lat": 1.8411300000,
+          "lon": 1.2178900000
+        }
+      },
+      {
+        "name" : "306",
+        "coordinates": {
+          "lat": 1.9958500000,
+          "lon": 1.2147800000
+        }
+      },
+      {
+        "name" : "307",
+        "coordinates": {
+          "lat": 1.9492500000,
+          "lon": 1.2154100000
+        }
+      },
+      {
+        "name" : "310",
+        "coordinates": {
+          "lat": 1.9970900000,
+          "lon": 1.2241000000
+        }
+      },
+      {
+        "name" : "311",
+        "coordinates": {
+          "lat": 2.1779100000,
+          "lon": 1.2110600000
+        }
+      },
+      {
+        "name" : "317",
+        "coordinates": {
+          "lat": 1.3682600000,
+          "lon": 0.9935750000
+        }
+      },
+      {
+        "name" : "320",
+        "coordinates": {
+          "lat": 1.0047600000,
+          "lon": 0.9438650000
+        }
+      },
+      {
+        "name" : "321",
+        "coordinates": {
+          "lat": 1.6963500000,
+          "lon": 0.8413390000
+        }
+      },
+      {
+        "name" : "322",
+        "coordinates": {
+          "lat": 1.5279600000,
+          "lon": 0.7313560000
+        }
+      },
+      {
+        "name" : "343",
+        "coordinates": {
+          "lat": 1.2228600000,
+          "lon": 1.0451500000
+        }
+      },
+      {
+        "name" : "346",
+        "coordinates": {
+          "lat": 1.0364500000,
+          "lon": 0.9544290000
+        }
+      }
+    ],
+    "edges": [
+      {
+        "name": "edge3-297",
+        "from": "3",
+        "to": "297",
+        "weight" : 0
+      },
+      {
+        "name": "edge311-3",
+        "from": "311",
+        "to": "3",
+        "weight" : 0
+      },
+      {
+        "name": "edge14-317",
+        "from": "14",
+        "to": "317",
+        "weight" : 4
+      },
+      {
+        "name": "edge198-227",
+        "from": "198",
+        "to": "227",
+        "weight": 2
+      },
+      {
+        "name": "edge201-202",
+        "from": "201",
+        "to": "202",
+        "weight" : 45
+      },
+      {
+        "name": "edge201-206",
+        "from": "201",
+        "to": "206",
+        "weight" : 7
+      },
+      {
+        "name": "edge202-321",
+        "from": "202",
+        "to": "321",
+        "weight" : 2
+      },
+      {
+        "name": "edge206-322",
+        "from": "206",
+        "to": "322",
+        "weight" : 24
+      },
+      {
+        "name": "edge227-201",
+        "from": "227",
+        "to": "201",
+        "weight" : 8
+      },
+      {
+        "name": "edge277-343",
+        "from": "277",
+        "to": "343",
+        "weight" : 1
+      },
+      {
+        "name": "edge278-277",
+        "from": "278",
+        "to": "277",
+        "weight" : 78
+      },
+      {
+        "name": "edge317-278",
+        "from": "317",
+        "to": "278",
+        "weight" : 29
+      },
+      {
+        "name": "edge297-306",
+        "from": "297",
+        "to": "306",
+        "weight" : 7
+      },
+      {
+        "name": "edge303-198",
+        "from": "303",
+        "to": "198",
+        "weight" : 36
+      },
+      {
+        "name": "edge306-307",
+        "from": "306",
+        "to": "307",
+        "weight" : 9
+      },
+      {
+        "name": "edge306-310",
+        "from": "306",
+        "to": "310",
+        "weight" : 0
+      },
+      {
+        "name": "edge307-303",
+        "from": "307",
+        "to": "303",
+        "weight" : 4
+      },
+      {
+        "name": "edge322-14",
+        "from": "322",
+        "to": "14",
+        "weight" : 5
+      },
+      {
+        "name": "edge343-346",
+        "from": "343",
+        "to": "346",
+        "weight" : 1
+      },
+      {
+        "name": "edge346-320",
+        "from": "346",
+        "to": "320",
+        "weight" : 3
+      }
+    ]
+  },
+  "stoplights": [
+    {
+      "location": "edge3-297",
+      "red": 15,
+      "green": 45,
+      "start" : 0
+    },
+    {
+      "location": "edge311-3",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge14-317",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge198-227",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge201-202",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge201-206",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge202-321",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge206-322",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge227-201",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge277-343",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge278-277",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge317-278",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge297-306",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge303-198",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge306-307",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge306-310",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge307-303",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge322-14",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge343-346",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    },
+    {
+      "location": "edge346-320",
+      "red": 15,
+      "green": 45,
+      "start": 0
+    }
+  ],
+  "vehicles": [
+    {
+      "name": "blue",
+      "start": "311",
+      "finish": "307",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000000,
+        "max-length": 1000000000,
+        "max-cost": 20000000
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "red",
+      "start": "311",
+      "finish": "310",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "yellow",
+      "start": "311",
+      "finish": "320",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "purple",
+      "start": "311",
+      "finish": "321",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "green",
+      "start": "311",
+      "finish": "322",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration": 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    }
+  ]
+}

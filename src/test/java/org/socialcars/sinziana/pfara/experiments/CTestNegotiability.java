@@ -23,19 +23,19 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestCBenchmarkMikro
+public class CTestNegotiability
 {
-    private CBenchmarkMikro m_benchmikro;
+    private CNegotiability m_neg;
 
     @Before
     public void init() throws IOException
     {
-        m_benchmikro = new CBenchmarkMikro( "src/test/resources/tiersection.json", "src/test/resources/tiergarten_info.json", "TiersectionBenchmarkMikro_5veh", 1, 0.01 );
+        m_neg = new CNegotiability( "src/test/resources/tiergarten.json", "TiergartenNegotiability", 1, 0.01, 3.0 );
     }
 
     @Test
-    public void run() throws IOException
+    public void run()
     {
-        m_benchmikro.run();
+        m_neg.run();
     }
 }
