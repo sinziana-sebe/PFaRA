@@ -92,8 +92,6 @@ public class CNegotiationMakro
             m_status.put( p, "Incomplete" );
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
-            if ( p.name().equals("red") ) m_routes.put( p, List.of( m_env.edgeByName(  "edge322-14" ) ) );
-            if ( p.name().equals( "blue" ) ) m_routes.put( p, List.of( m_env.edgeByName( "edge322-318" ) ) );
         } );
         m_ao = p_ao;
         m_deadline = p_rounds;

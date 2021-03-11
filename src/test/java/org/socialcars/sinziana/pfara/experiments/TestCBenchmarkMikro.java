@@ -30,7 +30,7 @@ public class TestCBenchmarkMikro
     @Before
     public void init() throws IOException
     {
-        m_benchmikro = new CBenchmarkMikro( "src/test/resources/tiersection.json", "src/test/resources/tiergarten_info.json", "TiersectionBenchmarkMikro_5veh", 1, 0.01 );
+        m_benchmikro = new CBenchmarkMikro( "src/test/resources/25sync.json", "src/test/resources/25_info.json", "25HtoLSyncBenchMikro_2veh", 1, 1.0 );
     }
 
     @Test

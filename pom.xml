@@ -23,7 +23,6 @@
 
 
     <dependencies>
-
         <dependency>
             <groupId>net.sf.jung</groupId>
             <artifactId>jung-graph-impl</artifactId>

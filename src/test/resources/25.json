@@ -1168,9 +1168,9 @@
   ],
   "vehicles": [
     {
-      "name" : "pod31",
-      "start": "12",
-      "finish": "20",
+      "name" : "pod1",
+      "start": "0",
+      "finish" : "6",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
@@ -1187,9 +1187,66 @@
       "agent-type": "vehicle"
     },
     {
-      "name" : "pod32",
-      "start": "12",
-      "finish": "0",
+      "name" : "pod2",
+      "start": "0",
+      "finish": "12",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 10000,
+        "max-length": 1000,
+        "max-cost": 200
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod3",
+      "start": "0",
+      "finish": "2",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 10000,
+        "max-length": 1000,
+        "max-cost": 200
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod4",
+      "start": "0",
+      "finish": "18",
+      "preference": {
+        "min-speed": 0.01,
+        "max-speed": 1,
+        "max-acceleration" : 0.5,
+        "max-deceleration": 0.3,
+        "max-time": 10000,
+        "max-length": 1000,
+        "max-cost": 200
+      },
+      "utility": {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name" : "pod5",
+      "start": "0",
+      "finish": "24",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,

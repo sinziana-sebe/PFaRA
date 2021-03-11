@@ -1,0 +1,96 @@
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: blue CREATED at 311 at 0 timestep
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: red CREATED at 311 at 0 timestep
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findSimple
+INFO: Total triangles: 249
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findSimple
+INFO: Valid triangles: 4
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findSimple$8
+INFO: original: [edge165-164(53)] proposed:[edge165-164(53)] alone:[edge164-164(11)]
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findSimple$8
+INFO: original: [edge10-190(40)] proposed:[edge10-191(28)] alone:[edge191-190(20)]
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findSimple$8
+INFO: original: [edge156-145(21)] proposed:[edge156-17(22)] alone:[edge17-145(1)]
+Mar 10, 2021 4:37:41 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findSimple$8
+INFO: original: [edge148-16(93)] proposed:[edge148-141(129)] alone:[edge141-16(1)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findComplex
+INFO: Total Trapezes: 594
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findComplex
+INFO: Valid Trapezes: 10
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge166-165(150)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge166-273(2), edge273-275(50), edge275-145(0), edge145-142(1), edge142-257(0), edge257-353(6), edge353-352(55)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge352-22(4), edge22-165(33)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge166-165(150)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge166-273(2), edge273-275(50), edge275-145(0), edge145-142(1), edge142-257(0), edge257-353(6), edge353-352(55), edge352-22(4)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge22-165(33)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge35-34(121)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge35-30(4), edge30-33(53)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge33-34(72)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge10-190(40)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge10-191(28)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge191-190(20)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge222-223(832)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge222-220(38), edge220-221(35), edge221-203(1), edge203-204(0), edge204-20(1), edge20-313(40), edge313-347(18), edge347-0(3), edge0-328(158), edge328-311(20), edge311-312(0), edge312-306(11), edge306-307(64), edge307-303(27), edge303-198(295)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge198-227(19), edge227-226(91), edge226-224(15), edge224-223(106)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge222-223(832)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge222-220(38), edge220-221(35), edge221-203(1), edge203-204(0), edge204-20(1), edge20-313(40), edge313-347(18), edge347-0(3), edge0-328(158), edge328-311(20), edge311-312(0), edge312-306(11), edge306-307(64), edge307-303(27), edge303-198(295), edge198-227(19)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge227-226(91), edge226-224(15), edge224-223(106)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge222-223(832)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge222-220(38), edge220-221(35), edge221-203(1), edge203-204(0), edge204-20(1), edge20-313(40), edge313-347(18), edge347-0(3), edge0-328(158), edge328-311(20), edge311-312(0), edge312-306(11), edge306-307(64), edge307-303(27), edge303-198(295), edge198-227(19), edge227-226(91)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge226-224(15), edge224-223(106)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge222-223(832)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge222-220(38), edge220-221(35), edge221-203(1), edge203-204(0), edge204-20(1), edge20-313(40), edge313-347(18), edge347-0(3), edge0-328(158), edge328-311(20), edge311-312(0), edge312-306(11), edge306-307(64), edge307-303(27), edge303-198(295), edge198-227(19), edge227-226(91), edge226-224(15)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge224-223(106)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge156-145(21)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge156-17(22)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge17-145(1)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Original: [edge148-16(93)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Common: [edge148-141(129)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$14
+INFO: Alone: [edge141-16(1)]
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 16 has 2 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 1 has 4 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 17 has 2 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 2 has 2 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 18 has 2 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 7 has 2 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 8 has 2 occurences.
+Mar 10, 2021 4:37:42 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables lambda$findComplex$16
+INFO: Size: 15 has 2 occurences.

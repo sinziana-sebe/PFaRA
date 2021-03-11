@@ -30,7 +30,7 @@ public class TestCNoPlatooningMikro
     @Before
     public void init() throws IOException
     {
-        m_npmikro = new CNoPlatooningMikro( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "TiergartenNPMikro_5veh", 1, 1.0 );
+        m_npmikro = new CNoPlatooningMikro( "src/test/resources/25sync.json", "src/test/resources/25_info.json", "25HtoLSyncNonPlatMikro_2veh", 1, 1.0 );
     }
 
     @Test

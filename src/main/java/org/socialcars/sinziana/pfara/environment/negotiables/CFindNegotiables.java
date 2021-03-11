@@ -82,7 +82,7 @@ public class CFindNegotiables implements IFingNegotiables
                 } );
             } );
         } );
-        s_logger.log( Level.INFO, "Triangle number: " + l_triangles.keySet().size() );
+        s_logger.log( Level.INFO, "Total triangles: " + l_triangles.keySet().size() );
 
         l_counter.set( 0 );
         final HashMap<Integer, CNegotiableElement> l_negotiable = new HashMap<>();
@@ -165,8 +165,8 @@ public class CFindNegotiables implements IFingNegotiables
                 }
             } );
         } );
-        s_logger.log( Level.INFO, "Trapezes: " + l_trapezoidcount.get() );
-        s_logger.log( Level.INFO, "Triangles: " + l_triangles.size() );
+        s_logger.log( Level.INFO, "Total Trapezes: " + l_trapezoidcount.get() );
+        s_logger.log( Level.INFO, "Valid Trapezes: " + l_triangles.size() );
         l_triangles.keySet().forEach( k ->
         {
             s_logger.log( Level.INFO, "Original: " + l_triangles.get( k ).original() );
@@ -180,13 +180,13 @@ public class CFindNegotiables implements IFingNegotiables
             l_complexitymap.put( l_triangles.get( k ).common().size(), l_complexitymap.getOrDefault( l_triangles.get( k ).common().size(), 1 ) + 1 );
         } );
         l_complexitymap.keySet().forEach( k -> s_logger.log( Level.INFO, "Size: " + k + " has " + l_complexitymap.get( k ) + " occurences." ) );
-        l_triangles.keySet().forEach( k ->
+        /**l_triangles.keySet().forEach( k ->
         {
             if (  l_triangles.get( k ).common().size() == 1 )
             {
                 s_logger.log( Level.INFO, "Triangle common route: " + l_triangles.get( k ).common().get( 0 ) );
             }
-        } );
+        } );**/
     }
 
     @Override

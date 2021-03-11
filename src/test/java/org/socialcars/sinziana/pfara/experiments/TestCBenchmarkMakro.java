@@ -30,7 +30,7 @@ public class TestCBenchmarkMakro
     @Before
     public void init() throws IOException
     {
-        m_benchmakro = new CBenchmarkMakro( "src/test/resources/25.json", "src/test/resources/25_info.json", "25HtoLBenchmarkMakro_2veh", 1, 1.0 );
+        m_benchmakro = new CBenchmarkMakro( "src/test/resources/tiergartenN.json", "src/test/resources/tiergarten_info.json", "TiergartenNegotiationBench", 1, 0.01 );
     }
 
     @Test

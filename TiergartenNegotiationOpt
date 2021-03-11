@@ -1,0 +1,88 @@
+Mar 11, 2021 11:21:42 AM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: blue CREATED at 78 at 0 timestep
+Mar 11, 2021 11:21:42 AM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: red CREATED at 78 at 0 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: blue FORMED at 78 at 0 timestep with null red
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle formed
+INFO: red FORMED at 78 at 0 timestep with null blue
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 0
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 78 at 0 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 78 at 0 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 1
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 2
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 3
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 4
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 5
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 6
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 7
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 8
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 9
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 10
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 11
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 71 at 11 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 71 at 11 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: blue SPLIT at 71 at 11 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle split
+INFO: red SPLIT at 71 at 11 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 12
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: blue DEPARTED at 71 at 12 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle departed
+INFO: red DEPARTED at 71 at 12 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 13
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 14
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 15
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 16
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 17
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 18
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 19
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 20
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 21
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 22
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: blue ARRIVED at 72 at 22 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle arrived
+INFO: red ARRIVED at 73 at 22 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue COMPLETED at 72 at 22 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue cost: 17.666666666666664, 0.07653068042607414 blocks
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: blue has an allowance of -6.938893903907228E-18 blocks, 999999978 timesteps and  1.9999982333333332E7 cost
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red COMPLETED at 73 at 22 timestep
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red cost: 20.666666666666664, 0.05378720327742638 blocks
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.agents.CVehicle completed
+INFO: red has an allowance of 9999999.946212796 blocks, 999978 timesteps and  -0.6666666666666661 cost
+Mar 11, 2021 11:21:43 AM org.socialcars.sinziana.pfara.experiments.COptimisationMakro run
+INFO: Time is 23

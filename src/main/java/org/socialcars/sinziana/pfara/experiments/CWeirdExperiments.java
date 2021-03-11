@@ -107,4 +107,10 @@ public class CWeirdExperiments
     {
         m_env.edges().forEach( e -> System.out.println( e.name() + ": " + e.length() ) );
     }
+
+    public void nodesandedges()
+    {
+        System.out.println( "Nodes:" + m_env.nodes().size() );
+        System.out.println( "Edges:" + m_env.edges().size() );
+    }
 }

@@ -1168,17 +1168,17 @@
   ],
   "vehicles": [
     {
-      "name" : "pod1",
-      "start": "0",
-      "finish": "11",
+      "name" : "pod30",
+      "start": "12",
+      "finish": "10",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
         "max-acceleration" : 0.5,
         "max-deceleration": 0.3,
-        "max-time": 1000,
+        "max-time": 10000,
         "max-length": 1000,
-        "max-cost": 20
+        "max-cost": 200
       },
       "utility": {
         "alpha": 0.2,
@@ -1187,17 +1187,17 @@
       "agent-type": "vehicle"
     },
     {
-      "name" : "pod2",
-      "start": "0",
-      "finish": "12",
+      "name" : "pod31",
+      "start": "12",
+      "finish": "20",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
         "max-acceleration" : 0.5,
         "max-deceleration": 0.3,
-        "max-time": 1000,
+        "max-time": 10000,
         "max-length": 1000,
-        "max-cost": 20
+        "max-cost": 200
       },
       "utility": {
         "alpha": 0.2,

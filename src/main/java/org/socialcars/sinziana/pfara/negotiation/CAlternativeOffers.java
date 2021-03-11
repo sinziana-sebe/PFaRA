@@ -151,8 +151,9 @@ public class CAlternativeOffers implements IProtocol
         {
             l_co.changeBuyout( p_offer.buyout() );
         }
-        m_routes.get( l_co.acceptor() ).clear();
-        m_routes.put( l_co.acceptor(), l_co.alternativeRoute() );
+        m_routes.replace( l_co.acceptor(), l_co.alternativeRoute() );
+        //m_routes.get( l_co.acceptor() ).clear();
+        //m_routes.put( l_co.acceptor(), l_co.alternativeRoute() );
         l_co.offeror().acceptUpdateCost( l_co.buyout() );
         l_co.offeror().release( this );
         l_co.acceptor().acceptUpdateCost( l_co.buyout() );

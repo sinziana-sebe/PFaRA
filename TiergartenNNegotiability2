@@ -1,0 +1,12 @@
+Mar 10, 2021 4:36:45 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: blue CREATED at 311 at 0 timestep
+Mar 10, 2021 4:36:45 PM org.socialcars.sinziana.pfara.agents.CVehicle <init>
+INFO: red CREATED at 311 at 0 timestep
+Mar 10, 2021 4:36:46 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findSimple
+INFO: Total triangles: 249
+Mar 10, 2021 4:36:46 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findSimple
+INFO: Valid triangles: 0
+Mar 10, 2021 4:36:47 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findComplex
+INFO: Total Trapezes: 594
+Mar 10, 2021 4:36:47 PM org.socialcars.sinziana.pfara.environment.negotiables.CFindNegotiables findComplex
+INFO: Valid Trapezes: 0

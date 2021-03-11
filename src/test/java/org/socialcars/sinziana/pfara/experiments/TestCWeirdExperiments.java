@@ -30,12 +30,12 @@ public class TestCWeirdExperiments
     @Before
     public void init() throws IOException
     {
-        m_weirdexp = new CWeirdExperiments( "src/test/resources/tiersection.json", "src/test/resources/tiergarten_info.json", "weird", 1, 0.01 );
+        m_weirdexp = new CWeirdExperiments( "src/test/resources/tiergartenN.json", "src/test/resources/tiergarten_info.json", "weird", 1, 0.01 );
     }
 
     @Test
     public void run()
     {
-        m_weirdexp.allEdgeLengths();
+        System.out.println( m_weirdexp.edgeLength( "edge78-71" ) );
     }
 }
