@@ -20,8 +20,10 @@ package org.socialcars.sinziana.pfara.experiments;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.socialcars.sinziana.pfara.environment.INode;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TestCVisualise
 {
@@ -30,7 +32,7 @@ public class TestCVisualise
     @Before
     public void init() throws IOException
     {
-        m_vis = new CVisualise( "src/test/resources/25.json", "src/test/resources/25_info.json", "25vis", 1, 1.0 );
+        m_vis = new CVisualise( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "Tiergartenvis", 1, 0.01 );
     }
 
     @Test
@@ -45,11 +47,28 @@ public class TestCVisualise
         m_vis.visualiseDensity();
     }
 
+    @Test
+    public void testEdges()
+    {
+        final ArrayList<String> l_edges = new ArrayList<>();
+        l_edges.add( "edge231-233" );
+        l_edges.add( "edge233-234" );
+        l_edges.add( "edge234-235" );
+        l_edges.add( "edge72-231" );
+
+        l_edges.add( "edge64-247" );
+        l_edges.add( "edge247-107" );
+        l_edges.add( "edge247-249" );
+        l_edges.add( "edge107-108" );
+
+        m_vis.paintEdges( l_edges );
+    }
+
     public static void main( final String[] p_args ) throws IOException
     {
         final TestCVisualise l_test = new TestCVisualise();
         l_test.init();
-        l_test.testDensity();
+        l_test.testEdges();
     }
 
 

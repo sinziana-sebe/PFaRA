@@ -97,7 +97,6 @@ public class CVisualise
         final JFrame l_frame = new JFrame();
         l_frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
         l_frame.setSize( new Dimension( 1000, 1000 ) );
-
         l_frame.getContentPane().add( new CGraph( m_input.getGraph() ).panel( l_frame.getSize() ) );
         l_frame.setVisible( true );
     }
@@ -124,5 +123,47 @@ public class CVisualise
         l_view.getRenderContext().setEdgeFillPaintTransformer( new CHeatFunction( l_density ) );
         l_view.getRenderContext().setVertexFillPaintTransformer( i -> new Color( 0, 0, 0 ) );
 
+    }
+
+    public void visualiseRoute( final ArrayList<IEdge> p_route )
+    {
+        final JFrame l_frame = new JFrame();
+        l_frame.setSize( new Dimension( 2000, 2000 ) );
+        l_frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
+
+        final VisualizationViewer<INode, IEdge> l_view = m_env.panel( l_frame.getSize() );
+        l_frame.getContentPane().add( l_view );
+        l_frame.setVisible( true );
+
+        final DefaultModalGraphMouse<INode, IEdge> l_gm = new DefaultModalGraphMouse<INode, IEdge>();
+        l_gm.setMode( ModalGraphMouse.Mode.TRANSFORMING );
+        l_view.setGraphMouse( l_gm );
+
+        final Map<IEdge, Integer> l_countingmap = new HashMap<>();
+        p_route.forEach( i -> l_countingmap.put( i, 1 ) );
+
+        l_view.getRenderContext().setEdgeFillPaintTransformer( new CHeatFunction( l_countingmap ) );
+        l_view.getRenderContext().setVertexFillPaintTransformer( i -> new Color( 0, 0, 0 ) );
+    }
+
+    public void paintEdges( final ArrayList<String> p_route )
+    {
+        final JFrame l_frame = new JFrame();
+        l_frame.setSize( new Dimension( 2000, 2000 ) );
+        l_frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
+
+        final VisualizationViewer<INode, IEdge> l_view = m_env.panel( l_frame.getSize() );
+        l_frame.getContentPane().add( l_view );
+        l_frame.setVisible( true );
+
+        final DefaultModalGraphMouse<INode, IEdge> l_gm = new DefaultModalGraphMouse<INode, IEdge>();
+        l_gm.setMode( ModalGraphMouse.Mode.TRANSFORMING );
+        l_view.setGraphMouse( l_gm );
+
+        final Map<IEdge, Integer> l_countingmap = new HashMap<>();
+        p_route.forEach( i -> l_countingmap.put( m_env.edgeByName( i ), 1 ) );
+
+        l_view.getRenderContext().setEdgeFillPaintTransformer( new CHeatFunction( l_countingmap ) );
+        l_view.getRenderContext().setVertexFillPaintTransformer( i -> new Color( 0, 0, 0 ) );
     }
 }

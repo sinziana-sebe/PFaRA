@@ -113,4 +113,9 @@ public class CWeirdExperiments
         System.out.println( "Nodes:" + m_env.nodes().size() );
         System.out.println( "Edges:" + m_env.edges().size() );
     }
+
+    public void viewNodes()
+    {
+
+    }
 }

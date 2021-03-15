@@ -7148,17 +7148,17 @@
   ],
   "vehicles": [
     {
-      "name": "blue",
-      "start": "311",
-      "finish": "307",
+      "name": "f",
+      "start": "72",
+      "finish": "64",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,
         "max-acceleration": 0.5,
         "max-deceleration": 0.3,
-        "max-time": 1000000000,
-        "max-length": 1000000000,
-        "max-cost": 20000000
+        "max-time": 1000000,
+        "max-length": 10000000,
+        "max-cost": 1530
       },
       "utility": {
         "alpha": 0.2,
@@ -7167,9 +7167,9 @@
       "agent-type": "vehicle"
     },
     {
-      "name": "red",
-      "start": "311",
-      "finish": "310",
+      "name": "g",
+      "start": "72",
+      "finish": "247",
       "preference": {
         "min-speed": 0.01,
         "max-speed": 1,

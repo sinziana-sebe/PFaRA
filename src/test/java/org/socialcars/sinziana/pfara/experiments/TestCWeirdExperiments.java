@@ -34,8 +34,14 @@ public class TestCWeirdExperiments
     }
 
     @Test
-    public void run()
+    public void edgeLength()
     {
         System.out.println( m_weirdexp.edgeLength( "edge78-71" ) );
+    }
+
+    @Test
+    public void viewStuff()
+    {
+
     }
 }
