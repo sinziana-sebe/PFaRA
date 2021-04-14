@@ -15,6 +15,9 @@
 
 package org.socialcars.sinziana.pfara.units;
 
+/**
+ * the transformation unit class
+ */
 public class CUnits implements IUnits
 {
     private final double m_timestep;
@@ -73,6 +76,7 @@ public class CUnits implements IUnits
      * returns the simulations distance unit of measure
      * @return block
      */
+    @Override
     public final Number getBlock()
     {
         return m_block;

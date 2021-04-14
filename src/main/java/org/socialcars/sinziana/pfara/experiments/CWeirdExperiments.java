@@ -25,6 +25,7 @@ import org.socialcars.sinziana.pfara.data.input.CInputpojo;
 import org.socialcars.sinziana.pfara.environment.CBackground;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.IEdge;
+import org.socialcars.sinziana.pfara.environment.negotiables.CNegotiableElement;
 import org.socialcars.sinziana.pfara.functionality.CEdgeEnd;
 import org.socialcars.sinziana.pfara.functionality.CPreGrouping;
 import org.socialcars.sinziana.pfara.functionality.CReadBackground;
@@ -33,6 +34,7 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -116,6 +118,41 @@ public class CWeirdExperiments
 
     public void viewNodes()
     {
+
+    }
+
+    public void utilities( final String p_original, final String p_common, final String p_alone, final Double p_omega )
+    {
+        final CNegotiableElement l_el = new CNegotiableElement(
+                Collections.singletonList( m_env.edgeByName( p_original ) ),
+                Collections.singletonList( m_env.edgeByName( p_common ) ),
+                Collections.singletonList( m_env.edgeByName( p_alone ) )
+        );
+        final CVehicle l_veh = m_vehicles.get( 0 );
+        final List<IEdge> l_list = new ArrayList<>();
+
+        final Double l_costreduction = l_el.common().get( 0 ).weight().doubleValue()
+                - ( l_el.common().get( 0 ).weight().doubleValue() / 2 + l_el.common().get( 0 ).weight().doubleValue() / p_omega );
+
+        l_list.add( l_el.common().get( 0 ) );
+        final Double l_common = l_veh.utility().calculateMakro( l_list, 1.0, m_unit, l_costreduction, l_veh.preferences() );
+        l_list.clear();
+        System.out.println( l_el.common().get( 0 ).name() + " " + l_common );
+
+        l_list.add( l_el.alone().get( 0 ) );
+        final Double l_alone = l_veh.utility().calculateMakro( l_list, 1.0, m_unit, 0.0, l_veh.preferences() );
+        l_list.clear();
+        System.out.println( l_el.alone().get( 0 ).name() + " " + l_alone );
+
+        l_list.add( l_el.original().get( 0 ) );
+        final Double l_original =  l_veh.utility().calculateMakro( l_list, 1.0, m_unit, 0.0, l_veh.preferences() );
+        l_list.clear();
+        System.out.println( l_el.original().get( 0 ).name() + " " + l_original );
+
+        l_list.add( l_el.common().get( 0 ) );
+        final Double l_common2 =  l_veh.utility().calculateMakro( l_list, 1.0, m_unit, l_costreduction * 2 - 0.001, l_veh.preferences() );
+
+        System.out.println( l_el.common().get( 0 ).name() + "' " + l_common2 );
 
     }
 }

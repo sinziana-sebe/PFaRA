@@ -30,7 +30,7 @@ public class CTestNegotiability
     @Before
     public void init() throws IOException
     {
-        m_neg = new CNegotiability( "src/test/resources/tiergartenR.json", "TiergartenRNegotiability2", 1, 0.01, 2.0 );
+        m_neg = new CNegotiability( "src/test/resources/spiderweb_2.json", "Spiderweb_2Negotiability4", 1, 1.0, 4.0 );
     }
 
     @Test

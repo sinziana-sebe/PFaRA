@@ -21,6 +21,9 @@ import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * Simulation event class
+ */
 public class CEvent implements IEvent
 {
     private final IDynamic m_who;
@@ -88,7 +91,7 @@ public class CEvent implements IEvent
     }
 
     /**
-     * the time that the event occured
+     * the time that the event occurred
      * @return timestep
      */
     @Override

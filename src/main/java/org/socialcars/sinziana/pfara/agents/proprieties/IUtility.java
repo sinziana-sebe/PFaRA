@@ -22,7 +22,7 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 import java.util.List;
 
 /**
- * the utility interface
+ * the agent utility interface
  */
 public interface IUtility
 {
@@ -61,7 +61,7 @@ public interface IUtility
     Double calculateMikro( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref );
 
     /**
-     * calculates the reservation value
+     * calculates the agent's reservation value
      * @param p_route the route
      * @param p_speed the speed
      * @param p_unit the transformation unit

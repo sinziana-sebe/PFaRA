@@ -21,6 +21,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * graph interface
+ * @param <V> used for visualisation
+ */
 public interface IGraph<V extends JPanel>
 {
 
@@ -99,7 +103,6 @@ public interface IGraph<V extends JPanel>
 
     /**
      * returns a panel with graph visualization
-     *
      * @param p_dimension dimension
      * @return panel
      */

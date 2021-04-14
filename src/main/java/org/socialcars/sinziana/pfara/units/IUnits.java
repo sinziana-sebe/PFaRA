@@ -15,11 +15,14 @@
 
 package org.socialcars.sinziana.pfara.units;
 
+/**
+ * the transformation unit interface
+ */
 public interface IUnits
 {
 
     /**
-     * transforms real life distance to interal distance in blocks
+     * transforms real life distance to internal distance in blocks
      * @param p_distance real life distance
      * @return the number of blocks
      */
@@ -74,5 +77,11 @@ public interface IUnits
      * @return the new position
      */
     Number newPosition( Number p_oldposition, Number p_speed );
+
+    /**
+     * returns the simulations distance unit of measure
+     * @return block
+     */
+    Number getBlock();
 
 }

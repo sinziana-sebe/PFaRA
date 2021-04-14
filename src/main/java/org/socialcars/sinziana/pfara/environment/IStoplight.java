@@ -15,8 +15,30 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+import java.util.logging.Logger;
+
+/**
+ * the stoplight interface
+ */
 public interface IStoplight
 {
+    /**
+     * sets the logger
+     * @param p_log the logger abject
+     */
+    void setLogger( final Logger p_log );
+
+    /**
+     * when the light cycle is started
+     * @return start time of the cycle
+     */
+    Integer startTime();
+
+    /**
+     * starts the light cycle
+     */
+    void start();
+
     /**
      * state
      * @return the current state
@@ -25,7 +47,7 @@ public interface IStoplight
 
     /**
      * time left
-     * @return how many timesteps untill light changes
+     * @return how many timesteps until light changes
      */
     Integer timeLeft();
 
@@ -34,4 +56,9 @@ public interface IStoplight
      * @return the edge name
      */
     String edgeName();
+
+    /**
+     * updates the light
+     */
+    void update();
 }

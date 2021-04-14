@@ -20,6 +20,9 @@ package org.socialcars.sinziana.pfara.environment;
 
 import org.socialcars.sinziana.pfara.data.input.CDemandpojo;
 
+/**
+ * traffic demand class
+ */
 public class CDemand implements IDemand
 {
     private final String m_from;
@@ -37,18 +40,30 @@ public class CDemand implements IDemand
         m_howmany = (float) p_pojo.getNb();
     }
 
+    /**
+     * the starting zone
+     * @return the origin zone
+     */
     @Override
     public String from()
     {
         return m_from;
     }
 
+    /**
+     * the end zone
+     * @return the destination zone
+     */
     @Override
     public String to()
     {
         return m_to;
     }
 
+    /**
+     * the number of trips that need to be generated
+     * @return number of trips
+     */
     @Override
     public Float howMany()
     {

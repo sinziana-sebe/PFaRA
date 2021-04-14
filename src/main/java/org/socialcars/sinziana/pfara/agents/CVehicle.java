@@ -92,11 +92,13 @@ public class CVehicle implements IVehicle
      * @param p_timestep the current time
      * @param p_log the logger
      * @param p_unit the unit object
-     * @param p_mikro movement type
+     * @param p_mikro movement type, true if microscopic, false for macroscopic
+     * @param p_omega the subsidisation coefficient
      */
     public CVehicle( final CVehiclepojo p_pojo, final Integer p_timestep, final Logger p_log, final CUnits p_unit, final Boolean p_mikro, final Double p_omega )
     {
         s_logger = p_log;
+
         m_name = p_pojo.getName();
         m_origin = p_pojo.getStart();
         m_destination = p_pojo.getFinish();
@@ -107,7 +109,6 @@ public class CVehicle implements IVehicle
         m_acceleration = 0.0;
         m_position = 0.0;
         m_location = m_origin;
-        //m_timelastarrival = p_timestep;
         m_routelength = 0.0;
         m_cost = 0.0;
         m_precedence = 0;
@@ -140,7 +141,7 @@ public class CVehicle implements IVehicle
     }
 
     /**
-     * the current location of the vehicle
+     * the current location of the agent
      * @return the name of the node or edge
      */
     @Override
@@ -170,7 +171,7 @@ public class CVehicle implements IVehicle
     }
 
     /**
-     * the position of a vehicle on the current edge
+     * the position of an agent on the current edge
      * @return the distance already travelled on the current edge
      */
     @Override
@@ -179,12 +180,20 @@ public class CVehicle implements IVehicle
         return m_position;
     }
 
+    /**
+     * preferences
+     * @return the vehicle's preferences
+     */
     @Override
     public CPreference preferences()
     {
         return m_preference;
     }
 
+    /**
+     * utility
+     * @return the vehicle's utility function
+     */
     @Override
     public CUtility utility()
     {
@@ -193,7 +202,7 @@ public class CVehicle implements IVehicle
 
     /**
      * moves the vehicle in a microscopic fashion
-     * based on the vehicles acceleration, current speed
+     * based on the vehicle's acceleration and current speed
      */
     @Override
     public void moveMikro()
@@ -232,8 +241,8 @@ public class CVehicle implements IVehicle
     }
 
     /**
-     * moves the vehicle in a macroscopic fashion, based on the median speed of the current edge
-     * @param p_speed the median speed
+     * moves the vehicle in a macroscopic fashion, based on the possible speed of the current edge
+     * @param p_speed the possible speed
      */
     @Override
     public void moveMakro( final Double p_speed )
@@ -244,7 +253,7 @@ public class CVehicle implements IVehicle
     }
 
     /**
-     * the necessary actions for departing a node
+     * performs the necessary actions when departing a node
      * @param p_position the current edge
      * @param p_timestep the current timestep
      */
@@ -254,14 +263,16 @@ public class CVehicle implements IVehicle
         final CEvent l_departed = new CEvent( this, EEventType.DEPARTED, p_position.from().name(), p_timestep, null );
         m_events.add( l_departed );
         s_logger.log( Level.INFO, l_departed.toString() );
+
         m_location = p_position.name();
         m_lastedge = p_position;
+
         if ( m_departuretime == null ) m_departuretime = p_timestep;
         if ( m_timelastarrival == null ) m_timelastarrival = p_timestep;
     }
 
     /**
-     * the necessary actions uppon arrival
+     * performs the necessary actions upon arrival at a node
      * @param p_position the current edge
      * @param p_timestep the current timestep
      */
@@ -270,11 +281,13 @@ public class CVehicle implements IVehicle
     {
         final CEvent l_arrived = new CEvent( this, EEventType.ARRIVED, p_position.to().name(), p_timestep, null );
         m_events.add( l_arrived );
-        m_location = p_position.to().name();
         s_logger.log( Level.INFO, l_arrived.toString() );
+
+        m_location = p_position.to().name();
         m_position = 0.0;
         m_preference.reduceMaxLength( p_position.length() );
         m_routelength += p_position.length();
+
         if ( m_companions.size() > 0 )
         {
             // d_e/nvp + d_e/omega
@@ -287,13 +300,13 @@ public class CVehicle implements IVehicle
             m_cost = m_cost + ( p_position.weight().doubleValue() );
             m_preference.reduceMaxCost( p_position.weight().doubleValue() );
         }
-        System.out.println( m_name + "  cost is: " + m_cost );
+
         m_preference.reduceMaxTime( p_timestep - m_timelastarrival );
         m_timelastarrival = p_timestep;
     }
 
     /**
-     * the necessary actions uppon travel completion
+     * performs the necessary actions upon travel completion
      * @param p_position the current node
      * @param p_timestep the current time-step
      */
@@ -311,7 +324,7 @@ public class CVehicle implements IVehicle
 
     /**
      * the necessary actions for the formation of a platoon
-     * @param p_position the current node
+     * @param p_position the current node name
      * @param p_timestep the current timestep
      * @param p_platoon the co-platooners
      */
@@ -328,7 +341,7 @@ public class CVehicle implements IVehicle
     }
 
     /**
-     * the necessary actions for the splitting from a platoon
+     * the necessary actions for splitting from a platoon
      * @param p_position the current node
      * @param p_timestep the current timestep
      */
@@ -343,18 +356,30 @@ public class CVehicle implements IVehicle
         s_logger.log( Level.INFO, l_split.toString() );
     }
 
+    /**
+     * whether the vehicle is currently platooning or not
+     * @return true if it is and false if not
+     */
     @Override
     public Boolean platooning()
     {
         return m_platooning;
     }
 
+    /**
+     * companions
+     * @return the co-platooning vehicles
+     */
     @Override
     public ArrayList<CVehicle> companions()
     {
         return m_companions;
     }
 
+    /**
+     * sets the stoplight delay based on the number of co-platooners
+     * @param p_maxdelay the maximum possible delay (how many seconds of red there are left)
+     */
     @Override
     public void setDelay( final Integer p_maxdelay )
     {
@@ -363,24 +388,39 @@ public class CVehicle implements IVehicle
         m_acceleration = 0.0;
     }
 
+    /**
+     * decreases the precedence at stoplight
+     * occurs when co-platooners split from the formation
+     */
     @Override
     public void updatePrecedence()
     {
         m_precedence--;
     }
 
+    /**
+     * current delay at stoplight
+     * @return the delay
+     */
     @Override
     public Integer getDelay()
     {
         return m_delay;
     }
 
+    /**
+     * decreases the delay at stoplights
+     */
     @Override
     public void updateDelay()
     {
         m_delay--;
     }
 
+    /**
+     * joins a negotiating party
+     * @param p_protocol the protocol for communication
+     */
     @Override
     public void joinParty( final IProtocol p_protocol )
     {
@@ -388,20 +428,31 @@ public class CVehicle implements IVehicle
         m_negmodule = new CNegotiationModule( p_protocol, m_utility, m_unit, m_preference, m_mikro );
         m_protocol = p_protocol;
         if ( m_speed == 0.0 ) m_speed = m_preference.maxSpeed();
+
         final CNegotiationEvent l_join = new CNegotiationEvent( this, ENegotiationEventType.JOINED, null );
         m_negevents.add( l_join );
         s_logger.log( Level.INFO, l_join.toString() + " protocol " + p_protocol.getNodeID().name() );
     }
 
+    /**
+     * releases the vehicle from the negotiation party
+     * @param p_protocol the protocol for communication
+     */
     @Override
     public void release( final IProtocol p_protocol )
     {
         m_negotiating = false;
-        final CNegotiationEvent l_leave = new CNegotiationEvent( this, ENegotiationEventType.LEFT, null );
         m_negmodule = null;
+        final CNegotiationEvent l_leave = new CNegotiationEvent( this, ENegotiationEventType.LEFT, null );
         s_logger.log( Level.INFO, l_leave.toString() );
     }
 
+    /**
+     * the necessary actions when receiving an offer
+     * @param p_offer the offer
+     * @param p_oldroute the old routes
+     * @throws IOException file write
+     */
     @Override
     public void receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute ) throws IOException
     {
@@ -429,6 +480,10 @@ public class CVehicle implements IVehicle
         }
     }
 
+    /**
+     * the necessary actions when sending an offer
+     * @param p_route the route in the offer
+     */
     @Override
     public void sendOffer( final List<IEdge> p_route )
     {
@@ -439,6 +494,11 @@ public class CVehicle implements IVehicle
         m_protocol.sendOffer( this, l_offer );
     }
 
+    /**
+     * the necessary actions for haggling
+     * @param p_offer the offer
+     * @throws IOException file write
+     */
     @Override
     public void haggle( final CSimpleOffer p_offer ) throws IOException
     {
@@ -466,6 +526,11 @@ public class CVehicle implements IVehicle
         }
     }
 
+    /**
+     * updates the cost to factor in the payment/reception of a buyout
+     * after the successful completion of a negotiation
+     * @param p_cost the cost of the buyout
+     */
     @Override
     public void acceptUpdateCost( final Double p_cost )
     {
@@ -538,21 +603,38 @@ public class CVehicle implements IVehicle
         return m_events;
     }
 
+    /**
+     * the cost of the route so far
+     * @return the cost
+     */
     public Double routeCost()
     {
         return m_cost;
     }
 
+    /**
+     * the length of the route so far
+     * @return the length
+     */
     public Double routeLength()
     {
         return m_routelength;
     }
 
+    /**
+     * the duration of the route so far
+     * @return the duration
+     */
     public Integer routeDuration()
     {
         return m_timelastarrival - m_departuretime;
     }
 
+    /**
+     * calculates the utility at the end of the route
+     * @param p_mikro movement type, true for micro, false for macro
+     * @return the utility value
+     */
     public Double endUtility( final Boolean p_mikro )
     {
         if ( p_mikro ) return m_utility.calculateMikroFinal( routeDuration(), m_routelength );

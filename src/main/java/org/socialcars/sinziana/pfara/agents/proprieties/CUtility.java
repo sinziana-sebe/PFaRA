@@ -23,6 +23,9 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 
 import java.util.List;
 
+/**
+ * the agent utility class
+ */
 public class CUtility implements IUtility
 {
     private final Double m_rho;
@@ -40,7 +43,7 @@ public class CUtility implements IUtility
 
     /**
      * the first coefficient
-     * @return alpha
+     * @return rho
      */
     @Override
     public Double rho()
@@ -50,7 +53,7 @@ public class CUtility implements IUtility
 
     /**
      * the second coefficient
-     * @return beta
+     * @return sigma
      */
     @Override
     public Double sigma()
@@ -88,6 +91,15 @@ public class CUtility implements IUtility
         else return m_rho * l_length.get() + m_sigma * l_cost.get();
     }
 
+    /**
+     * calculates the utility for a given route based on time
+     * @param p_route the route
+     * @param p_speed the speed
+     * @param p_unit the transformation unit
+     * @param p_buyout the buyout
+     * @param p_pref the preference
+     * @return the utility
+     */
     @Override
     public Double calculateMikro( final List<IEdge> p_route, final Double p_speed, final CUnits p_unit, final Double p_buyout, final CPreference p_pref )
     {
@@ -108,7 +120,7 @@ public class CUtility implements IUtility
     }
 
     /**
-     * calculates the reservation value
+     * calculates the agent's reservation value
      * @param p_route the route
      * @param p_speed the speed
      * @param p_unit the transformation unit
@@ -125,12 +137,24 @@ public class CUtility implements IUtility
         return Math.abs( l_rv );
     }
 
+    /**
+     * calculates the utility based on cost at the end of the route
+     * @param p_distance the distance of the travel
+     * @param p_cost the cost of the travel
+     * @return the utility
+     */
     @Override
     public Double calculateMakroFinal( final Double p_distance, final Double p_cost )
     {
         return m_rho * p_distance + m_sigma * p_cost;
     }
 
+    /**
+     * calculates the utility based on time at the end of the route
+     * @param p_duration the duration of the travel
+     * @param p_distance the distance of the travel
+     * @return the utility
+     */
     @Override
     public Double calculateMikroFinal( final Integer p_duration, final Double p_distance )
     {

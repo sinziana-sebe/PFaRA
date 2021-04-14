@@ -18,6 +18,9 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+/**
+ * the edge sections class
+ */
 public class CSections implements ISections
 {
     private final Double m_begining;
@@ -37,13 +40,12 @@ public class CSections implements ISections
         m_end = p_end;
     }
 
-
     /**
-     * the begining portion of the edge
+     * the beginning portion of the edge
      * @return the length
      */
     @Override
-    public Double begining()
+    public Double beginning()
     {
         return m_begining;
     }

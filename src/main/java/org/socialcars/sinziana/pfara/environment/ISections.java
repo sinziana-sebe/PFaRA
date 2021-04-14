@@ -18,13 +18,16 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+/**
+ * the edge sections interface
+ */
 public interface ISections
 {
     /**
-     * the begining portion of the edge
+     * the  portion of then edge
      * @return the length
      */
-    Double begining();
+    Double beginning();
 
     /**
      * the middle portion of the edge

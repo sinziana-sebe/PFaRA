@@ -61,38 +61,38 @@ public interface IDynamic extends IAgent
 
     /**
      * moves the agent in a microscopic fashion
-     * based on the agents acceleration, current speed
+     * based on the agents acceleration and current speed
      */
     void moveMikro();
 
     /**
      * performs the braking action
-     * based on the aggents deceleration and current speed
+     * based on the agents deceleration and current speed
      */
     void brake();
 
     /**
-     * moves the agent in a macroscopic fashion, based on the median speed of the current edge
-     * @param p_speed the median speed
+     * moves the agent in a macroscopic fashion, based on the possible speed of the current edge
+     * @param p_speed the possible speed
      */
     void moveMakro( final Double p_speed );
 
     /**
-     * the necessary actions for departing a node
+     * performs the necessary actions when departing a node
      * @param p_position the current edge
      * @param p_timestep the current timestep
      */
     void departed( final IEdge p_position, final Integer p_timestep );
 
     /**
-     * the necessary actions uppon arrival
+     * performs the necessary actions upon arrival at a node
      * @param p_position the current edge
      * @param p_timestep the current timestep
      */
     void arrived( final IEdge p_position, final Integer p_timestep );
 
     /**
-     * the necessary actions uppon travel completion
+     * performs the necessary actions upon travel completion
      * @param p_position the current node
      * @param p_timestep the current time-step
      */

@@ -16,7 +16,7 @@
 package org.socialcars.sinziana.pfara.agents.events;
 
 /**
- * enumerates the types of possible events
+ * enumeration of the possible events types
  */
 public enum EEventType
 {

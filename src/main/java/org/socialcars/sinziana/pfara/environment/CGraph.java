@@ -42,6 +42,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * the graph class
+ */
 public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
 {
     private final Graph<INode, IEdge> m_graph;
@@ -73,6 +76,8 @@ public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
         m_graph = Graphs.unmodifiableGraph( l_graph );
         m_pathalgorithm = new DijkstraShortestPath<>( m_graph, IEdge::weight );
 
+        //divides the nodes into zones
+        // for traffic demand and background information generation
         m_zones = new HashMap<>();
         if ( p_pojo.getZones() != 0 )
         {
@@ -237,6 +242,11 @@ public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
         if ( l_edge.stoplight().state().equals( ELightState.RED ) ) p_pod.setDelay( l_edge.stoplight().timeLeft() );
     }
 
+    /**
+     * finds multiple paths between the given edge's start and end nodes
+     * @param p_edge edge for which we are looking for alternative routes
+     * @return alternative route
+     */
     public List<IEdge> findMultiplePaths( final IEdge p_edge )
     {
         final Function<IEdge, Integer> l_transformer = new Function<IEdge, Integer>()
@@ -270,6 +280,11 @@ public class CGraph implements IGraph<VisualizationViewer<INode, IEdge>>
         return m_zones.get( p_zone ).get( ThreadLocalRandom.current().nextInt( m_zones.get( p_zone ).size() ) );
     }
 
+    /**
+     * creates a visualisation for the graph
+     * @param p_dimension dimension of the resulting window
+     * @return a VisualisationViewer object containing the graph
+     */
     @Override
     public VisualizationViewer<INode, IEdge> panel( final Dimension p_dimension )
     {

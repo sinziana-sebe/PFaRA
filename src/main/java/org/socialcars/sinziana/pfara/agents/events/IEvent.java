@@ -49,7 +49,7 @@ public interface IEvent
     Collection<IDynamic> with();
 
     /**
-     * the time that the event occured
+     * the time that the event occurred
      * @return timestep
      */
     Integer when();

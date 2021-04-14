@@ -20,4 +20,10 @@ package org.socialcars.sinziana.pfara.agents;
  */
 public interface IStatic extends IAgent
 {
+    /**
+     * the location of the static agent
+     * used as destination for dynamic agents
+     * @return the agent's location
+     */
+    String location();
 }

@@ -18,6 +18,9 @@
 
 package org.socialcars.sinziana.pfara.environment.negotiables;
 
+/**
+ * the find negotiables interface
+ */
 public interface IFingNegotiables
 {
     /**
@@ -33,13 +36,13 @@ public interface IFingNegotiables
     Boolean validateSimple( final INegotiableElement p_el );
 
     /**
-     * finds complex negotiable shapes (trapezoids)
+     * finds complex negotiable shapes (polygons)
      */
     void findComplex();
 
     /**
-     * validates the complex negotiable trapezoid
-     * @param p_el the trapezoid
+     * validates the complex negotiable polygon
+     * @param p_el the polygon
      * @return whether it is valid or not
      */
     Boolean validateComplex( final INegotiableElement p_el );

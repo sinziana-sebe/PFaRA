@@ -19,6 +19,9 @@ import org.socialcars.sinziana.pfara.data.input.CEdgepojo;
 
 import java.text.MessageFormat;
 
+/**
+ * the edge class
+ */
 public class CEdge implements IEdge
 {
     private final String m_name;

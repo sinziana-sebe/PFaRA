@@ -18,6 +18,9 @@
 
 package org.socialcars.sinziana.pfara.agents;
 
+/**
+ * the agent preference interface
+ */
 public interface IPreference
 {
     /**

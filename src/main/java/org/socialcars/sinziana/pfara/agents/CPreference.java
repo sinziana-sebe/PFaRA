@@ -17,6 +17,9 @@ package org.socialcars.sinziana.pfara.agents;
 
 import org.socialcars.sinziana.pfara.data.input.CPreferencepojo;
 
+/**
+ * the agent preference class
+ */
 public class CPreference implements IPreference
 {
     private final Double m_minspeed;
@@ -114,6 +117,7 @@ public class CPreference implements IPreference
 
     /**
      * reduces the upper limit on travel distance based on the length of the edge already travelled
+     * must be accessible to the agent
      * @param p_edge the edge travelled
      */
     protected void reduceMaxLength( final Double p_edge )
@@ -123,6 +127,7 @@ public class CPreference implements IPreference
 
     /**
      * reduces the upper limit on travel cost based on the given cost
+     * must be accessible to the agent
      * @param p_cost the cost of the edge travelled
      */
     protected void reduceMaxCost( final Double p_cost )
@@ -132,6 +137,7 @@ public class CPreference implements IPreference
 
     /**
      * reduces the upper limit on travel time based on the time it took to travel the last edge
+     * must be accessible to the agent
      * @param p_time the travel time
      */
     protected void reduceMaxTime( final Integer p_time )

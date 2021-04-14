@@ -15,6 +15,9 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+/**
+ * the edge interface
+ */
 public interface IEdge
 {
     /**

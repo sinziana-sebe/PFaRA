@@ -19,13 +19,26 @@
 package org.socialcars.sinziana.pfara.environment;
 
 /**
- * interface for demand
+ * traffic demand interface
+ * based on the zones of the environment
  */
 public interface IDemand
 {
+    /**
+     * the starting zone
+     * @return the origin zone
+     */
     String from();
 
+    /**
+     * the end zone
+     * @return the destination zone
+     */
     String to();
 
+    /**
+     * the number of trips that need to be generated
+     * @return number of trips
+     */
     Float howMany();
 }

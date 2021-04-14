@@ -20,7 +20,6 @@ package org.socialcars.sinziana.pfara.experiments;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.socialcars.sinziana.pfara.environment.INode;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class TestCVisualise
     @Before
     public void init() throws IOException
     {
-        m_vis = new CVisualise( "src/test/resources/tiergarten.json", "src/test/resources/tiergarten_info.json", "Tiergartenvis", 1, 0.01 );
+        m_vis = new CVisualise( "src/test/resources/spiderweb_2.json", "src/test/resources/tiergarten_info.json", "Spidervis", 1, 1.0 );
     }
 
     @Test
@@ -68,7 +67,7 @@ public class TestCVisualise
     {
         final TestCVisualise l_test = new TestCVisualise();
         l_test.init();
-        l_test.testEdges();
+        l_test.testDensity();
     }
 
 

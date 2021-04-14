@@ -22,15 +22,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.uci.ics.jung.visualization.VisualizationViewer;
 import edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse;
 import edu.uci.ics.jung.visualization.control.ModalGraphMouse;
-import org.socialcars.sinziana.pfara.agents.CVehicle;
 import org.socialcars.sinziana.pfara.data.input.CInputpojo;
-import org.socialcars.sinziana.pfara.environment.CBackground;
 import org.socialcars.sinziana.pfara.environment.CGraph;
 import org.socialcars.sinziana.pfara.environment.IEdge;
 import org.socialcars.sinziana.pfara.environment.INode;
 import org.socialcars.sinziana.pfara.functionality.CEdgeEnd;
 import org.socialcars.sinziana.pfara.functionality.CPreGrouping;
-import org.socialcars.sinziana.pfara.functionality.CReadBackground;
 import org.socialcars.sinziana.pfara.units.CUnits;
 import org.socialcars.sinziana.pfara.visualisation.CHeatFunction;
 
@@ -40,7 +37,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -52,14 +48,8 @@ public class CVisualise
 
     private final CInputpojo m_input;
     private final CGraph m_env;
-    private final CReadBackground m_readbackground;
-    private final HashMap<IEdge, CBackground> m_backinfo;
 
-    private final ArrayList<CVehicle> m_vehicles;
-    private final HashMap<CVehicle, String> m_status = new HashMap<>();
-    private final HashMap<CVehicle, List<IEdge>> m_routes = new HashMap<>();
     private final Map<IEdge, Integer> m_countingmap = new HashMap<>();
-    private final Map<CVehicle, List<IEdge>> m_finalroute = new HashMap<>();
 
     private final CUnits m_unit;
     private Integer m_time;
@@ -78,27 +68,33 @@ public class CVisualise
 
         m_input = new ObjectMapper().readValue( new File( p_infile ), CInputpojo.class );
         m_env = new CGraph( m_input.getGraph() );
-        m_readbackground = new CReadBackground( m_env );
-        m_backinfo = m_readbackground.getBackground( p_backfile );
+        //m_readbackground = new CReadBackground( m_env );
+        //m_backinfo = m_readbackground.getBackground( p_backfile );
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
-        m_vehicles = new ArrayList<>();
-        m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, 1.0 ) ) );
-        m_vehicles.forEach( p ->
+        /*m_vehicles = new ArrayList<>();
+        //m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, 1.0 ) ) );
+        //m_vehicles.forEach( p ->
         {
             m_status.put( p, "Incomplete" );
             m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
             m_finalroute.put( p, new ArrayList<>() );
-        } );
+        } );*/
     }
 
     public void visualiseNetwork()
     {
         final JFrame l_frame = new JFrame();
+        l_frame.setSize( new Dimension( 2000, 2000 ) );
         l_frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
-        l_frame.setSize( new Dimension( 1000, 1000 ) );
-        l_frame.getContentPane().add( new CGraph( m_input.getGraph() ).panel( l_frame.getSize() ) );
+
+        final VisualizationViewer<INode, IEdge> l_view = m_env.panel( l_frame.getSize() );
+        l_frame.getContentPane().add( l_view );
         l_frame.setVisible( true );
+
+        final DefaultModalGraphMouse<INode, IEdge> l_gm = new DefaultModalGraphMouse<INode, IEdge>();
+        l_gm.setMode( ModalGraphMouse.Mode.TRANSFORMING );
+        l_view.setGraphMouse( l_gm );
     }
 
 

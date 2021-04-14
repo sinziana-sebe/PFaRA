@@ -22,6 +22,13 @@ import org.socialcars.sinziana.pfara.environment.IEdge;
 
 import java.util.List;
 
+/**
+ * the negotiable element class
+ * finds formations in the graph that are "negotiable"
+ * the common route without compensation would not have been taken
+ * the common route with compensation provided would potentially be taken
+ * ( (  common(no compensation) + alone > original ) && ( common(with compensation) + alone < original ) )
+ */
 public class CNegotiableElement implements INegotiableElement
 {
     private final List<IEdge> m_original;

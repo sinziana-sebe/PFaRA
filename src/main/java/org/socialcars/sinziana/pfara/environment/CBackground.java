@@ -20,6 +20,9 @@ package org.socialcars.sinziana.pfara.environment;
 
 import org.socialcars.sinziana.pfara.data.input.CBackgroundpojo;
 
+/**
+ * background traffic information class
+ */
 public class CBackground
 {
     private final Double m_maxspeed;

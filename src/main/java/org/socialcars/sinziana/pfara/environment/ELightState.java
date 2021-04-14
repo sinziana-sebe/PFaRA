@@ -15,6 +15,9 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+/**
+ * traffic light state enumeration
+ */
 public enum ELightState
 {
     RED,

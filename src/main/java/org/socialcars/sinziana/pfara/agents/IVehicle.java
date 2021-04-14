@@ -24,6 +24,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * the vehicle agent interface
+ */
 public interface IVehicle extends IDynamic
 {
 
@@ -37,14 +40,14 @@ public interface IVehicle extends IDynamic
 
 
     /**
-     * the necessary actions for the splitting from a platoon
+     * the necessary actions for splitting from a platoon
      * @param p_position the current node
      * @param p_timestep the current timestep
      */
     void split( final String p_position, final Integer p_timestep );
 
     /**
-     * wether the vehicle is currently platooning or not
+     * whether the vehicle is currently platooning or not
      * @return true if it is and false if not
      */
     Boolean platooning();
@@ -56,23 +59,25 @@ public interface IVehicle extends IDynamic
     ArrayList<CVehicle> companions();
 
     /**
-     * sets the delay based on the number of co-platooners
+     * sets the stoplight delay based on the number of co-platooners
+     * @param p_maxdelay the maximum possible delay (how many seconds of red there are left)
      */
     void setDelay( final Integer p_maxdelay );
 
     /**
-     * decreases the precedence
+     * decreases the precedence at stoplight
+     * occurs when co-platooners split from the formation
      */
     void updatePrecedence();
 
     /**
-     * delay
+     * current delay at stoplight
      * @return the delay
      */
     Integer getDelay();
 
     /**
-     * decreases the delay
+     * decreases the delay at stoplights
      */
     void updateDelay();
 
@@ -89,7 +94,7 @@ public interface IVehicle extends IDynamic
     void release( final IProtocol p_protocol );
 
     /**
-     * actions needed when receiving an offer
+     * the necessary actions when receiving an offer
      * @param p_offer the offer
      * @param p_oldroute the old routes
      * @throws IOException file write
@@ -97,13 +102,13 @@ public interface IVehicle extends IDynamic
     void receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute ) throws IOException;
 
     /**
-     * actions needed when sending an offer
+     * the necessary actions when sending an offer
      * @param p_route the route in the offer
      */
     void sendOffer( final List<IEdge> p_route );
 
     /**
-     * actions needed for haggling
+     * the necessary actions for haggling
      * @param p_offer the offer
      * @throws IOException file write
      */
@@ -111,7 +116,7 @@ public interface IVehicle extends IDynamic
 
 
     /**
-     * updates the cost to factor sending/receiving a buyout
+     * updates the cost to factor in the payment/reception of a buyout
      * after the successful completion of a negotiation
      * @param p_cost the cost of the buyout
      */

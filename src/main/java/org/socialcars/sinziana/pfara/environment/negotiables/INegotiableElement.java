@@ -22,11 +22,26 @@ import org.socialcars.sinziana.pfara.environment.IEdge;
 
 import java.util.List;
 
+/**
+ * negotiable element interface
+ */
 public interface INegotiableElement
 {
+    /**
+     * edges in the original route
+     * @return the original route
+     */
     List<IEdge> original();
 
+    /**
+     * edges in the new common route
+     * @return the new common route
+     */
     List<IEdge> common();
 
+    /**
+     * edges in the new alone route
+     * @return the new alone route
+     */
     List<IEdge> alone();
 }

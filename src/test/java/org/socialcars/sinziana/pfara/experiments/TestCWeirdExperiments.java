@@ -30,7 +30,7 @@ public class TestCWeirdExperiments
     @Before
     public void init() throws IOException
     {
-        m_weirdexp = new CWeirdExperiments( "src/test/resources/tiergartenN.json", "src/test/resources/tiergarten_info.json", "weird", 1, 0.01 );
+        m_weirdexp = new CWeirdExperiments( "src/test/resources/spiderweb_1.json", "src/test/resources/tiergarten_info.json", "weird", 1, 1.0 );
     }
 
     @Test
@@ -42,6 +42,11 @@ public class TestCWeirdExperiments
     @Test
     public void viewStuff()
     {
+    }
 
+    @Test
+    public void testUtilities()
+    {
+        m_weirdexp.utilities( "edge4-3", "edge4-c", "edgec-3", 4.0 );
     }
 }

@@ -20,6 +20,9 @@ import org.socialcars.sinziana.pfara.data.input.CStoplightpojo;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * the stoplight class
+ */
 public class CStoplight implements IStoplight
 {
     private static Logger s_logger;
@@ -49,6 +52,7 @@ public class CStoplight implements IStoplight
      * sets the logger
      * @param p_log the logger abject
      */
+    @Override
     public void setLogger( final Logger p_log )
     {
         s_logger = p_log;
@@ -58,6 +62,7 @@ public class CStoplight implements IStoplight
      * when the light cycle is started
      * @return start time of the cycle
      */
+    @Override
     public Integer startTime()
     {
         return m_start;
@@ -66,6 +71,7 @@ public class CStoplight implements IStoplight
     /**
      * starts the light cycle
      */
+    @Override
     public void start()
     {
         m_state = ELightState.GREEN;
@@ -101,6 +107,7 @@ public class CStoplight implements IStoplight
     /**
      * updates the light
      */
+    @Override
     public void update()
     {
         if ( m_current > 1 )

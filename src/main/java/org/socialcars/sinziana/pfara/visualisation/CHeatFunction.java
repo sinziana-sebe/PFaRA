@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * heat function calss
+ * heat function class
  * maps the values collected for the edges to an index in the colour map
  */
 public class CHeatFunction implements Function<IEdge, Paint>
@@ -38,6 +38,7 @@ public class CHeatFunction implements Function<IEdge, Paint>
     public CHeatFunction( final Map<IEdge, Integer> p_countingmap )
     {
         final Integer l_max = p_countingmap.entrySet().stream().max( Map.Entry.comparingByValue() ).get().getValue();
+        //colour palette can be changed here
         m_coding = p_countingmap.entrySet().stream().collect( Collectors.toMap( Map.Entry::getKey, i -> EColourMap.INFERNO.apply( i.getValue(), l_max ) ) );
     }
 

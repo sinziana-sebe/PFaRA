@@ -1,0 +1,805 @@
+{
+  "graph":
+  {
+    "zones": 1,
+    "nodes": [
+      {
+        "name" : "0",
+        "coordinates": {
+          "lat": 0,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "1",
+        "coordinates": {
+          "lat": 10,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "2",
+        "coordinates": {
+          "lat": 5,
+          "lon": -10
+        }
+      },
+      {
+        "name" : "3",
+        "coordinates": {
+          "lat": -5,
+          "lon": -10
+        }
+      },
+      {
+        "name" : "4",
+        "coordinates": {
+          "lat": -10,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "5",
+        "coordinates": {
+          "lat": -5,
+          "lon": 10
+        }
+      },
+      {
+        "name" : "6",
+        "coordinates": {
+          "lat": 5,
+          "lon": 10
+        }
+      },
+      {
+        "name" : "7",
+        "coordinates": {
+          "lat": 20,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "8",
+        "coordinates": {
+          "lat": 10,
+          "lon": -20
+        }
+      },
+      {
+        "name" : "9",
+        "coordinates": {
+          "lat": -10,
+          "lon": -20
+        }
+      },
+      {
+        "name" : "10",
+        "coordinates": {
+          "lat": -20,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "11",
+        "coordinates": {
+          "lat": -10,
+          "lon": 20
+        }
+      },
+      {
+        "name" : "12",
+        "coordinates": {
+          "lat": 10,
+          "lon": 20
+        }
+      },
+	  {
+        "name" : "13",
+        "coordinates": {
+          "lat": 30,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "14",
+        "coordinates": {
+          "lat": 15,
+          "lon": -30
+        }
+      },
+      {
+        "name" : "15",
+        "coordinates": {
+          "lat": -15,
+          "lon": -30
+        }
+      },
+      {
+        "name" : "16",
+        "coordinates": {
+          "lat": -30,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "17",
+        "coordinates": {
+          "lat": -15,
+          "lon": 30
+        }
+      },
+      {
+        "name" : "18",
+        "coordinates": {
+          "lat": 15,
+          "lon": 30
+        }
+      },
+      {
+        "name" : "19",
+        "coordinates": {
+          "lat": 40,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "20",
+        "coordinates": {
+          "lat": 20,
+          "lon": -40
+        }
+      },
+      {
+        "name" : "21",
+        "coordinates": {
+          "lat": -20,
+          "lon": -40
+        }
+      },
+      {
+        "name" : "22",
+        "coordinates": {
+          "lat": -40,
+          "lon": 0
+        }
+      },
+      {
+        "name" : "23",
+        "coordinates": {
+          "lat": -20,
+          "lon": 40
+        }
+      },
+      {
+        "name" : "24",
+        "coordinates": {
+          "lat": 20,
+          "lon": 40
+        }
+      }
+    ],
+    "edges": [
+      {
+        "name": "edge0-1",
+        "from": "0",
+        "to": "1",
+        "weight": 10
+      },
+      {
+        "name": "edge1-0",
+        "from": "1",
+        "to": "0",
+        "weight": 10
+      },
+      {
+        "name": "edge0-2",
+        "from": "0",
+        "to": "2",
+        "weight": 10
+      },
+      {
+        "name": "edge2-0",
+        "from": "2",
+        "to": "0",
+        "weight": 10
+      },
+      {
+        "name": "edge0-3",
+        "from": "0",
+        "to": "3",
+        "weight": 10
+      },
+      {
+        "name": "edge3-0",
+        "from": "3",
+        "to": "0",
+        "weight": 10
+      },
+      {
+        "name": "edge0-4",
+        "from": "0",
+        "to": "4",
+        "weight": 10
+      },
+      {
+        "name": "edge4-0",
+        "from": "4",
+        "to": "0",
+        "weight": 10
+      },
+      {
+        "name": "edge0-5",
+        "from": "0",
+        "to": "5",
+        "weight": 10
+      },
+      {
+        "name": "edge5-0",
+        "from": "5",
+        "to": "0",
+        "weight": 10
+      },
+      {
+        "name": "edge0-6",
+        "from": "0",
+        "to": "6",
+        "weight": 10
+      },
+      {
+        "name": "edge6-0",
+        "from": "6",
+        "to": "0",
+        "weight": 10
+      },
+      {
+        "name": "edge1-2",
+        "from": "1",
+        "to": "2",
+        "weight": 9
+      },
+      {
+        "name": "edge2-1",
+        "from": "2",
+        "to": "1",
+        "weight": 9
+      },
+      {
+        "name": "edge2-3",
+        "from": "2",
+        "to": "3",
+        "weight": 9
+      },
+      {
+        "name": "edge3-2",
+        "from": "3",
+        "to": "2",
+        "weight": 9
+      },
+      {
+        "name": "edge3-4",
+        "from": "3",
+        "to": "4",
+        "weight": 9
+      },
+      {
+        "name": "edge4-3",
+        "from": "4",
+        "to": "3",
+        "weight": 9
+      },
+      {
+        "name": "edge4-5",
+        "from": "4",
+        "to": "5",
+        "weight": 9
+      },
+      {
+        "name": "edge5-4",
+        "from": "5",
+        "to": "4",
+        "weight": 9
+      },
+      {
+        "name": "edge5-6",
+        "from": "5",
+        "to": "6",
+        "weight": 9
+      },
+      {
+        "name": "edge6-5",
+        "from": "6",
+        "to": "5",
+        "weight": 9
+      },
+      {
+        "name": "edge6-1",
+        "from": "6",
+        "to": "1",
+        "weight": 9
+      },
+      {
+        "name": "edge1-6",
+        "from": "1",
+        "to": "6",
+        "weight": 9
+      },
+      {
+        "name": "edge1-7",
+        "from": "1",
+        "to": "7",
+        "weight": 8
+      },
+      {
+        "name": "edge7-1",
+        "from": "7",
+        "to": "1",
+        "weight": 8
+      },
+      {
+        "name": "edge2-8",
+        "from": "2",
+        "to": "8",
+        "weight": 8
+      },
+      {
+        "name": "edge8-2",
+        "from": "8",
+        "to": "2",
+        "weight": 8
+      },
+      {
+        "name": "edge3-9",
+        "from": "3",
+        "to": "9",
+        "weight": 8
+      },
+      {
+        "name": "edge9-3",
+        "from": "9",
+        "to": "3",
+        "weight": 8
+      },
+      {
+        "name": "edge4-10",
+        "from": "4",
+        "to": "10",
+        "weight": 8
+      },
+      {
+        "name": "edge10-4",
+        "from": "10",
+        "to": "4",
+        "weight": 8
+      },
+      {
+        "name": "edge5-11",
+        "from": "5",
+        "to": "11",
+        "weight": 8
+      },
+      {
+        "name": "edge11-5",
+        "from": "11",
+        "to": "5",
+        "weight": 8
+      },
+      {
+        "name": "edge6-12",
+        "from": "6",
+        "to": "12",
+        "weight": 8
+      },
+      {
+        "name": "edge12-6",
+        "from": "12",
+        "to": "6",
+        "weight": 8
+      },
+      {
+        "name": "edge7-8",
+        "from": "7",
+        "to": "8",
+        "weight": 7
+      },
+      {
+        "name": "edge8-7",
+        "from": "8",
+        "to": "7",
+        "weight": 7
+      },
+      {
+        "name": "edge8-9",
+        "from": "8",
+        "to": "9",
+        "weight": 7
+      },
+      {
+        "name": "edge9-8",
+        "from": "9",
+        "to": "8",
+        "weight": 7
+      },
+      {
+        "name": "edge9-10",
+        "from": "9",
+        "to": "10",
+        "weight": 7
+      },
+      {
+        "name": "edge10-9",
+        "from": "10",
+        "to": "9",
+        "weight": 7
+      },
+      {
+        "name": "edge10-11",
+        "from": "10",
+        "to": "11",
+        "weight": 7
+      },
+      {
+        "name": "edge11-10",
+        "from": "11",
+        "to": "10",
+        "weight": 7
+      },
+      {
+        "name": "edge11-12",
+        "from": "11",
+        "to": "12",
+        "weight": 7
+      },
+      {
+        "name": "edge12-11",
+        "from": "12",
+        "to": "11",
+        "weight": 7
+      },
+      {
+        "name": "edge12-7",
+        "from": "12",
+        "to": "7",
+        "weight": 7
+      },
+      {
+        "name": "edge7-12",
+        "from": "7",
+        "to": "12",
+        "weight": 7
+      },
+      {
+        "name": "edge7-13",
+        "from": "7",
+        "to": "13",
+        "weight": 6
+      },
+      {
+        "name": "edge13-7",
+        "from": "13",
+        "to": "7",
+        "weight": 6
+      },
+      {
+        "name": "edge8-14",
+        "from": "8",
+        "to": "14",
+        "weight": 6
+      },
+      {
+        "name": "edge14-8",
+        "from": "14",
+        "to": "8",
+        "weight": 6
+      },
+      {
+        "name": "edge9-15",
+        "from": "9",
+        "to": "15",
+        "weight": 6
+      },
+      {
+        "name": "edge15-9",
+        "from": "15",
+        "to": "9",
+        "weight": 6
+      },
+      {
+        "name": "edge10-16",
+        "from": "10",
+        "to": "16",
+        "weight": 6
+      },
+      {
+        "name": "edge16-10",
+        "from": "16",
+        "to": "10",
+        "weight": 6
+      },
+      {
+        "name": "edge11-17",
+        "from": "11",
+        "to": "17",
+        "weight": 6
+      },
+      {
+        "name": "edge17-11",
+        "from": "17",
+        "to": "11",
+        "weight": 6
+      },
+      {
+        "name": "edge12-18",
+        "from": "12",
+        "to": "18",
+        "weight": 6
+      },
+      {
+        "name": "edge18-12",
+        "from": "18",
+        "to": "12",
+        "weight": 6
+      },
+      {
+        "name": "edge13-14",
+        "from": "13",
+        "to": "14",
+        "weight": 5
+      },
+      {
+        "name": "edge14-13",
+        "from": "14",
+        "to": "13",
+        "weight": 5
+      },
+      {
+        "name": "edge14-15",
+        "from": "14",
+        "to": "15",
+        "weight": 5
+      },
+      {
+        "name": "edge15-14",
+        "from": "15",
+        "to": "14",
+        "weight": 5
+      },
+      {
+        "name": "edge15-16",
+        "from": "15",
+        "to": "16",
+        "weight": 5
+      },
+      {
+        "name": "edge16-15",
+        "from": "16",
+        "to": "15",
+        "weight": 5
+      },
+      {
+        "name": "edge16-17",
+        "from": "16",
+        "to": "17",
+        "weight": 5
+      },
+      {
+        "name": "edge17-16",
+        "from": "17",
+        "to": "16",
+        "weight": 5
+      },
+      {
+        "name": "edge17-18",
+        "from": "17",
+        "to": "18",
+        "weight": 5
+      },
+      {
+        "name": "edge18-17",
+        "from": "18",
+        "to": "17",
+        "weight": 5
+      },
+      {
+        "name": "edge13-18",
+        "from": "13",
+        "to": "18",
+        "weight": 5
+      },
+      {
+        "name": "edge18-13",
+        "from": "18",
+        "to": "13",
+        "weight": 5
+      },
+      {
+        "name": "edge13-19",
+        "from": "13",
+        "to": "19",
+        "weight": 4
+      },
+      {
+        "name": "edge19-13",
+        "from": "19",
+        "to": "13",
+        "weight": 4
+      },
+      {
+        "name": "edge14-20",
+        "from": "14",
+        "to": "20",
+        "weight": 4
+      },
+      {
+        "name": "edge20-14",
+        "from": "20",
+        "to": "14",
+        "weight": 4
+      },
+      {
+        "name": "edge15-21",
+        "from": "15",
+        "to": "21",
+        "weight": 4
+      },
+      {
+        "name": "edge21-15",
+        "from": "21",
+        "to": "15",
+        "weight": 4
+      },
+      {
+        "name": "edge16-22",
+        "from": "16",
+        "to": "22",
+        "weight": 4
+      },
+      {
+        "name": "edge22-16",
+        "from": "22",
+        "to": "16",
+        "weight": 4
+      },
+      {
+        "name": "edge17-23",
+        "from": "17",
+        "to": "23",
+        "weight": 4
+      },
+      {
+        "name": "edge23-17",
+        "from": "23",
+        "to": "17",
+        "weight": 4
+      },
+      {
+        "name": "edge18-24",
+        "from": "18",
+        "to": "24",
+        "weight": 4
+      },
+      {
+        "name": "edge24-18",
+        "from": "24",
+        "to": "18",
+        "weight": 4
+      },
+      {
+        "name": "edge19-20",
+        "from": "19",
+        "to": "20",
+        "weight": 3
+      },
+      {
+        "name": "edge20-19",
+        "from": "20",
+        "to": "19",
+        "weight": 3
+      },
+      {
+        "name": "edge20-21",
+        "from": "20",
+        "to": "21",
+        "weight": 3
+      },
+      {
+        "name": "edge21-20",
+        "from": "21",
+        "to": "20",
+        "weight": 3
+      },
+      {
+        "name": "edge21-22",
+        "from": "21",
+        "to": "22",
+        "weight": 3
+      },
+      {
+        "name": "edge22-21",
+        "from": "22",
+        "to": "21",
+        "weight": 3
+      },
+      {
+        "name": "edge22-23",
+        "from": "22",
+        "to": "23",
+        "weight": 3
+      },
+      {
+        "name": "edge23-22",
+        "from": "23",
+        "to": "22",
+        "weight": 3
+      },
+      {
+        "name": "edge23-24",
+        "from": "23",
+        "to": "24",
+        "weight": 3
+      },
+      {
+        "name": "edge24-23",
+        "from": "24",
+        "to": "23",
+        "weight": 3
+      },
+      {
+        "name": "edge19-24",
+        "from": "19",
+        "to": "24",
+        "weight": 3
+      },
+      {
+        "name": "edge24-19",
+        "from": "24",
+        "to": "19",
+        "weight": 3
+      }
+    ]
+  },
+  "vehicles": [
+    {
+      "name": "red",
+      "start": "0",
+      "finish": "6",
+      "preference":
+      {
+        "min-speed": 0.1,
+        "max-speed": 1.0,
+        "max-acceleration": 0.9,
+        "max-deceleration": 0.7,
+        "max-time": 100,
+        "max-length": 100,
+        "max-cost": 12
+      },
+      "utility":
+      {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    },
+    {
+      "name": "blue",
+      "start": "0",
+      "finish": "7",
+      "preference":
+      {
+        "min-speed": 0.1,
+        "max-speed": 1.0,
+        "max-acceleration": 0.9,
+        "max-deceleration": 0.7,
+        "max-time": 100,
+        "max-length": 100,
+        "max-cost": 14
+      },
+      "utility":
+      {
+        "alpha": 0.2,
+        "beta": 0.8
+      },
+      "agent-type": "vehicle"
+    }
+  ]
+}

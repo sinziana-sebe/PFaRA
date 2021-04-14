@@ -18,6 +18,9 @@
 
 package org.socialcars.sinziana.pfara.environment;
 
+/**
+ * traffic background information interface
+ */
 public interface IBackground
 {
     /**
