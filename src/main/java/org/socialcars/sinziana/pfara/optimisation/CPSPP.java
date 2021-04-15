@@ -32,6 +32,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.stream.IntStream;
 
+/**
+ * the platooning shortest path class
+ */
 public class CPSPP implements IPSPP
 {
     private final GRBEnv m_env;
@@ -77,6 +80,7 @@ public class CPSPP implements IPSPP
         m_unit = p_unit;
         m_omega = p_omega;
 
+        //defines the objective function
         final GRBLinExpr l_obj = new GRBLinExpr();
         p_env.edges().forEach( e ->
         {
@@ -134,6 +138,9 @@ public class CPSPP implements IPSPP
         cleanUp();
     }
 
+    /**
+     * adds the flow and binary constraints
+     */
     private void addConstraints()
     {
         //flow constraint
@@ -188,6 +195,9 @@ public class CPSPP implements IPSPP
         } );
     }
 
+    /**
+     * adds the length constraint
+     */
     private void addLengthConstraint()
     {
         m_pods.forEach( p ->
@@ -207,6 +217,9 @@ public class CPSPP implements IPSPP
         } );
     }
 
+    /**
+     * adds the speed constraint
+     */
     private void addSpeedConstrain()
     {
         final ArrayList<Double> l_maxspeeds = new ArrayList<>();
@@ -214,6 +227,9 @@ public class CPSPP implements IPSPP
         m_speed = Collections.min( l_maxspeeds );
     }
 
+    /**
+     * adds the time consintraint
+     */
     private void addTimeConstraint()
     {
         final HashMap<IEdge, Double> l_times = new HashMap<>();
@@ -237,6 +253,9 @@ public class CPSPP implements IPSPP
         } );
     }
 
+    /**
+     * adds the cost constraint
+     */
     private void addCostConstraint()
     {
         m_pods.forEach( p ->
@@ -256,6 +275,9 @@ public class CPSPP implements IPSPP
         } );
     }
 
+    /**
+     * saves the result so model can be destroyed after solving
+     */
     private void saveResults()
     {
         m_graph.edges().forEach( e ->
@@ -286,6 +308,10 @@ public class CPSPP implements IPSPP
         sortResult();
     }
 
+    /**
+     * sorts the result found
+     * so that the route is ordered
+     */
     private void sortResult()
     {
         m_results.keySet().forEach( p ->
@@ -307,11 +333,22 @@ public class CPSPP implements IPSPP
         } );
     }
 
+
+    /**
+     * gets the sorted routes
+     * @return the routes found by the solver
+     */
+    @Override
     public HashMap<CVehicle, ArrayList<IEdge>> getRoutes()
     {
         return m_results;
     }
 
+    /**
+     * failsafe function to ensure the solver solution
+     * outperforms selfish routing
+     * @return vehicles whose cost is higher
+     */
     private ArrayList<CVehicle> secondCostCheck()
     {
         final ArrayList<CVehicle> l_flagged = new ArrayList<>();
@@ -324,60 +361,22 @@ public class CPSPP implements IPSPP
         return l_flagged;
     }
 
+
     /**
-     * calculates the costs of the route
+     * the flagged vehicles
+     * @return vehicles whose cost is higher with the solver
      */
-    /*public void getCosts()
-    {
-        final HashMap<IEdge, Integer> l_np = new HashMap<>();
-        final HashMap<CVehicle, Double> l_costs = new HashMap<>();
-
-        m_pods.forEach( p -> m_results.get( p ).forEach( e -> l_np.put( e, l_np.getOrDefault( e, 0 ) + 1 ) ) );
-
-        m_results.keySet().forEach( k ->
-        {
-            final ArrayList<IEdge> l_edges = m_results.get( k );
-            final AtomicReference<Double> l_cost = new AtomicReference<>( 0.00 );
-            final AtomicReference<Double> l_total = new AtomicReference<>( 0.00 );
-            final AtomicReference<Double> l_distcost = new AtomicReference<>( 0.00 );
-            final AtomicReference<Double> l_function = new AtomicReference<>( 0.00 );
-            l_edges.forEach( e ->
-            {
-                l_total.getAndUpdate( v -> v + e.weight().doubleValue() );
-                l_cost.getAndUpdate( v -> v + e.weight().doubleValue() / l_np.get( e ) );
-                l_distcost.getAndUpdate( v -> v + 2 * e.length() + ( e.length() / m_speed ) - l_cost.get() );
-                l_function.getAndUpdate( v -> v + 0.6 * e.length() / m_speed + 0.4 * e.weight().doubleValue() / l_np.get( e ) - l_cost.get() );
-            } );
-            l_costs.put( k, l_function.get() );
-        } );
-
-        System.out.println();
-
-        System.out.println( "The number of platooning vehicles per edge are: " );
-        l_np.keySet().forEach( k -> System.out.println( k.name() + ": " + l_np.get( k ) ) );
-        System.out.println();
-
-        System.out.println( "The costs are as follows:" );
-        l_costs.keySet()
-                .forEach( k -> System.out.println( "Destination " + k.destination() + " platoon cost:" + l_costs.get( k ) ) );
-        System.out.println();
-
-        System.out.println( "Speed is: " + m_speed );
-        System.out.println( "System optimum is: " + m_optimum );
-
-        System.out.println( "Endtimes are:" );
-        m_endtimes.keySet().forEach( k ->
-                System.out.println( "Pod " + k.name() + " endtime " + m_endtimes.get( k ) ) );
-
-        System.out.println( "Distances are: " );
-        m_lengths.keySet().forEach( k -> System.out.println( "Pod " + k.name() + " length of route " + m_lengths.get( k ) ) );
-    }*/
-
+    @Override
     public ArrayList<CVehicle> getFlagged()
     {
         return m_flagged;
     }
 
+    /**
+     * the final solution( all y's selected)
+     * @return the complete solution
+     */
+    @Override
     public HashMap<IEdge, Integer> getNP()
     {
         return m_np;
@@ -398,6 +397,10 @@ public class CPSPP implements IPSPP
         m_np.keySet().forEach( y -> System.out.println( "y:" + y.name() ) );
     }
 
+    /**
+     * destroys the model
+     * @throws GRBException gurobi
+     */
     private void cleanUp() throws GRBException
     {
         m_model.dispose();

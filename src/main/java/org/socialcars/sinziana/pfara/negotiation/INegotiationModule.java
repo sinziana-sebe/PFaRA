@@ -20,6 +20,9 @@ import org.socialcars.sinziana.pfara.environment.IEdge;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * the negotiation module interface
+ */
 public interface INegotiationModule
 {
     /**

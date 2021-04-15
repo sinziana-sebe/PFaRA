@@ -16,6 +16,11 @@
 package org.socialcars.sinziana.pfara.optimisation;
 
 import gurobi.GRBException;
+import org.socialcars.sinziana.pfara.agents.CVehicle;
+import org.socialcars.sinziana.pfara.environment.IEdge;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * interface for the
@@ -34,4 +39,22 @@ public interface IPSPP
      * @throws GRBException gurobi
      */
     void display() throws GRBException;
+
+    /**
+     * gets the sorted routes
+     * @return the routes found by the solver
+     */
+    HashMap<CVehicle, ArrayList<IEdge>> getRoutes();
+
+    /**
+     * the flagged vehicles
+     * @return vehicles whose cost is higher with the solver
+     */
+    ArrayList<CVehicle> getFlagged();
+
+    /**
+     * the final cost( sum of the y)
+     * @return the cost of the complete solution
+     */
+    HashMap<IEdge, Integer> getNP();
 }

@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * the simplest of offers object
- * used for the haggling portion
+ * used for the haggling portion of negotiation
  */
 public class CSimpleOffer implements IOffer
 {

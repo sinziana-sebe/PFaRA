@@ -25,6 +25,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * the take it or leave it protocol class
+ */
 public class CTakeItOrLeaveIt implements IProtocol
 {
     private final CGraph m_env;
@@ -42,6 +45,11 @@ public class CTakeItOrLeaveIt implements IProtocol
         m_routes = p_routes;
     }
 
+
+    /**
+     * opens the protocol
+     * @param p_time the time of opening
+     */
     @Override
     public void open( final Integer p_time )
     {
@@ -49,12 +57,21 @@ public class CTakeItOrLeaveIt implements IProtocol
         m_time = p_time;
     }
 
+    /**
+     * the type of protocol
+     * @return the protocol's type
+     */
     @Override
     public EProtocolType type()
     {
         return EProtocolType.TILI;
     }
 
+    /**
+     * function for receiving an offer and sending offers
+     * @param p_offeror the initiating agent sending the offer
+     * @param p_offer the offer
+     */
     @Override
     public void sendOffer( final CVehicle p_offeror, final CInitialOffer p_offer )
     {
@@ -77,12 +94,18 @@ public class CTakeItOrLeaveIt implements IProtocol
         } );
     }
 
+    /**
+     * function for receiving an accepted offer
+     * @param p_acceptor the vehicle accepting the offer
+     * @param p_offer the offe
+     * @throws IOException file exception
+     */
     @Override
-    public void receiveAccept( final CVehicle p_pod, final IOffer p_offer ) throws IOException
+    public void receiveAccept( final CVehicle p_acceptor, final IOffer p_offer ) throws IOException
     {
         final CCompleteOffer l_co = m_offer;
         l_co.accept();
-        if ( l_co.acceptor().equals( p_pod ) )
+        if ( l_co.acceptor().equals( p_acceptor ) )
         {
             l_co.changeBuyout( p_offer.buyout() - l_co.savings() );
         }
@@ -98,12 +121,17 @@ public class CTakeItOrLeaveIt implements IProtocol
         l_co.acceptor().release( this );
         final ArrayList<CVehicle> l_of = new ArrayList<>();
         l_of.add( l_co.offeror() );
-        l_co.acceptor().formed( p_pod.location(), m_time, l_of );
+        l_co.acceptor().formed( p_acceptor.location(), m_time, l_of );
         final ArrayList<CVehicle> l_ac = new ArrayList<>();
         l_ac.add( l_co.acceptor() );
-        l_co.offeror().formed( p_pod.location(), m_time, l_ac );
+        l_co.offeror().formed( p_acceptor.location(), m_time, l_ac );
     }
 
+    /**
+     * function for receiving a rejected offer
+     * @param p_offer the offer
+     * @throws IOException file exception
+     */
     @Override
     public void receiveReject( final IOffer p_offer ) throws IOException
     {
@@ -113,6 +141,11 @@ public class CTakeItOrLeaveIt implements IProtocol
         l_co.acceptor().release( this );
     }
 
+    /**
+     * function for receiving a breakaway offer
+     * @param p_offer the offer
+     * @throws IOException file exception
+     */
     @Override
     public void receiveBreakaway( final IOffer p_offer ) throws IOException
     {
@@ -122,23 +155,43 @@ public class CTakeItOrLeaveIt implements IProtocol
         l_co.acceptor().release( this );
     }
 
+    /**
+     * funtion for the haggling process
+     * @param p_veh the vehicle sending the haggling offer
+     * @param p_offer the offer
+     * @throws IOException file exception
+     */
     @Override
     public void haggle( final CVehicle p_veh, final CSimpleOffer p_offer )
     {
     }
 
+    /**
+     * gets the round counter
+     * @return round counter
+     */
     @Override
     public Integer getRoundCounter()
     {
         return null;
     }
 
+    /**
+     * gets the deadline
+     * the maximum number of rounds
+     * @return the deadline
+     */
     @Override
     public Integer getDeadline()
     {
         return 1;
     }
 
+    /**
+     * the id of the protocol
+     * given by the node name where the negotiation takes place
+     * @return the node
+     */
     @Override
     public INode getNodeID()
     {

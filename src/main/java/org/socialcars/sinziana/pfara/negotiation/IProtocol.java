@@ -20,6 +20,9 @@ import org.socialcars.sinziana.pfara.environment.INode;
 
 import java.io.IOException;
 
+/**
+ * the negotiation protocol interface
+ */
 public interface IProtocol
 {
 

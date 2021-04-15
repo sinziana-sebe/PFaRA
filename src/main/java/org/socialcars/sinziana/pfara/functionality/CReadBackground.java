@@ -31,7 +31,10 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * class for reading background traffic information
+ * from previously generated JSON file
+ */
 public class CReadBackground
 {
     private final CGraph m_env;

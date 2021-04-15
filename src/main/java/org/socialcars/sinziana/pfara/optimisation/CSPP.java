@@ -64,9 +64,11 @@ public class CSPP implements ISPP
         {
             final INode l_start = iEdge.from();
             final INode l_end = iEdge.to();
+            //creates the objective function
             try
             {
                 if ( iEdge.weight().doubleValue() == 0.0 )
+                    //some weight must be given, throws the program for a loop
                     m_xs[Integer.valueOf( l_start.name() )][Integer.valueOf( l_end.name() )] = m_model.addVar( 0.0, 1.0, iEdge.weight().doubleValue() + 0.000001,
                             GRB.BINARY,
                             "y" + l_start  + "-" + l_end );
@@ -99,6 +101,7 @@ public class CSPP implements ISPP
 
     private void addConstraints( final CGraph p_network, final Integer p_origin, final Integer p_destination ) throws GRBException
     {
+        //flow constraints
         for ( int i = 0; i < p_network.size(); i++ )
         {
             final GRBLinExpr l_expr = new GRBLinExpr();
@@ -113,6 +116,8 @@ public class CSPP implements ISPP
         }
     }
 
+    //the results should be available after the execution
+    //
     private void saveResults()
     {
         m_graph.edges().forEach( e ->
@@ -138,16 +143,26 @@ public class CSPP implements ISPP
     /**
      * displays the result
      */
+    @Override
     public void display()
     {
         m_results.forEach( e -> System.out.println( e.name() ) );
     }
 
+    /**
+     * the length of the route
+     * @return length
+     */
+    @Override
     public Integer length()
     {
         return m_length;
     }
 
+    /**
+     * cost of the route
+     * @return cost
+     */
     @Override
     public Double cost()
     {

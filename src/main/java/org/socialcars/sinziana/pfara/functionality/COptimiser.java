@@ -28,6 +28,9 @@ import org.socialcars.sinziana.pfara.units.CUnits;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * shell class for creating an optimiser instance
+ */
 public class COptimiser
 {
     private final CPSPP m_opt;

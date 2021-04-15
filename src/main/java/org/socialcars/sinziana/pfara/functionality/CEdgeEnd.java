@@ -124,6 +124,8 @@ public class CEdgeEnd
     /**
      * checks if any pods are travelling alone after being a part of a platoon
      * registers a split if yes
+     * public since it needs to be called before departure
+     * other functions are called at arrival
      */
     public void checkLoners()
     {

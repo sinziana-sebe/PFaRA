@@ -197,7 +197,7 @@ public class CPreGrouping
 
     /**
      * runs the optimiser and performs the subsequent checks
-     * @param p_vehicles the mapwith the grouped vehicles
+     * @param p_vehicles the map with the grouped vehicles
      */
     private void runOptimiser( final HashMap<String, ArrayList<CVehicle>> p_vehicles )
     {
@@ -249,7 +249,7 @@ public class CPreGrouping
 
     /**
      * checks the vehicles that have higher cost with the optimiser solution than their cost allowance
-     * @param p_flagged the flagged pods
+     * @param p_flagged the flagged vehicles
      * @param p_platroutes the complete routes given by the optimiser
      * @param p_np the number of vehicles per edge
      * @param p_clusters the cluster the flagged vehicles belong to
@@ -296,7 +296,7 @@ public class CPreGrouping
     }
 
     /**
-     * checks the costs of the parters of a flagged vehicle
+     * checks the costs of the partners of a flagged vehicle
      * @param p_partners partners
      * @param p_flaggedroute the flagged common route
      * @param p_platroutes the routes given by the optimiser

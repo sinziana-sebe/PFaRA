@@ -26,12 +26,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 
+/**
+ * the negotiation module class
+ */
 public class CNegotiationModule implements INegotiationModule
 {
-    private static Logger s_logger;
-
     private EAgentType m_role;
     private final IProtocol m_protocol;
     private Double m_altroutecost;
@@ -46,6 +46,14 @@ public class CNegotiationModule implements INegotiationModule
     private Double m_rvpeak;
     private final Boolean m_mikro;
 
+    /**
+     * ctor
+     * @param p_protocol the negotiation protocol
+     * @param p_utility the utility of the agent
+     * @param p_unit the transformation unit
+     * @param p_preference the agent's preference
+     * @param p_mikro type of movement
+     */
     public CNegotiationModule( final IProtocol p_protocol, final CUtility p_utility, final CUnits p_unit, final CPreference p_preference, final Boolean p_mikro )
     {
         m_protocol = p_protocol;
@@ -55,6 +63,13 @@ public class CNegotiationModule implements INegotiationModule
         m_mikro = p_mikro;
     }
 
+    /**
+     * handles offers received
+     * @param p_offer the offer
+     * @param p_oldroute the ego-agent's old route
+     * @param p_speed the speed of travel
+     * @return string with the response to the offer (accept,reject,haggle)
+     */
     @Override
     public String receiveOffer( final IOffer p_offer, final List<IEdge> p_oldroute, final Double p_speed )
     {
@@ -63,6 +78,7 @@ public class CNegotiationModule implements INegotiationModule
         final List<IEdge> l_newroute = p_offer.route();
         final Double l_oldutility;
         final Double l_newutility;
+        //switches movement type
         if ( !m_mikro )
         {
             l_oldutility = m_utility.calculateMakro( p_oldroute, p_speed, m_unit, 0.0, m_preference );
@@ -81,6 +97,7 @@ public class CNegotiationModule implements INegotiationModule
             m_altroutecost = l_altroutecost.get();
         }
 
+        //switches protocol type
         switch ( m_protocol.type() )
         {
             case AO:
@@ -102,10 +119,14 @@ public class CNegotiationModule implements INegotiationModule
             default:
                 return "";
         }
-
-
     }
 
+    /**
+     * handles the sending of an offer
+     * @param p_route the route offered
+     * @param p_name the name of the ego agent
+     * @return the offer
+     */
     @Override
     public CInitialOffer sendOffer( final List<IEdge> p_route, final String p_name )
     {
@@ -135,6 +156,12 @@ public class CNegotiationModule implements INegotiationModule
         }
     }
 
+    /**
+     * handles the haggling process
+     * @param p_offer the offer in discussion
+     * @return string with response to the offer (accept, reject, haggle)
+     * @throws IOException file
+     */
     @Override
     public String haggle( final CSimpleOffer p_offer ) throws IOException
     {
@@ -150,19 +177,32 @@ public class CNegotiationModule implements INegotiationModule
         }
     }
 
+    /**
+     * gives the cost of the alternative (the one offered) route
+     * @return cost
+     */
     @Override
     public Double alternativeRouteCost()
     {
         return m_altroutecost;
     }
 
+    /**
+     * the role of the ego agent
+     * @return role
+     */
     @Override
     public EAgentType role()
     {
         return m_role;
     }
 
-    private String initiatorHaggle( final CSimpleOffer p_offer ) throws IOException
+    /**
+     * handles the haggling process as an initiator
+     * @param p_offer the offer received
+     * @return the new buyout
+     */
+    private String initiatorHaggle( final CSimpleOffer p_offer )
     {
         if ( m_lastoffer == null )
         {
@@ -181,7 +221,12 @@ public class CNegotiationModule implements INegotiationModule
         else return "accept";
     }
 
-    private String acceptorHaggle( final CSimpleOffer p_offer ) throws IOException
+    /**
+     * handles the haggling process as an acceptor
+     * @param p_offer the offer received
+     * @return the new buyout
+     */
+    private String acceptorHaggle( final CSimpleOffer p_offer )
     {
         if ( ( m_protocol.getRoundCounter() < m_protocol.getDeadline() )
                 && ( m_altroutecost - p_offer.buyout() > m_rv ) || ( m_protocol.getRoundCounter() < m_protocol.getDeadline() * 0.75 ) )
@@ -199,12 +244,17 @@ public class CNegotiationModule implements INegotiationModule
         else return "accept";
     }
 
+    /**
+     * calls the bidding module to select the best bid
+     */
     private void chooseBestBid()
     {
         final ArrayList<Double> l_bids = new ArrayList<>();
         Iterator<Double> l_it =  new Random().doubles( 0, 1 ).iterator();
+        //the opponent's theorised payment limit based on the deadline and current round
         final Double l_lim = Math.abs( m_av - m_rv ) / m_protocol.getDeadline() * m_protocol.getRoundCounter();
         if ( m_rvpeak == null ) m_rvpeak = m_lastoffer;
+        //creates a probability distribution based on opponent's payment limit
         switch ( m_role )
         {
             case INITIATOR:
@@ -218,6 +268,7 @@ public class CNegotiationModule implements INegotiationModule
             default:
                 break;
         }
+        //creates bid acceptance probability
         while ( l_bids.size() < 20 ) l_bids.add( l_it.next() );
         Double l_bb = m_bb.getBestBid( l_bids, m_protocol.getRoundCounter(), m_rvpeak );
         if ( l_bb == 0.0 )

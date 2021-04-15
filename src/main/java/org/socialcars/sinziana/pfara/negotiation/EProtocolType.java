@@ -15,6 +15,11 @@
 
 package org.socialcars.sinziana.pfara.negotiation;
 
+/**
+ * protocols defined
+ * TILI = Take it or Leave it
+ * AO = Alternative offers
+ */
 public enum EProtocolType
 {
     TILI,
