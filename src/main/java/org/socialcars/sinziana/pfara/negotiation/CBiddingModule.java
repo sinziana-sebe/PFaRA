@@ -50,19 +50,35 @@ public class CBiddingModule implements IBiddingModule
         m_ss = new CSimultaneousSearch();
     }
 
+    /**
+     * gives the best bid in the current round
+     * @param p_bids the previous bids
+     * @param p_time the current round
+     * @param p_rv opponent's estimated reservation value
+     * @return best offer
+     */
     @Override
     public Double getBestBid( final ArrayList<Double> p_bids, final Integer p_time, final Double p_rv )
     {
+        //generates the opponets payment limit(RV) distribution
         final ArrayList<Double> l_rvs = m_probgen.getDistribution( "normal", 100, p_rv );
+        //transforms the RV distribution to acceptance probability of ego bids
         m_rvtoacc = new CRVtoAccProb( m_type, m_strategy, m_firstbid, m_deadline, l_rvs );
+        //uses the adapted simultaneous search to determine the best bid to make at this point in the negotiation
         m_ss.fromAccProb( m_rvtoacc.calculateForBids( p_bids, p_time ) );
+        //chooses the best bid
         final CCollege l_res = m_ss.getBestBid();
         return l_res.getU();
     }
 
+    /**
+     * updates the opponents perceived strategy
+     * @param p_offer the current offer made by the opponent
+     */
     @Override
     public void updateStrategy( final Double p_offer )
     {
+        //the percentage change from the previous bids
         final Double l_percentage;
         switch ( m_type )
         {

@@ -6,6 +6,10 @@ import org.socialcars.sinziana.pfara.negotiation.simultaneoussearch.CColleges;
 
 import java.util.ArrayList;
 
+/**
+ * class for transforming the opponent payment limit(RV)
+ * to and acceptandce probability of ego bids
+ */
 public class CRVtoAccProb
 {
     private final ArrayList<Double> m_rvprob;
@@ -15,6 +19,14 @@ public class CRVtoAccProb
     private final Integer m_deadline;
     private ArrayList<Double> m_accprob;
 
+    /**
+     * ctor
+     * @param p_type the type of opponent (initiator/acceptor)
+     * @param p_opptype the opponent strategy (boulware,linear,conceder)
+     * @param p_firstbid the first bid
+     * @param p_deadline the deadline
+     * @param p_rvprob the payment limit distribution
+     */
     public CRVtoAccProb( final String p_type, final Double p_opptype, final Double p_firstbid, final Integer p_deadline, final ArrayList<Double> p_rvprob )
     {
         m_rvprob = p_rvprob;
@@ -24,11 +36,20 @@ public class CRVtoAccProb
         m_opponent = p_type;
     }
 
+    /**
+     * the RV probability
+     * @return the RV probability
+     */
     public ArrayList<Double> getRVProb()
     {
         return m_rvprob;
     }
 
+    /**
+     * calculates the ego bid acceptance probability
+     * @param p_time the current moment of negotiation
+     * @return the acceptance probability distribution
+     */
     public ArrayList<Double> calculateAccProb( final Integer p_time )
     {
         final Double l_alpha = m_firstbid + ( 1 - m_firstbid ) * Math.pow( p_time.doubleValue() / m_deadline.doubleValue(), m_opponenttype );
@@ -51,6 +72,12 @@ public class CRVtoAccProb
         return m_accprob;
     }
 
+    /**
+     * calculates the acceptance probability of one bid
+     * @param p_bid the desired bid
+     * @param p_time the current moment in the negotiation
+     * @return the acceptance rate of the bid
+     */
     public Double calculateForBid( final Double p_bid, final Integer p_time )
     {
         final AtomicDouble l_prob = new AtomicDouble( 0.0 );
@@ -80,6 +107,12 @@ public class CRVtoAccProb
         return l_prob.get() / m_rvprob.size();
     }
 
+    /**
+     * calculates the acceptance probability for multiple bids
+     * @param p_bids the desired bids
+     * @param p_time the current moment in the negotiation
+     * @return touples consisting o bids and their acceptance rate
+     */
     public CColleges calculateForBids( final ArrayList<Double> p_bids, final Integer p_time )
     {
         final CColleges l_bidprob = new CColleges();

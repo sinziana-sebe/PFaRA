@@ -42,6 +42,9 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for random weird experiments
+ */
 public class CWeirdExperiments
 {
     private static final Logger LOGGER = Logger.getLogger( CWeirdExperiments.class.getName() );
@@ -64,6 +67,15 @@ public class CWeirdExperiments
     private CEdgeEnd m_edgeend;
 
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CWeirdExperiments( final String p_infile, final String p_backfile, final String p_outfile,
                             final Integer p_time, final Double p_space ) throws IOException
     {
@@ -87,6 +99,9 @@ public class CWeirdExperiments
         } );
     }
 
+    /**
+     * minimum and maximum weight of the edges
+     */
     public void minmaxweight()
     {
         final AtomicDouble l_minweight = new AtomicDouble( 0 );
@@ -100,27 +115,41 @@ public class CWeirdExperiments
         System.out.println( "Max weight: " + l_maxweight.get() );
     }
 
+    /**
+     * a specific edge's length
+     * @param p_edge the desired edge
+     * @return it's length
+     */
     public Double edgeLength( final String p_edge )
     {
         return m_env.edgeByName( p_edge ).length();
     }
 
+    /**
+     * the length of all edges
+     */
     public void allEdgeLengths()
     {
         m_env.edges().forEach( e -> System.out.println( e.name() + ": " + e.length() ) );
     }
 
+    /**
+     * the number of edges and nodes
+     */
     public void nodesandedges()
     {
         System.out.println( "Nodes:" + m_env.nodes().size() );
         System.out.println( "Edges:" + m_env.edges().size() );
     }
 
-    public void viewNodes()
-    {
 
-    }
-
+    /**
+     * calculates the utilities of some edges
+     * @param p_original original edge
+     * @param p_common common edge
+     * @param p_alone alone edge
+     * @param p_omega platooning subsidisation coefficient
+     */
     public void utilities( final String p_original, final String p_common, final String p_alone, final Double p_omega )
     {
         final CNegotiableElement l_el = new CNegotiableElement(

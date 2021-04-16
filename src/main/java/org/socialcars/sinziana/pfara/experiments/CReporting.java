@@ -25,17 +25,31 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * class for final reporting
+ */
 public class CReporting
 {
     private final CSVWriter m_csvwriter;
     private final Boolean m_mikro;
 
+    /**
+     * ctor
+     * @param p_outfile the output file
+     * @param p_mikro type of movement
+     * @throws IOException file
+     */
     public CReporting( final String p_outfile, final Boolean p_mikro ) throws IOException
     {
         m_csvwriter = new CSVWriter( new FileWriter( "CSV" + p_outfile ) );
         m_mikro = p_mikro;
     }
 
+    /**
+     * writes the vehicles' information into a csv file
+     * @param p_vehicles the vehicles
+     * @throws IOException file
+     */
     public void writeCSV( final ArrayList<CVehicle> p_vehicles ) throws IOException
     {
         final ArrayList<String[]> l_stringarray = new ArrayList<>();

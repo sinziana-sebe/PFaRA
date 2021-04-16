@@ -39,6 +39,10 @@ public class CReadBackground
 {
     private final CGraph m_env;
 
+    /**
+     * ctor
+     * @param p_env the environment
+     */
     public CReadBackground( final CGraph p_env )
     {
         m_env = p_env;

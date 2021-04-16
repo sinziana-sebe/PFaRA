@@ -42,6 +42,9 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for simple visualisation purposes
+ */
 public class CVisualise
 {
     private static final Logger LOGGER = Logger.getLogger( CVisualise.class.getName() );
@@ -59,6 +62,15 @@ public class CVisualise
 
     private CReporting m_report;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CVisualise( final String p_infile, final String p_backfile, final String p_outfile,
                        final Integer p_time, final Double p_space ) throws IOException
     {
@@ -68,20 +80,13 @@ public class CVisualise
 
         m_input = new ObjectMapper().readValue( new File( p_infile ), CInputpojo.class );
         m_env = new CGraph( m_input.getGraph() );
-        //m_readbackground = new CReadBackground( m_env );
-        //m_backinfo = m_readbackground.getBackground( p_backfile );
         m_unit = new CUnits( p_time, p_space );
         m_time = 0;
-        /*m_vehicles = new ArrayList<>();
-        //m_input.getVehicles().forEach( p -> m_vehicles.add( new CVehicle( p, 0, LOGGER, m_unit, false, 1.0 ) ) );
-        //m_vehicles.forEach( p ->
-        {
-            m_status.put( p, "Incomplete" );
-            m_routes.put( p, m_env.route( p.origin(), p.destination() ) );
-            m_finalroute.put( p, new ArrayList<>() );
-        } );*/
     }
 
+    /**
+     * shows the network
+     */
     public void visualiseNetwork()
     {
         final JFrame l_frame = new JFrame();
@@ -98,7 +103,10 @@ public class CVisualise
     }
 
 
-    public void visualiseDensity() throws IOException
+    /**
+     * shows the network with traffic density
+     */
+    public void visualiseDensity()
     {
         final HashMap<IEdge, Integer> l_density = new HashMap<>();
         m_env.edges().forEach(  e -> l_density.put( e, (int)Math.round( e.weight() ) ) );
@@ -121,6 +129,10 @@ public class CVisualise
 
     }
 
+    /**
+     * shows the route in the network
+     * @param p_route the route
+     */
     public void visualiseRoute( final ArrayList<IEdge> p_route )
     {
         final JFrame l_frame = new JFrame();
@@ -142,6 +154,10 @@ public class CVisualise
         l_view.getRenderContext().setVertexFillPaintTransformer( i -> new Color( 0, 0, 0 ) );
     }
 
+    /**
+     * paints specific edges
+     * @param p_route the name of desired edges
+     */
     public void paintEdges( final ArrayList<String> p_route )
     {
         final JFrame l_frame = new JFrame();

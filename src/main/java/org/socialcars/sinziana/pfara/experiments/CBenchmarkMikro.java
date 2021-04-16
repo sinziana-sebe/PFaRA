@@ -43,6 +43,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for simulation with microscopic movement and an overlapping approach
+ */
 public class CBenchmarkMikro
 {
     private static final Logger LOGGER = Logger.getLogger( CBenchmarkMikro.class.getName() );
@@ -67,6 +70,15 @@ public class CBenchmarkMikro
 
     private CReporting m_report;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CBenchmarkMikro( final String p_infile, final String p_backfile, final String p_outfile,
                            final Integer p_time, final Double p_space ) throws IOException
     {
@@ -100,6 +112,12 @@ public class CBenchmarkMikro
         m_report = new CReporting( p_outfile, true );
     }
 
+    /**
+     * creates sections in the edges
+     * to allow for a better transition of movement
+     * accelerating in the beginning
+     * braking in the end
+     */
     private void addSections()
     {
         m_env.edges().forEach( e ->
@@ -111,6 +129,10 @@ public class CBenchmarkMikro
         } );
     }
 
+    /**
+     * syncs the traffic light
+     * opposing sides must be on opposing cycles
+     */
     private void syncLights()
     {
         while ( m_stoplights.containsValue( "Incomplete" ) )
@@ -130,6 +152,13 @@ public class CBenchmarkMikro
         }
     }
 
+    /**
+     * switches the movement type used
+     * @param p_pod the vehicle
+     * @param p_edge the edge it is travelling on
+     * on the middle portion the vehicle travels at the speed allowed by the traffic
+     * slower if it is congested and normal if it is not
+     */
     private void switchmovement( final CVehicle p_pod, final IEdge p_edge )
     {
         if ( p_pod.position().doubleValue() <= p_edge.sections().beginning() ) p_pod.moveMikro();
@@ -137,6 +166,10 @@ public class CBenchmarkMikro
         else p_pod.brake();
     }
 
+    /**
+     * start the simulation
+     * @throws IOException file
+     */
     public void run() throws IOException
     {
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, true, false, 1.0 );

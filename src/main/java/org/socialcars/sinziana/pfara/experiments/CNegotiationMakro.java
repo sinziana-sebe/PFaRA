@@ -45,6 +45,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for simulation with macroscopic movement with an optimisation approach + the negotiation approach
+ */
 public class CNegotiationMakro
 {
     private static final Logger LOGGER = Logger.getLogger( CNegotiationMakro.class.getName() );
@@ -73,6 +76,15 @@ public class CNegotiationMakro
 
     private CReporting m_report;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CNegotiationMakro( final String p_infile, final String p_backfile, final String p_outfile,
                               final Integer p_time, final Double p_space, final Double p_omega, final Boolean p_ao, final Integer p_rounds ) throws IOException
     {
@@ -100,6 +112,10 @@ public class CNegotiationMakro
         m_report = new CReporting( p_outfile, false );
     }
 
+    /**
+     * runs the simulation
+     * @throws IOException file
+     */
     public void run() throws IOException
     {
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );
@@ -114,8 +130,12 @@ public class CNegotiationMakro
         m_report.writeCSV( m_vehicles );
     }
 
+    /**
+     * checks for negotiation
+     */
     private void checkNegotiation()
     {
+        //creates clusters for negotiation
         m_vehicles.forEach( p ->
         {
             if ( ( !p.platooning() )
@@ -134,6 +154,8 @@ public class CNegotiationMakro
                 }
             }
         } );
+        //if there are at least 2 vehicles in the cluster,
+        //create a protocol and send the first offer
         m_clusters.keySet().forEach( n ->
         {
             if ( m_clusters.get( n ).size() > 1 )

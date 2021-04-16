@@ -41,16 +41,28 @@ public class COptimiser
         m_opt.solve();
     }
 
+    /**
+     * accesses the found solution
+     * @return the routes
+     */
     public HashMap<CVehicle, ArrayList<IEdge>> getRoutes()
     {
         return m_opt.getRoutes();
     }
 
+    /**
+     * gets the potential "problematic" vehicles
+     * @return the vehicles
+     */
     public ArrayList<CVehicle> getFlagged()
     {
         return m_opt.getFlagged();
     }
 
+    /**
+     * gets the common solution
+     * @return the solution
+     */
     public HashMap<IEdge, Integer> getNP()
     {
         return m_opt.getNP();

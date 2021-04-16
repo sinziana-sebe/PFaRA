@@ -32,6 +32,9 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for testing the negotiability of the network
+ */
 public class CNegotiability
 {
     private static final Logger LOGGER = Logger.getLogger( CNegotiability.class.getName() );
@@ -46,6 +49,14 @@ public class CNegotiability
 
     private final Double m_omega;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CNegotiability( final String p_infile, final String p_outfile, final Integer p_time, final Double p_space, final Double p_omega ) throws IOException
     {
         final FileHandler l_handler = new FileHandler( p_outfile );
@@ -62,6 +73,10 @@ public class CNegotiability
         m_omega = p_omega;
     }
 
+    /**
+     * searches for negotiable shapes
+     * both simple and complex
+     */
     public void run()
     {
         final CFindNegotiables l_findneg = new CFindNegotiables( m_env, m_vehicles.get( 0 ), m_unit, m_omega, LOGGER );

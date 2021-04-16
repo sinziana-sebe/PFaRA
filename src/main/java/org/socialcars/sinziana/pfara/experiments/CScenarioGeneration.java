@@ -43,6 +43,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.IntStream;
 
+/**
+ * class for generating traffic scenarios
+ */
 public class CScenarioGeneration
 {
     private final CDemandspojo m_inputd;
@@ -53,6 +56,14 @@ public class CScenarioGeneration
 
     private final CUnits m_unit;
 
+    /**
+     * ctor
+     * @param p_demand the traffic demand file
+     * @param p_graph the input file
+     * @param p_space space transformation
+     * @param p_time time transformation
+     * @throws IOException file
+     */
     CScenarioGeneration( final String p_demand, final String p_graph, final Double p_space, final Integer p_time ) throws IOException
     {
         m_input = new ObjectMapper().readValue( new File( p_graph ), CInputpojo.class );
@@ -68,12 +79,19 @@ public class CScenarioGeneration
 
     }
 
+    /**
+     * generates the traffic
+     * @param p_ratio the ratio of traffic generated (by hour)
+     * @param p_endfile the output file
+     * @throws IOException file
+     */
     public void generateDensityFlow( final Integer p_ratio, final String p_endfile ) throws IOException
     {
         //this generates deltaN
         final IGraph<VisualizationViewer<INode, IEdge>> l_env = new CGraph( m_input.getGraph() );
         final HashMap<IEdge, Integer> l_countingmap = new HashMap<>();
 
+        //generates the trips
         m_demand.forEach( i -> IntStream.range( 0, Math.round( i.howMany() ) ).boxed()
                 .flatMap( j -> l_env.route( l_env.randomnodebyzone( i.from() ), l_env.randomnodebyzone( i.to() ) ).stream() )
                 .forEach( j -> l_countingmap.put( j, l_countingmap.getOrDefault( j, 0 ) + 1 ) ) );
@@ -81,9 +99,9 @@ public class CScenarioGeneration
         final HashMap<IEdge, CBackground> l_background = new HashMap<>();
         l_countingmap.keySet().forEach( e ->
         {
-            //then we generate Q by dividing into hours
+            //then we generate Q (flow) by dividing into hours
             final Double l_flow = Double.valueOf( l_countingmap.get( e ) / p_ratio );
-            //then we generate D by dividing by length
+            //then we generate D (density) by dividing by length
             final Double l_density = l_flow / m_unit.distanceToBlocks( e.length() ).doubleValue();
             l_background.put( e, new CBackground( l_density, l_flow ) );
         } );
@@ -92,6 +110,12 @@ public class CScenarioGeneration
 
     }
 
+    /**
+     * writes the generated traffic information to file
+     * @param p_values the generated information
+     * @param p_endfile the outputfile
+     * @throws IOException file
+     */
     private void writeInfo( final HashMap<IEdge, CBackground> p_values, final String p_endfile ) throws IOException
     {
         final File l_filedir = new File( p_endfile );

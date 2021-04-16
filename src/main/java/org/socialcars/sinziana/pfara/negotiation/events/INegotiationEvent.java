@@ -18,6 +18,9 @@ package org.socialcars.sinziana.pfara.negotiation.events;
 import org.socialcars.sinziana.pfara.agents.IAgent;
 import org.socialcars.sinziana.pfara.negotiation.IOffer;
 
+/**
+ * the negotiation event interface
+ */
 public interface INegotiationEvent
 {
     /**

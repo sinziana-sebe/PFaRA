@@ -15,6 +15,9 @@
 
 package org.socialcars.sinziana.pfara.negotiation.events;
 
+/**
+ * negotiation event type enumeration
+ */
 public enum ENegotiationEventType
 {
     JOINED,

@@ -79,12 +79,16 @@ public class CPreGrouping
         final ArrayList<CVehicle> l_platooners = new ArrayList<>();
         IntStream.range( 0, m_pods.size() ).boxed().forEach( i ->
         {
+            //if the vehicle was not already grouped, is at a node and not at its destination
             if ( ( !l_platooners.contains( m_pods.get( i ) ) )
                     && ( m_pods.get( i ).position().equals( 0.0 ) )
                     && ( !m_pods.get( i ).location().contentEquals( m_pods.get( i ).destination() ) ) )
             {
+                //create a new platooning group
                 final HashSet<CVehicle> l_platoon = new HashSet<>();
                 l_platoon.add( m_pods.get( i ) );
+                //find all the other vehicles at the same position
+                //that were not already grouped and not at their destination
                 IntStream.range( i + 1, m_pods.size() ).boxed().forEach( j ->
                 {
                     if ( ( m_pods.get( j ).position().equals( 0.0 ) )
@@ -93,6 +97,8 @@ public class CPreGrouping
                             & ( !l_platooners.contains( m_pods.get( j ) ) ) )
                         l_platoon.add( m_pods.get( j ) );
                 } );
+                //if there are more than 2 vehicles in a group,
+                //move to step 2
                 if ( l_platoon.size() > 1 )
                 {
                     l_platooners.addAll( l_platoon );
@@ -106,7 +112,8 @@ public class CPreGrouping
      * checks if the group of vehicles is a new platoon or not
      * @param p_platoon group of pods
      * if same platoon do nothing, otherwise group the vehicles
-     * based on minimum speed
+     * based on their possible minimum speed
+     * ensuring that they can drive together in a platoon and no vehicle gets left behind
      */
     private void checkforPlatoonStage2( final HashSet<CVehicle> p_platoon )
     {
@@ -124,6 +131,7 @@ public class CPreGrouping
                     if ( p.preferences().maxSpeed() > l_maxminspeed ) l_plat.add( p );
                 } );
                 l_plat.forEach( p -> l_pl.remove( p ) );
+                //if the vehicles are speed compatible, move on to the actual grouping
                 if ( l_plat.size() > 1  ) groupPlatoon( l_plat );
             }
         }
@@ -138,6 +146,7 @@ public class CPreGrouping
     {
         final AtomicBoolean l_trig = new AtomicBoolean( false );
         final AtomicReference<Integer> l_count = new AtomicReference<>( 0 );
+        //if there are no vehicles that are currently platooning
         p_platoon.forEach( p ->
         {
             if ( !p.platooning() ) l_count.getAndSet( l_count.get() + 1 );
@@ -146,6 +155,7 @@ public class CPreGrouping
         {
             final CVehicle l_pod = p_platoon.get( 0 );
             l_count.set( 0 );
+            //if the vehicles are not in the same platoon
             p_platoon.forEach( c ->
             {
                 if ( ( !l_pod.companions().contains( c ) ) && ( !l_pod.equals( c ) ) )
@@ -197,6 +207,7 @@ public class CPreGrouping
 
     /**
      * runs the optimiser and performs the subsequent checks
+     * namely ensuring the flagged vehicles are dealt with accordingly
      * @param p_vehicles the map with the grouped vehicles
      */
     private void runOptimiser( final HashMap<String, ArrayList<CVehicle>> p_vehicles )
@@ -263,6 +274,7 @@ public class CPreGrouping
         {
             final ArrayList<IEdge> l_platroute = p_platroutes.get( p );
             final AtomicBoolean l_trig = new AtomicBoolean( false );
+            //attemps to find still SOME common route between the vehicles
             while ( ( l_platroute.size() > 2 ) && ( !l_trig.get() ) )
             {
                 final IEdge l_final = l_platroute.get( l_platroute.size() - 1 );
@@ -273,6 +285,8 @@ public class CPreGrouping
                 l_patched.forEach( e -> l_cost.getAndAdd( e.weight().doubleValue() ) );
                 if ( l_cost.get() <= p.preferences().maxCost() ) l_trig.set( true );
             }
+            //if an appropriate shorter route is found
+            //the vehicles are grouped and the routes changed accordingly
             if ( l_trig.get() )
             {
                 final AtomicReference<IEdge> l_pos = new AtomicReference<>();

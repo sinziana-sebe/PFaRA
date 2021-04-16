@@ -17,6 +17,9 @@ package org.socialcars.sinziana.pfara.negotiation;
 
 import java.util.ArrayList;
 
+/**
+ * the bidding module interface
+ */
 public interface IBiddingModule
 {
     /**

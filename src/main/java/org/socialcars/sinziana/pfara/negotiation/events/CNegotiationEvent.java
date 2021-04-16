@@ -18,12 +18,21 @@ package org.socialcars.sinziana.pfara.negotiation.events;
 import org.socialcars.sinziana.pfara.agents.IAgent;
 import org.socialcars.sinziana.pfara.negotiation.IOffer;
 
+/**
+ * negotiation event class
+ */
 public class CNegotiationEvent implements INegotiationEvent
 {
     private final IAgent m_who;
     private final ENegotiationEventType m_type;
     private final IOffer m_which;
 
+    /**
+     * ctor
+     * @param p_who the ego agent
+     * @param p_type type of event
+     * @param p_which the offer
+     */
     public CNegotiationEvent( final IAgent p_who, final ENegotiationEventType p_type, final IOffer p_which )
     {
         m_who = p_who;

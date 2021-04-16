@@ -62,12 +62,14 @@ public class CEdgeEnd
         m_pods.forEach( p ->
         {
             edgeEnd( p );
+            //if the vehicle reached an intermediary node
             if ( ( p.platooning() ) && ( p.position().equals( 0.00 ) ) && ( p.location() != p.destination() ) )
             {
                 final AtomicBoolean l_trig = new AtomicBoolean( false );
                 final IEdge l_edge = m_routes.get( p ).iterator().next();
                 p.companions().forEach( c ->
                 {
+                    //if there is no more common route, registers a split
                     if ( ( !m_routes.get( c ).isEmpty() ) && ( !l_edge.equals( m_routes.get( c ).iterator().next() ) ) ) l_trig.set( true );
                 } );
                 if ( l_trig.get() )
@@ -93,6 +95,7 @@ public class CEdgeEnd
     {
         if ( p_pod.location().contentEquals( p_pod.destination() ) )
         {
+            //ensures that the vehicle has not already registered a completed route
             final AtomicBoolean l_dest = new AtomicBoolean( false );
             final Collection<IEvent> l_events = p_pod.events();
             l_events.forEach( e ->
@@ -111,11 +114,14 @@ public class CEdgeEnd
     {
         if ( p_pod.platooning() )
         {
+            //removes the vehicles for the companion list of all its co-platooners
+            //and updates their precedence
             p_pod.companions().forEach( c ->
             {
                 c.updatePrecedence();
                 c.companions().remove( p_pod );
             } );
+            //registers the split
             p_pod.split( p_pod.location(), m_time );
         }
         p_pod.completed( p_pod.destination(), m_time );
@@ -134,6 +140,8 @@ public class CEdgeEnd
             final AtomicBoolean l_dest = new AtomicBoolean( false );
             if ( ( p.platooning() ) && ( p.companions().isEmpty() ) )
             {
+                //if the last event is not a split after a formed was registere
+                //creates and registers a split
                 p.events().forEach( e ->
                 {
                     if ( e.what().equals( EEventType.FORMED ) ) l_dest.set( true );

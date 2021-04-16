@@ -251,10 +251,10 @@ public class CNegotiationModule implements INegotiationModule
     {
         final ArrayList<Double> l_bids = new ArrayList<>();
         Iterator<Double> l_it =  new Random().doubles( 0, 1 ).iterator();
-        //the opponent's theorised payment limit based on the deadline and current round
+        //the agent's payment limit based on the deadline and current round
         final Double l_lim = Math.abs( m_av - m_rv ) / m_protocol.getDeadline() * m_protocol.getRoundCounter();
         if ( m_rvpeak == null ) m_rvpeak = m_lastoffer;
-        //creates a probability distribution based on opponent's payment limit
+        //creates a random generator based on out payment limit
         switch ( m_role )
         {
             case INITIATOR:
@@ -268,7 +268,7 @@ public class CNegotiationModule implements INegotiationModule
             default:
                 break;
         }
-        //creates bid acceptance probability
+        //creates a number of possible bids
         while ( l_bids.size() < 20 ) l_bids.add( l_it.next() );
         Double l_bb = m_bb.getBestBid( l_bids, m_protocol.getRoundCounter(), m_rvpeak );
         if ( l_bb == 0.0 )

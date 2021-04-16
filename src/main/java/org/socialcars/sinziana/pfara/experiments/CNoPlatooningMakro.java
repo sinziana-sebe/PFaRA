@@ -38,6 +38,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for simulation with macroscopic movement and no platooning
+ */
 public class CNoPlatooningMakro
 {
     private static final Logger LOGGER = Logger.getLogger( CBenchmarkMakro.class.getName() );
@@ -58,6 +61,15 @@ public class CNoPlatooningMakro
 
     private CReporting m_report;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CNoPlatooningMakro( final String p_infile, final String p_backfile, final String p_outfile,
                             final Integer p_time, final Double p_space ) throws IOException
     {
@@ -83,6 +95,10 @@ public class CNoPlatooningMakro
         m_report = new CReporting( p_outfile, false );
     }
 
+    /**
+     * runs the simulatio
+     * @throws IOException file
+     */
     public void run() throws IOException
     {
         while ( m_status.containsValue( "Incomplete" ) )

@@ -41,6 +41,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for simulation with macroscopic movement and optimisation approach
+ */
 public class COptimisationMakro
 {
     private static final Logger LOGGER = Logger.getLogger( CBenchmarkMakro.class.getName() );
@@ -65,6 +68,15 @@ public class COptimisationMakro
     private final Double m_omega;
     private CReporting m_report;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public COptimisationMakro( final String p_infile, final String p_backfile, final String p_outfile,
                             final Integer p_time, final Double p_space, final Double p_omega ) throws IOException
     {
@@ -90,6 +102,10 @@ public class COptimisationMakro
         m_report = new CReporting( p_outfile, false );
     }
 
+    /**
+     * runs the simulation
+     * @throws IOException file
+     */
     public void run() throws IOException
     {
         m_grouping = new CPreGrouping( m_vehicles, m_env, m_unit, m_routes, m_time, false, true, m_omega );

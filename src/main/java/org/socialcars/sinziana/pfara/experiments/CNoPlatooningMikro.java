@@ -40,6 +40,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * class for simulation with microscopic movement and no platooning
+ */
 public class CNoPlatooningMikro
 {
     private static final Logger LOGGER = Logger.getLogger( CBenchmarkMikro.class.getName() );
@@ -61,6 +64,15 @@ public class CNoPlatooningMikro
 
     private CReporting m_report;
 
+    /**
+     * ctor
+     * @param p_infile the input file
+     * @param p_backfile the background information file
+     * @param p_outfile the output file
+     * @param p_time the time transformation coefficient
+     * @param p_space the space transformation coefficient
+     * @throws IOException file
+     */
     public CNoPlatooningMikro( final String p_infile, final String p_backfile, final String p_outfile,
                             final Integer p_time, final Double p_space ) throws IOException
     {
@@ -94,6 +106,12 @@ public class CNoPlatooningMikro
         m_report = new CReporting( p_outfile, true );
     }
 
+    /**
+     * creates sections in the edges
+     * to allow for a better transition of movement
+     * accelerating in the beginning
+     * braking in the end
+     */
     private void addSections()
     {
         m_env.edges().forEach( e ->
@@ -105,6 +123,10 @@ public class CNoPlatooningMikro
         } );
     }
 
+    /**
+     * syncs the traffic light
+     * opposing sides must be on opposing cycles
+     */
     private void syncLights()
     {
         while ( m_stoplights.containsValue( "Incomplete" ) )
@@ -124,6 +146,13 @@ public class CNoPlatooningMikro
         }
     }
 
+    /**
+     * switches the movement type used
+     * @param p_pod the vehicle
+     * @param p_edge the edge it is travelling on
+     * on the middle portion the vehicle travels at the speed allowed by the traffic
+     * slower if it is congested and normal if it is not
+     */
     private void switchmovement( final CVehicle p_pod, final IEdge p_edge )
     {
         if ( p_pod.position().doubleValue() <= p_edge.sections().beginning() ) p_pod.moveMikro();
@@ -131,6 +160,10 @@ public class CNoPlatooningMikro
         else p_pod.brake();
     }
 
+    /**
+     * start the simulation
+     * @throws IOException file
+     */
     public void run() throws IOException
     {
         while ( m_status.containsValue( "Incomplete" ) )
